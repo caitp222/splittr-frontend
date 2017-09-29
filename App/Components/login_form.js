@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
          TextInput,
@@ -8,6 +9,8 @@ import { AppRegistry,
        } from 'react-native';
 
 class LoginForm extends Component {
+  componentWillMount () {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
   constructor(props) {
     super(props);
     this.state = {user: {
