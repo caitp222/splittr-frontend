@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { LoginForm } from './App/Components/login_form.js';
 import { RegisterForm } from './App/Components/user_register_form.js';
+import { ExpenseForm } from './App/Components/new_expense_form'
 
 export default class splittr extends Component {
   render() {
@@ -25,7 +26,7 @@ export default class splittr extends Component {
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
-        <RegisterForm />
+        <ExpenseForm />
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
