@@ -4,50 +4,55 @@
  * @flow
  */
 
+ import {
+   StackNavigator,
+ } from 'react-navigation';
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+import Register from './App/Scenes/register';
+import Login from './App/Scenes/login';
+import Profile from './App/Scenes/user_profile';
+// import Foo from './App/Scenes/login'
 
-export default class splittr extends Component {
+class Home extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Hello World!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <View>
+      <Button
+        title="Login"
+        onPress={() =>
+          navigate('Login', { name: 'Jane' })}
+      />
+      <Button
+        title="Register"
+        onPress={() =>
+          navigate('Register')}
+      />
+    </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+const splittr = StackNavigator({
+  Home: { screen: Home },
+  Login: {
+    screen: Login,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  Register: {
+    screen: Register,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });
+
 
 AppRegistry.registerComponent('splittr', () => splittr);
