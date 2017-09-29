@@ -16,8 +16,23 @@ import { LoginForm } from './App/Components/login_form.js';
 import { RegisterForm } from './App/Components/user_register_form.js';
 import { ExpenseForm } from './App/Components/new_expense_form'
 import { GroupForm } from './App/Components/new_group_form'
+import { ExpenseNewScene } from './App/Scenes/expenses_new'
+import { GroupNewScene } from './App/Scenes/new_group'
+import { LoginScene } from './App/Scenes/login'
+import { RegisterScene } from './App/Scenes/register'
+import { ExpenseShowScene } from './App/Scenes/expenses_show'
+
 
 export default class splittr extends Component {
+  constructor() {
+    super();
+    this.state = {expense: {
+      description: "description",
+      amount: "$12.34",
+      vendor: "Rico's Seaside Bar & Grill",
+      user: "Rico Suave"
+    }}
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -27,7 +42,7 @@ export default class splittr extends Component {
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
-        <RegisterForm />
+        <ExpenseShowScene expense={this.state.expense} />
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu

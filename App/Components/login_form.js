@@ -28,7 +28,6 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
-        <Text>Login</Text>
         <Text>Email:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="email"
       value={this.state.user.email} onChangeText={this.onChangeEmail}/>
