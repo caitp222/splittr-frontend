@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
-         TextInput,
          Button,
          View,
          Text,
        } from 'react-native';
 
 class LoginForm extends Component {
-  componentWillMount () {
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
   constructor(props) {
     super(props);
     this.state = {user: {
@@ -33,8 +30,11 @@ class LoginForm extends Component {
       <View>
         <Text>Login</Text>
         <Text>Email:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="email"
-      value={this.state.user.email} onChangeText={this.onChangeEmail}/>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          name="email"
+          value={this.state.user.email} onChangeText={this.onChangeEmail}
+        />
         <Text>Password:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="password"
       value={this.state.user.password} onChangeText={this.onChangePassword}/>
