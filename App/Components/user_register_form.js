@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet,
          TextInput,
          View,
+         Button,
          Text,
        } from 'react-native';
 
@@ -41,6 +42,11 @@ class RegisterForm extends Component {
         <Text>Password:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.user.password} onChangeText={this.onChangePassword}/>
+      <Button
+          onPress={"h1"}
+          title="Register User"
+          color="#841584"
+          accessibilityLabel="Create new user"/>
       </View>
     )
   }

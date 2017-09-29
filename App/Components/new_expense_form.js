@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { TextInput,
          View,
+         Button,
          Text,
        } from 'react-native';
 
@@ -37,6 +38,11 @@ class ExpenseForm extends Component {
         <Text>Amount:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.expense.amount} onChangeText={this.onChangeAmount}/>
+      <Button
+          onPress={"h1"}
+          title="Create Expense"
+          color="#841584"
+          accessibilityLabel="Create new expense"/>
       </View>
     )
   }

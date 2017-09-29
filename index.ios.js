@@ -27,6 +27,7 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
+<<<<<<< HEAD
       <View>
       <Button
         title="Login"
@@ -39,6 +40,21 @@ class Home extends React.Component {
           navigate('Register')}
       />
     </View>
+=======
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Hello World!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <RegisterForm />
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+>>>>>>> c8651a03280bdf8be9ebcabe60d5d756e9fb6112
     );
   }
 }
