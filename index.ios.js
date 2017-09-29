@@ -27,6 +27,7 @@ export default class splittr extends Component {
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
+        <RegisterForm />
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
