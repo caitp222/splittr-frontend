@@ -1,0 +1,3 @@
+rootProject.name = 'splittr'
+
+include ':app'
