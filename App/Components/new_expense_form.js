@@ -28,7 +28,6 @@ class ExpenseForm extends Component {
   render() {
     return(
       <View>
-        <Text>Add New Expense</Text>
         <Text>Vendor:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
