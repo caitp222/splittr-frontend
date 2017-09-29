@@ -12,13 +12,13 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  Button
+  TextInput,
+  View
 } from 'react-native';
-import Register from './App/Scenes/register';
-import Login from './App/Scenes/login';
-import Profile from './App/Scenes/user_profile';
-// import Foo from './App/Scenes/login'
+import { LoginForm } from './App/Components/login_form.js';
+import { RegisterForm } from './App/Components/user_register_form.js';
+import { ExpenseForm } from './App/Components/new_expense_form'
+import { GroupForm } from './App/Components/new_group_form'
 
 class Home extends React.Component {
   static navigationOptions = {
