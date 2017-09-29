@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { ExpenseForm } from '../Components/new_expense_form'
 
-class ExpenseContainer extends Component {
+class ExpenseNewScene extends Component {
   render() {
     return(
       <View>
@@ -17,4 +17,4 @@ class ExpenseContainer extends Component {
     )
   }
 }
-export { ExpenseContainer };
+export { ExpenseNewScene };

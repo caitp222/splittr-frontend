@@ -16,7 +16,8 @@ import { LoginForm } from './App/Components/login_form.js';
 import { RegisterForm } from './App/Components/user_register_form.js';
 import { ExpenseForm } from './App/Components/new_expense_form'
 import { GroupForm } from './App/Components/new_group_form'
-import { ExpenseContainer } from './App/Scenes/expenses_new'
+import { ExpenseNewScene } from './App/Scenes/expenses_new'
+import { GroupNewScene } from './App/Scenes/new_group'
 
 
 export default class splittr extends Component {
@@ -29,7 +30,7 @@ export default class splittr extends Component {
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
-        <ExpenseContainer />
+        <GroupNewScene />
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
