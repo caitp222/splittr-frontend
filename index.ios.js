@@ -13,7 +13,8 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View
+  View,
+  Button
 } from 'react-native';
 import { LoginForm } from './App/Components/login_form.js';
 import { RegisterForm } from './App/Components/user_register_form.js';
@@ -62,10 +63,10 @@ class Home extends React.Component {
 const splittr = StackNavigator({
   Home: { screen: Home },
   Login: {
-    screen: Login,
+    screen: LoginForm,
   },
   Register: {
-    screen: Register,
+    screen: RegisterForm,
   },
 
 });
