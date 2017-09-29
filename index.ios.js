@@ -9,8 +9,10 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  TextInput,
+  View,
 } from 'react-native';
+import { LoginForm } from './App/Components/login_form.js';
 
 export default class splittr extends Component {
   render() {
