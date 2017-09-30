@@ -4,6 +4,8 @@ import { TextInput,
          Button,
          Text,
        } from 'react-native';
+import GroupForm from './new_group_form';
+import { StackNavigator } from 'react-navigation';
 
 class ProfileHeader extends Component {
   constructor() {
@@ -15,20 +17,27 @@ class ProfileHeader extends Component {
     }};
   }
   render(){
+    const { navigate } = this.props.navigation;
     return(
       <View>
-        <Text>firstName:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
-      <Text>lastName:</Text>
-      <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
+        <Text>Princess</Text>
+        <Text>Rebecca</Text>
         <Button
-            onPress={"h1"}
-            title="Create Group"
-            color="#841584"
-            accessibilityLabel="Create New Group"/>
+          title="Create Group"
+          color="#841584"
+          accessibilityLabel="Create New Group"
+          onPress={() =>
+            navigate('GroupForm')}
+        />
       </View>
     )
   }
 }
+
+const splittr = StackNavigator({
+  GroupForm: {
+    screen: GroupForm,
+  },
+});
+
+export default ProfileHeader;

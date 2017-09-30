@@ -4,9 +4,7 @@
  * @flow
  */
 
- import {
-   StackNavigator,
- } from 'react-navigation';
+ import { StackNavigator } from 'react-navigation';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -19,7 +17,8 @@ import {
 import { LoginForm } from './App/Components/login_form.js';
 import { RegisterForm } from './App/Components/user_register_form.js';
 import { ExpenseForm } from './App/Components/new_expense_form';
-import { GroupForm } from './App/Components/new_group_form'
+import { GroupForm } from './App/Components/new_group_form';
+import ProfileHeader from './App/Components/profile_header'
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -56,6 +55,9 @@ const splittr = StackNavigator({
   },
   Register: {
     screen: RegisterForm,
+  },
+  User: {
+    screen: ProfileHeader,
   },
 });
 
