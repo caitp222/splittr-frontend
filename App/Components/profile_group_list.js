@@ -10,24 +10,14 @@ import {
 import { StackNavigator } from 'react-navigation'
 
 class ProfileGroup extends Component {
-  constructor(){
-    super();
-    this.state ={
-      groups: [
-      { groupName: "The Lanisters" },
-      { groupName: "The Starks" },
-      { groupName: "The Targaryen" },
-    ]};
-  }
-
   render() {
     return(
       <View>
-        {this.state.groups.map(function(group, index){
+        {this.props.groups.map(function(group, index){
           return (
             <Button
               key={index}
-              title= {group.groupName}
+              title= {group.group_name}
               onPress = {() =>
               console.log("hi")}
             />

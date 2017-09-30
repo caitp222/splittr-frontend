@@ -20,7 +20,7 @@ class UserShowScene extends React.Component {
     this.state = { user: {
       firstName: "Blah",
       lastName: "",
-      
+      groups: []
     }}
   }
 
@@ -31,7 +31,8 @@ class UserShowScene extends React.Component {
       ).then((responseJson) => {this.setState(
           {user: {
             firstName: responseJson.user.first_name,
-            lastName: responseJson.user.last_name}
+            lastName: responseJson.user.last_name,
+            groups: responseJson.user_groups}
           })
       })
   }
@@ -43,7 +44,7 @@ class UserShowScene extends React.Component {
       <ProfileHeader />
       <Text>User name is: {user.firstName}</Text>
       <Text>User Show Scene</Text>
-      <ProfileGroup />
+      <ProfileGroup groups={this.state.user.groups}/>
     </View>
     )
   }
