@@ -14,9 +14,11 @@ class GroupShowScene extends Component {
       groupName: "",
       details: "",
       settledUp: false,
-    }, memberSplit: 0,
+    }, totalSpend: 0,
+       memberSplit: 0,
        members: []
-  }
+     }
+   }
 
   componentDidMount = function() {
     fetch("http://localhost:3000/groups/9",
@@ -28,6 +30,7 @@ class GroupShowScene extends Component {
       details: responseJson.group.details,
       settledUp: responseJson.group.settle_up
     },
+    totalSpend: responseJson.total_spend,
     memberSplit: responseJson.member_split,
     members: responseJson.members
   })})
@@ -36,7 +39,10 @@ class GroupShowScene extends Component {
   render() {
     return(
       <View>
-        <Text>group name</Text>
+        <Text>{this.state.group.groupName}</Text>
+        <Text>{this.state.group.details}</Text>
+        <Text>Total Group Spend: ${this.state.totalSpend}</Text>
+        <Text>Member Split: ${this.state.memberSplit}</Text>
         <MemberList />
       </View>
     )
