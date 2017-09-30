@@ -14,27 +14,27 @@ class ProfileHeader extends Component {
   constructor() {
     super();
     this.state = {user: {
-      firstName: "First Name",
-      lastName: "Last Name",
-      groupNames: "Name",
+      firstName: "Princess",
+      lastName: "Rebecca",
+      groupNames: "Groups",
     }};
   }
-
-  alert2 = () => {
-    alert("bai den conjo")
-  }
+  static navigationOptions = {
+    title: 'Hey Beautiful',
+  };
   render(){
-    const { navigate } = this.props.navigation;
+    //const { navigate } = this.props.navigation;
     return(
       <View>
-        <Text>Princess</Text>
-        <Text>Rebecca</Text>
+        <Text> {this.state.user.firstName} {this.state.user.lastName}</Text>
         <Button
-          onPress={() =>  navigate('GroupForm')}
-          title="Press Me"
+          title="Create New Squad"
+          onPress={() =>
+            navigate('GroupForm')}
         />
+        <Text> {this.state.user.groupNames} </Text>
       </View>
-    )
+    );
   }
 }
 

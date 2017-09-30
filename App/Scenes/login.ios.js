@@ -13,6 +13,7 @@ class LoginScene extends Component {
     <View>
       <Text>Login</Text>
       <LoginForm />
+      <Text>Login Scene</Text>
     </View>
     )
   }
