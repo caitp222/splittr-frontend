@@ -37,13 +37,14 @@ class GroupShowScene extends Component {
   }
 
   render() {
+    const { navigate } = this.props;
     return(
       <View>
         <Text>{this.state.group.groupName}</Text>
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
         <Text>Member Split: ${this.state.memberSplit}</Text>
-        <MemberList members={this.state.members}/>
+        <MemberList members={this.state.members} navigate={ navigate }/>
       </View>
     )
   }
