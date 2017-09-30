@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { TextInput,
+         Button,
          View,
          Text,
        } from 'react-native';
@@ -8,7 +9,7 @@ class GroupForm extends Component {
   constructor() {
     super();
     this.state = {group: {
-        group_name: "Name",
+        groupName: "Name",
         details: "Details"
       }}
   }
@@ -29,6 +30,11 @@ class GroupForm extends Component {
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.group_name} onChangeText={this.onChangeGroupName}/>
         <Text>Description:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.details} onChangeText={this.onChangeDetails}/>
+        <Button
+            onPress={"h1"}
+            title="Create Group"
+            color="#841584"
+            accessibilityLabel="Create new group"/>
       </View>
     )
   }
