@@ -5,16 +5,17 @@ import {
   Text,
   View
 } from 'react-native';
-import  MemberList from '../Components/member_list';
+import  Member  from './member';
+
 
 class GroupShowScene extends Component {
   render() {
     return(
       <View>
-        <Text>group name</Text>
-        <MemberList />
+        <Text>Members list</Text>
+          <Member />
       </View>
     )
   }
 }
-export { GroupShowScene };
+export default GroupShowScene ;
