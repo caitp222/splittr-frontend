@@ -12,16 +12,15 @@ import { StackNavigator } from 'react-navigation'
 class ProfileGroup extends Component {
   constructor(){
     super();
-    this.state = {group: {
-      groupName: "The Lanisters",
-      details: "Details"
-    }};
+    this.state = [groups: {
+      groupName: "The Lanisters", groupName: "The Starks", groupName: "The Targaryens",
+    }];
   }
   render() {
     return(
       <View>
         <Button
-          title={this.state.group.groupName}
+          title={this.state.groups.groupName}
           onPress={() =>
             navigate('GroupForm')}
         />
