@@ -8,7 +8,7 @@ import {
 
 let style = StyleSheet.create({
   container: {
-    width: 100,
+    width: 250,
     height: 100,
   },
 })
@@ -18,7 +18,7 @@ class Expense extends Component {
     const { expense } = this.props;
     return(
       <View style={ style.container }>
-        <Text>Expense</Text>
+        <Text>{ expense.user}: </Text>
           <Text>Amount: { expense.amount } paid to: { expense.vendor }</Text>
       </View>
     )

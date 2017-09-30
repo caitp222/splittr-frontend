@@ -17,4 +17,4 @@ class GroupShowScene extends Component {
     )
   }
 }
-export { GroupShowScene };
+export default GroupShowScene ;

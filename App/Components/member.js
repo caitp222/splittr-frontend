@@ -11,22 +11,12 @@ import Expense from './expense';
 class Member extends Component {
   constructor() {
     super();
-    this.state = {expenses: [{
-      description: "description",
-      amount: "$12.34",
-      vendor: "Rico's Seaside Bar & Grill",
-      user: 'Rico Suave'
-      }, {description: "This was a seafood joint",
-      amount: "$132.99",
-      vendor: "Rocco's seafood taco's",
-      user: 'Leo'}]}
-    }
+  }
   render() {
-    const { expenses } = this.state;
+    const { expenses, user } = this.props;
     return(
       <View>
-        <Text>Member.name</Text>
-        <Text>Expenses</Text>
+        <Text>{user.name}</Text>
           <FlatList
             data = {expenses}
             renderItem={({item}) => <Text><Expense expense={item}/></Text>}
@@ -35,4 +25,5 @@ class Member extends Component {
     )
   }
 }
+
 export default Member ;
