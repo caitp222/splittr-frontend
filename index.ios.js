@@ -14,6 +14,7 @@ import {
   View,
   Button
 } from 'react-native';
+
 import { LoginScene } from './App/Scenes/login.ios.js';
 import { RegisterScene } from './App/Scenes/register.ios.js';
 import  UserShowScene  from './App/Scenes/user_show.ios.js'
@@ -22,10 +23,20 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js'
 // import { ExpenseForm } from './App/Components/new_expense_form';
 // import { GroupForm } from './App/Components/new_group_form';
 
+
 class Home extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
   };
+  constructor() {
+    super();
+    this.state = {expense: {
+      description: "description",
+      amount: "$12.34",
+      vendor: "Rico's Seaside Bar & Grill",
+      user: 'Rico Suave'
+    }}
+  }
   render() {
     const { navigate } = this.props.navigation;
     return (

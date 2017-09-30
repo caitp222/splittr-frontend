@@ -9,10 +9,11 @@ import ExpenseForm from '../Components/new_expense_form.js'
 
 class ExpenseNewScene extends Component {
   render() {
+    const { expense } = this.props
     return(
       <View>
-        <Text>Create a New Expense:</Text>
-        <ExpenseForm />
+        <Text>Create a New Expense</Text>
+        <ExpenseForm  />
       </View>
     )
   }
