@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
+<<<<<<< HEAD
+=======
+         TextInput,
+>>>>>>> fff4ecca93b08473ff04cab86d6e8d4d569f3e14
          Button,
          View,
          Text,
@@ -28,7 +32,6 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
-        <Text>Login</Text>
         <Text>Email:</Text>
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}

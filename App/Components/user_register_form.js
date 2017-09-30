@@ -31,7 +31,6 @@ class RegisterForm extends Component {
   render() {
     return(
       <View>
-        <Text>Register</Text>
         <Text>First Name:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.firstName} onChangeText={this.onChangeFirstName}/>
         <Text>Last Name:</Text>
