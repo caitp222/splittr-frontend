@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
-<<<<<<< HEAD
-=======
-         TextInput,
->>>>>>> fff4ecca93b08473ff04cab86d6e8d4d569f3e14
          Button,
          View,
          Text,

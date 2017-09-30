@@ -4,6 +4,11 @@ import { TextInput,
          Button,
          Text,
        } from 'react-native';
+<<<<<<< HEAD
+import GroupForm from './new_group_form';
+import { StackNavigator } from 'react-navigation';
+=======
+>>>>>>> 515c99c0cc1bea88a06e8154796b1245da55b2c4
 
 class ProfileHeader extends Component {
   constructor() {
@@ -15,6 +20,20 @@ class ProfileHeader extends Component {
     }};
   }
   render(){
+<<<<<<< HEAD
+    const { navigate } = this.props.navigation;
+    return(
+      <View>
+        <Text>Princess</Text>
+        <Text>Rebecca</Text>
+        <Button
+          title="Create Group"
+          color="#841584"
+          accessibilityLabel="Create New Group"
+          onPress={() =>
+            navigate('GroupForm')}
+        />
+=======
     return(
       <View>
         <Text>firstName:</Text>
@@ -28,7 +47,19 @@ class ProfileHeader extends Component {
             title="Create Group"
             color="#841584"
             accessibilityLabel="Create New Group"/>
+>>>>>>> 515c99c0cc1bea88a06e8154796b1245da55b2c4
       </View>
     )
   }
 }
+<<<<<<< HEAD
+
+const splittr = StackNavigator({
+  GroupForm: {
+    screen: GroupForm,
+  },
+});
+
+export default ProfileHeader;
+=======
+>>>>>>> 515c99c0cc1bea88a06e8154796b1245da55b2c4
