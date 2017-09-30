@@ -21,4 +21,4 @@ class ExpenseShowScene extends Component {
     )
   }
 }
-export { ExpenseShowScene };
+export default ExpenseShowScene ;
