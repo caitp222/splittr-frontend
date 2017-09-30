@@ -18,7 +18,7 @@ class UserShowScene extends React.Component {
   constructor() {
     super();
     this.state = { user: {
-      firstName: "Blah",
+      firstName: "",
       lastName: "",
       groups: []
     }}
@@ -41,10 +41,8 @@ class UserShowScene extends React.Component {
     const { user } = this.state
     return(
     <View>
-      <ProfileHeader />
-      <Text>User name is: {user.firstName}</Text>
-      <Text>User Show Scene</Text>
-      <ProfileGroup groups={this.state.user.groups}/>
+      <ProfileHeader userName={user.firstName}/>
+      <ProfileGroup groups={user.groups}/>
     </View>
     )
   }

@@ -13,6 +13,7 @@ class ProfileGroup extends Component {
   render() {
     return(
       <View>
+        <Text> Your Groups </Text>
         {this.props.groups.map(function(group, index){
           return (
             <Button
