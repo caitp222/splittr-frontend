@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import { TextInput,
-         View,
-         Button,
-         Text,
-       } from 'react-native';
+import {
+  TextInput,
+  View,
+  Button,
+  Text,
+  AppRegistry,
+  StyleSheet,
+} from 'react-native';
 import GroupForm from './new_group_form';
 import { StackNavigator } from 'react-navigation';
 
@@ -11,26 +14,24 @@ class ProfileHeader extends Component {
   constructor() {
     super();
     this.state = {user: {
-      firstName: "First Name",
-      lastName: "Last Name",
-      groupNames: "Name",
+      firstName: "Princess",
+      lastName: "Rebecca",
+      groupNames: "Groups",
     }};
   }
   render(){
-    const { navigate } = this.props.navigation;
+    //const { navigate } = this.props.navigation;
     return(
       <View>
-        <Text>Princess</Text>
-        <Text>Rebecca</Text>
+        <Text> {this.state.user.firstName} {this.state.user.lastName}</Text>
         <Button
-          title="Create Group"
-          color="#841584"
-          accessibilityLabel="Create New Group"
+          title="Create New Squad"
           onPress={() =>
             navigate('GroupForm')}
         />
+        <Text> {this.state.user.groupNames} </Text>
       </View>
-    )
+    );
   }
 }
 
@@ -41,20 +42,3 @@ const splittr = StackNavigator({
 });
 
 export default ProfileHeader;
-
-
-{/* return(
-  <View>
-    <Text>firstName:</Text>
-    <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-  value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
-  <Text>lastName:</Text>
-  <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-    value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
-    <Button
-        onPress={"h1"}
-        title="Create Group"
-        color="#841584"
-        accessibilityLabel="Create New Group"/>
-
-  </View> */}

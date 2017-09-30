@@ -4,7 +4,7 @@
  * @flow
  */
 
- import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -14,13 +14,12 @@ import {
   View,
   Button
 } from 'react-native';
-import { LoginForm } from './App/Components/login_form.js';
-import { RegisterForm } from './App/Components/user_register_form.js';
-import { ExpenseForm } from './App/Components/new_expense_form';
-import { GroupForm } from './App/Components/new_group_form';
-import ProfileHeader from './App/Components/profile_header'
-import { GroupShowScene } from './App/Scenes/group_show';
-import { ExpenseShowScene } from './App/Scenes/expenses_show';
+
+import { LoginScene } from './App/Scenes/login.ios.js';
+import { RegisterScene } from './App/Scenes/register.ios.js';
+import  UserShowScene  from './App/Scenes/user_show.ios.js'
+// import { ExpenseForm } from './App/Components/new_expense_form';
+// import { GroupForm } from './App/Components/new_group_form';
 
 
 class Home extends React.Component {
@@ -65,13 +64,13 @@ class Home extends React.Component {
 const splittr = StackNavigator({
   Home: { screen: Home },
   Login: {
-    screen: LoginForm,
+    screen: LoginScene,
   },
   Register: {
-    screen: RegisterForm,
+    screen: RegisterScene,
   },
   User: {
-    screen: ProfileHeader,
+    screen: UserShowScene,
   },
 });
 
