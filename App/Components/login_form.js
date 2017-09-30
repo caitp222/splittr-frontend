@@ -28,7 +28,6 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
-        <Text>Login</Text>
         <Text>Email:</Text>
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
