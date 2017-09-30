@@ -5,16 +5,16 @@ import {
   Text,
   View
 } from 'react-native';
-import { ExpenseForm } from '../Components/new_expense_form'
+import ExpenseForm from '../Components/new_expense_form.js'
 
 class ExpenseNewScene extends Component {
   render() {
     return(
       <View>
-        <Text>Create a New Expense</Text>
+        <Text>Create a New Expense:</Text>
         <ExpenseForm />
       </View>
     )
   }
 }
-export { ExpenseNewScene };
+export default ExpenseNewScene;

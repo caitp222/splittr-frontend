@@ -10,8 +10,9 @@ class ExpenseForm extends Component {
     super();
     this.state = {expense: {
       description: "description",
-      amount: "$12.34",
-      vendor: "Rico's Seaside Bar & Grill"
+      amount: 12.34,
+      vendor: "Rico's Seaside Bar & Grill",
+      membership_id: 3
     }};
   }
 
@@ -24,13 +25,18 @@ class ExpenseForm extends Component {
   onChangeDescription = this.handleInputChange.bind(this, "description")
   onChangeAmount = this.handleInputChange.bind(this, "amount")
   onChangeVendor = this.handleInputChange.bind(this, "vendor")
+  onButtonPress = this.handleButtonPress.bind(this)
 
   handleButtonPress() {
-    const { expense } = this.state;
+    const expense = this.state.expense;
     fetch("http://localhost:3000/groups/1/expenses", {
       method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({expense})
-    })
+    }).then((response) => console(response))
   }
 
   render() {
@@ -46,13 +52,13 @@ class ExpenseForm extends Component {
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.expense.amount} onChangeText={this.onChangeAmount}/>
       <Button
-          onPress={this.handleButtonPress}
+          onPress={this.onButtonPress}
           title="Create Expense"
           color="#841584"
-          accessibilityLabel="Create new expense"/>
+          accessibilityLabel="Create new expense" />
       </View>
     )
   }
 }
 
-export { ExpenseForm };
+export default ExpenseForm;
