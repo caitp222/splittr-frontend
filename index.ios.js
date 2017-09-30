@@ -55,7 +55,7 @@ class Home extends React.Component {
           onPress={() =>
             navigate('User')}
         />
-        <GroupShowScene />
+        <GroupShowScene navigate={ navigate }/>
       </View>
     );
   }

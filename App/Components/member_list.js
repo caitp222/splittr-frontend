@@ -32,10 +32,11 @@ class MemberList extends Component {
 
   render() {
     const { expenses, user } = this.state;
+    const { navigate } = this.props;
     return(
       <View>
         <Text>Members list</Text>
-          <Member expenses={ expenses } user={ user }/>
+          <Member expenses={ expenses } user={ user } navigate={navigate} />
       </View>
     )
   }
