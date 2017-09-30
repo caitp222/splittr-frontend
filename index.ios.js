@@ -21,6 +21,11 @@ import  UserShowScene  from './App/Scenes/user_show.ios.js'
 import  GroupShowScene  from './App/Scenes/group_show.ios.js'
 // import { ExpenseForm } from './App/Components/new_expense_form';
 // import { GroupForm } from './App/Components/new_group_form';
+var styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#5085A5',
+  }
+})
 
 
 class Home extends React.Component {
@@ -39,19 +44,22 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
+      <View style={styles.button}>
         <Button
           title="Login"
+          color= "#ffffff"
           onPress={() =>
             navigate('Login')}
         />
         <Button
           title="Register"
+          color= "#ffffff"
           onPress={() =>
             navigate('Register')}
         />
         <Button
           title="User"
+          color= "#F7F9FB"
           onPress={() =>
             navigate('User')}
         />

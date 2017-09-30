@@ -12,6 +12,8 @@ import Expense from './expense';
 
 import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 
+
+
 class Member extends Component {
   constructor() {
     super();
