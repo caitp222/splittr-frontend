@@ -15,7 +15,7 @@ class GroupForm extends Component {
     this.state = {group: {
         groupName: "Name",
         details: "Details"
-      }}
+      }};
   }
 
   handleInputChange(name, text) {
