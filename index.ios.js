@@ -21,8 +21,8 @@ import UserShowScene from './App/Scenes/user_show.ios.js'
 import ExpenseShowScene from './App/Scenes/expenses_show.ios.js';
 import ExpenseNewScene from './App/Scenes/expenses_new.ios.js'
 import GroupShowScene from './App/Scenes/group_show.ios.js'
-// import { ExpenseForm } from './App/Components/new_expense_form';
-// import { GroupForm } from './App/Components/new_group_form';
+import GroupNewScene from './App/Scenes/new_group.ios.js'
+
 var styles = StyleSheet.create({
   button: {
     backgroundColor: '#5085A5',
@@ -54,10 +54,10 @@ class Home extends React.Component {
             navigate('Login')}
         />
         <Button
-          title="Register"
+          title="NewGroup"
           color= "#ffffff"
           onPress={() =>
-            navigate('Register')}
+            navigate('NewGroup')}
         />
         <Button
           title="User"
@@ -80,8 +80,8 @@ const splittr = StackNavigator({
   Login: {
     screen: LoginScene,
   },
-  Register: {
-    screen: RegisterScene,
+  NewGroup: {
+    screen: GroupNewScene,
   },
   User: {
     screen: UserShowScene,
