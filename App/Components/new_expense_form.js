@@ -25,6 +25,14 @@ class ExpenseForm extends Component {
   onChangeAmount = this.handleInputChange.bind(this, "amount")
   onChangeVendor = this.handleInputChange.bind(this, "vendor")
 
+  handleButtonPress() {
+    const { expense } = this.state;
+    fetch("http://localhost:3000/groups/1/expenses", {
+      method: 'POST',
+      body: JSON.stringify({expense})
+    })
+  }
+
   render() {
     return(
       <View>
@@ -38,7 +46,7 @@ class ExpenseForm extends Component {
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.expense.amount} onChangeText={this.onChangeAmount}/>
       <Button
-          onPress={"h1"}
+          onPress={this.handleButtonPress}
           title="Create Expense"
           color="#841584"
           accessibilityLabel="Create new expense"/>

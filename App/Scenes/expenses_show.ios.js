@@ -8,17 +8,42 @@ import {
 
 
 class ExpenseShowScene extends Component {
+  constructor() {
+    super();
+    this.state = { expense: {
+        vendor: "",
+        amount: "",
+        description: "",
+        user: "",
+        error: ""
+    }}
+  }
+
+  componentWillMount = function() {
+    fetch("http://localhost:3000/groups/12/expenses/2",
+          {method: 'get'}
+        ).then((response) => response.json()
+        ).then((responseJson) =>  {this.setState(
+                                  {expense:
+                                    {vendor: responseJson.vendor,
+                                      amount: responseJson.amount,
+                                      description: responseJson.description,
+                                      user: responseJson.paid_by}
+                                    })
+      })
+  }
+
   render() {
-    const { expense } = this.props
+    const { expense } = this.state
     return(
       <View>
-        <Text>Expense Show</Text>
+        <Text>Expense</Text>
+        <Text>Vendor: {expense.vendor}</Text>
         <Text>Description: {expense.description}</Text>
         <Text>Amount: {expense.amount}</Text>
-        <Text>Vendor: {expense.vendor}</Text>
-        <Text>User: {expense.user}</Text>
+        <Text>Paid By: {expense.user}</Text>
       </View>
     )
   }
 }
-export { ExpenseShowScene };
+export default ExpenseShowScene ;
