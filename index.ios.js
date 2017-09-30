@@ -20,6 +20,7 @@ import { ExpenseForm } from './App/Components/new_expense_form';
 import { GroupForm } from './App/Components/new_group_form';
 import ProfileHeader from './App/Components/profile_header'
 import { GroupShowScene } from './App/Scenes/group_show';
+import { ExpenseShowScene } from './App/Scenes/expenses_show';
 
 
 class Home extends React.Component {
@@ -54,6 +55,7 @@ class Home extends React.Component {
           onPress={() =>
             navigate('User')}
         />
+        <ExpenseShowScene expense={ this.state.expense }/>
         <GroupShowScene />
       </View>
     );

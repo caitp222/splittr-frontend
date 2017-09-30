@@ -9,11 +9,12 @@ import  Member  from './member';
 
 
 class MemberList extends Component {
+  
   render() {
     return(
       <View>
         <Text>Members list</Text>
-
+          <Member />
       </View>
     )
   }
