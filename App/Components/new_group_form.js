@@ -9,7 +9,7 @@ class GroupForm extends Component {
   constructor() {
     super();
     this.state = {group: {
-        group_name: "Name",
+        groupName: "Name",
         details: "Details"
       }}
   }
