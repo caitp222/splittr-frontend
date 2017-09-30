@@ -43,7 +43,7 @@ class GroupShowScene extends Component {
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
         <Text>Member Split: ${this.state.memberSplit}</Text>
-        <MemberList />
+        <MemberList members={this.state.members}/>
       </View>
     )
   }
