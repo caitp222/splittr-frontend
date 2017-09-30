@@ -13,7 +13,7 @@ import ProfileGroup  from '../Components/profile_group_list';
 
 class UserShowScene extends React.Component {
   static navigationOptions = {
-    title: 'Khalesse',
+    title: 'Khaleesi',
   };
   render(){
     return(
