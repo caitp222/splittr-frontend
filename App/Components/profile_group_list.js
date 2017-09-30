@@ -26,4 +26,4 @@ class ProfileGroup extends Component {
   }
 }
 
-export default GroupForm;
+export default ProfileGroup;
