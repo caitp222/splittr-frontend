@@ -18,7 +18,9 @@ import {
 import { LoginScene } from './App/Scenes/login.ios.js';
 import { RegisterScene } from './App/Scenes/register.ios.js';
 import  UserShowScene  from './App/Scenes/user_show.ios.js'
+
 import  GroupShowScene  from './App/Scenes/group_show.ios.js'
+
 // import { ExpenseForm } from './App/Components/new_expense_form';
 // import { GroupForm } from './App/Components/new_group_form';
 var styles = StyleSheet.create({
@@ -63,7 +65,15 @@ class Home extends React.Component {
           onPress={() =>
             navigate('User')}
         />
+<<<<<<< HEAD
         <GroupShowScene navigate={ navigate }/>
+=======
+        <Button
+          title="Expense"
+          onPress={() =>
+            navigate('Expense')}
+        />
+>>>>>>> master
       </View>
     );
   }
@@ -79,6 +89,9 @@ const splittr = StackNavigator({
   },
   User: {
     screen: UserShowScene,
+  },
+  Expense: {
+    screen: ExpenseNewScene,
   },
 });
 
