@@ -13,16 +13,20 @@ class ProfileGroup extends Component {
   constructor(){
     super();
     this.state = {group: {
-      groupName: "Name",
+      groupName: "The Lanisters",
       details: "Details"
     }};
   }
   render() {
     return(
       <View>
-        <Text>Group Buttons</Text>
+        <Button
+          title={this.state.group.groupName}
+          onPress={() =>
+            navigate('GroupForm')}
+        />
       </View>
-    )
+    );
   }
 }
 
