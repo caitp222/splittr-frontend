@@ -19,9 +19,6 @@ class ProfileHeader extends Component {
       groupNames: "Groups",
     }};
   }
-  static navigationOptions = {
-    title: 'Hey Beautiful',
-  };
   render(){
     //const { navigate } = this.props.navigation;
     return(
