@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { Member } from './member';
+import  Member  from './member';
 
 
 class MemberList extends Component {
@@ -13,7 +13,7 @@ class MemberList extends Component {
     return(
       <View>
         <Text>Members list</Text>
-        
+
       </View>
     )
   }

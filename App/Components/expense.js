@@ -16,4 +16,4 @@ class Expense extends Component {
     )
   }
 }
-export { Expense };
+export default Expense ;

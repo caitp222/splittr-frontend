@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { Expense } from './expense';
+import Expense from './expense';
 
 class Member extends Component {
   render() {
@@ -13,9 +13,9 @@ class Member extends Component {
       <View>
         <Text>Member.name</Text>
         <Text>Expenses</Text>
-          
+
       </View>
     )
   }
 }
-export { Member };
+export default Member ;
