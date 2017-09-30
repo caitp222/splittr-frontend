@@ -13,6 +13,7 @@ class RegisterScene extends Component {
     <View>
       <Text>Register</Text>
       <RegisterForm />
+      <Text>Register Scene</Text>
     </View>
     )
   }

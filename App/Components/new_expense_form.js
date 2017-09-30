@@ -12,7 +12,7 @@ class ExpenseForm extends Component {
       description: "description",
       amount: "$12.34",
       vendor: "Rico's Seaside Bar & Grill"
-    }}
+    }};
   }
 
   handleInputChange(name, text) {
