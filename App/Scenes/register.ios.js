@@ -19,4 +19,4 @@ class RegisterScene extends Component {
   }
 }
 
-export { RegisterScene };
+export default RegisterScene;

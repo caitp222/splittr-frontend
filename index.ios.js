@@ -15,11 +15,12 @@ import {
   Button
 } from 'react-native';
 
-import { LoginScene } from './App/Scenes/login.ios.js';
-import { RegisterScene } from './App/Scenes/register.ios.js';
-import  UserShowScene  from './App/Scenes/user_show.ios.js'
+import LoginScene from './App/Scenes/login.ios.js';
+import RegisterScene from './App/Scenes/register.ios.js';
+import UserShowScene from './App/Scenes/user_show.ios.js'
 import ExpenseShowScene from './App/Scenes/expenses_show.ios.js';
 import ExpenseNewScene from './App/Scenes/expenses_new.ios.js'
+import GroupShowScene from './App/Scenes/group_show.ios.js'
 // import { ExpenseForm } from './App/Components/new_expense_form';
 // import { GroupForm } from './App/Components/new_group_form';
 
@@ -57,9 +58,9 @@ class Home extends React.Component {
             navigate('User')}
         />
         <Button
-          title="Expense"
+          title="Group"
           onPress={() =>
-            navigate('Expense')}
+            navigate('Group')}
         />
       </View>
     );
@@ -77,8 +78,8 @@ const splittr = StackNavigator({
   User: {
     screen: UserShowScene,
   },
-  Expense: {
-    screen: ExpenseShowScene,
+  Group: {
+    screen: GroupShowScene,
   },
 });
 
