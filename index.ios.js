@@ -19,11 +19,22 @@ import { RegisterForm } from './App/Components/user_register_form.js';
 import { ExpenseForm } from './App/Components/new_expense_form';
 import { GroupForm } from './App/Components/new_group_form';
 import ProfileHeader from './App/Components/profile_header'
+import { GroupShowScene } from './App/Scenes/group_show';
+
 
 class Home extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
   };
+  constructor() {
+    super();
+    this.state = {expense: {
+      description: "description",
+      amount: "$12.34",
+      vendor: "Rico's Seaside Bar & Grill",
+      user: 'Rico Suave'
+    }}
+  }
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -43,6 +54,7 @@ class Home extends React.Component {
           onPress={() =>
             navigate('User')}
         />
+        <GroupShowScene />
       </View>
     );
   }
