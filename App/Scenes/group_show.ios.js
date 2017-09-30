@@ -9,12 +9,13 @@ import  MemberList from '../Components/member_list';
 
 class GroupShowScene extends Component {
   render() {
+    const { navigate } = this.props;
     return(
       <View>
         <Text>group name</Text>
-        <MemberList />
+        <MemberList navigate={ navigate }/>
       </View>
     )
   }
 }
-export { GroupShowScene };
+export default GroupShowScene ;
