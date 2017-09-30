@@ -78,7 +78,7 @@ const splittr = StackNavigator({
     screen: UserShowScene,
   },
   Expense: {
-    screen: ExpenseNewScene,
+    screen: ExpenseShowScene,
   },
 });
 

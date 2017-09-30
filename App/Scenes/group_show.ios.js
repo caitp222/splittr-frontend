@@ -8,6 +8,8 @@ import {
 import  MemberList from '../Components/member_list';
 
 class GroupShowScene extends Component {
+
+
   render() {
     return(
       <View>
