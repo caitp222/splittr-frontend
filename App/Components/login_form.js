@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
@@ -29,6 +30,13 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
+        <FormLabel>Email</FormLabel>
+        <FormInput onChangeText={this.onChangeEmail}/>
+        <FormLabel>Password</FormLabel>
+        <FormInput onChangeText={this.onChangePassword}/>
+        
+
+
         <Text>Email:</Text>
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
