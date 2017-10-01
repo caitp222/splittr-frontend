@@ -26,7 +26,7 @@ class ProfileGroup extends Component {
         {groups.map(function(group, index){
           return (
             <TouchableHighlight>
-              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id.toString()})}>{group.group_name}: button</Text>
+              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id})}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}
