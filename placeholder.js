@@ -49,35 +49,40 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-        <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.button}>Login</Text>
-        </TouchableHighlight>
+        <View style={styles.background}>
+          <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
 
-        <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.button}>Register</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('Login')}>
+            <Text style={styles.button}>Login</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.button}>User</Text>
-        </TouchableHighlight>
-        <GroupShowScene navigate={ navigate }/>
+          <TouchableHighlight onPress={() => navigate('Register')}>
+            <Text style={styles.button}>Register</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('Expense')}>
-          <Text style={styles.button}>Expense</Text>
-        </TouchableHighlight>
-        <Tabs/>
+          <TouchableHighlight onPress={() => navigate('User')}>
+            <Text style={styles.button}>User</Text>
+          </TouchableHighlight>
+          <GroupShowScene navigate={ navigate }/>
+
+          <TouchableHighlight onPress={() => navigate('Expense')}>
+            <Text style={styles.button}>Expense</Text>
+          </TouchableHighlight>
+          <Text>Hi</Text>
+          <Tabs/>
         </LinearGradient>
-      </View>
+        </View>
     );
   }
 }
 const styles = StyleSheet.create({
   linearGradient: {
     height: "100%",
+    paddingLeft: 15,
+    paddingRight: 15,
   }
 });
+
 const splittr = StackNavigator({
   Home: { screen: Home },
   Login: {
