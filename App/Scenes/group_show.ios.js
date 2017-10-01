@@ -27,11 +27,12 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    debugger
     console.log(this.props.navigation.state.params.group_id)
-    // const id = this.props.navigation.state.params.group_id
-    // console.log(id)
-    fetch("http://localhost:3000/groups/56",
+    const id = this.props.navigation.state.params.group_id
+    console.log(id)
+    const url = "http://localhost:3000/groups/"
+    const fetchUrl = url + id;
+    fetch(fetchUrl,
       {method: 'GET'}
     ).then((response) => response.json()
   ).then((responseJson) => {this.setState({

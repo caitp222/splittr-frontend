@@ -12,12 +12,6 @@ import { StackNavigator } from 'react-navigation'
 import { NavigationActions } from 'react-navigation'
 
 class ProfileGroup extends Component {
-  // const setParams = NavigationActions.setParams({
-  //   params: {group_id: group.id},
-  //   key: 'GroupShow',})
-  //
-  // this.props.navigation.dispatch(setParams)
-
   render() {
     const { navigation, groups } = this.props;
     return(
