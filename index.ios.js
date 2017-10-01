@@ -61,9 +61,9 @@ class Home extends React.Component {
           </TouchableHighlight>
 
 
-          <TouchableHighlight onPress={() => navigate('CameraAcc')}>
+          {/* <TouchableHighlight onPress={() => navigate('CameraAcc')}>
             <Text style={styles.button}>Camera</Text>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
 
         <TouchableHighlight onPress={() => navigate('User')}>
           <Text style={styles.button}>User</Text>

@@ -24,8 +24,8 @@ class Member extends Component {
         <Text>{member.full_name}</Text>
         {expenses.map(function(expense, index){
           return (
-            <TouchableHighlight >
-              <Text key={index} onPress = {() => navigate('Expense', { expense: expense })}>{expense.vendor + ": $" +expense.amount}: button</Text>
+            <TouchableHighlight key={index}>
+              <Text onPress = {() => navigate('Expense', { expense: expense })}>{expense.vendor + ": $" +expense.amount}: button</Text>
             </TouchableHighlight>
           )
         })}

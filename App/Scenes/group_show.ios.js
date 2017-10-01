@@ -3,7 +3,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 import  MemberList from '../Components/member_list';
 
@@ -48,9 +49,12 @@ class GroupShowScene extends Component {
   }
 
   render() {
-    const { navigate } = this.props;
+    const { navigate } = this.props.navigation;
     return(
       <View style={styles.background}>
+        <TouchableHighlight onPress={() => navigate('CameraAcc')}>
+          <Text style={styles.button}>Add New Expense</Text>
+        </TouchableHighlight>
         <Text>{this.state.group.groupName}</Text>
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
