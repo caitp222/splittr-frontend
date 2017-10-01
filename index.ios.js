@@ -24,6 +24,7 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
+import CameraAccess from './App/Components/camera.js';
 
 var styles = StyleSheet.create({
   background: {
@@ -67,11 +68,21 @@ class Home extends React.Component {
           <TouchableHighlight onPress={() => navigate('User')}>
             <Text style={styles.button}>User</Text>
           </TouchableHighlight>
-          <GroupShowScene navigate={ navigate }/>
 
           <TouchableHighlight onPress={() => navigate('Expense')}>
             <Text style={styles.button}>Expense</Text>
           </TouchableHighlight>
+
+
+          <TouchableHighlight onPress={() => navigate('CameraAcc')}>
+            <Text style={styles.button}>Camera</Text>
+          </TouchableHighlight>
+
+          <GroupShowScene navigate={ navigate }/>
+
+
+
+
         </View>
     </LinearGradient>
     );
@@ -87,6 +98,7 @@ const styles = StyleSheet.create({
 
 const splittr = StackNavigator({
   Home: { screen: Home },
+  CameraAcc:{ screen: CameraAccess},
   Login: {
     screen: LoginScene,
   },
