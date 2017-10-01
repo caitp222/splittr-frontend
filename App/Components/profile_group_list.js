@@ -20,7 +20,7 @@ class ProfileGroup extends Component {
           return (
             <TouchableHighlight onPress={() => navigate('GroupShow')}>
               <Text key={index} onPress = {() =>
-              console.log("Placeholder")}>{group.groupName}: button</Text>
+              console.log("Placeholder")}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}
