@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 import { TextInput,
          View,
          Button,
@@ -42,20 +43,19 @@ class ExpenseForm extends Component {
   render() {
     return(
       <View>
-        <Text>Vendor:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.expense.vendor} onChangeText={this.onChangeVendor}/>
-        <Text>Description:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.expense.description} onChangeText={this.onChangeDescription}/>
-        <Text>Amount:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.expense.amount} onChangeText={this.onChangeAmount}/>
 
-      <TouchableHighlight onPress={this.onButtonPress}>
-        <Text>Create Expense: button</Text>
-      </TouchableHighlight>
-
+        <FormLabel>Vendor</FormLabel>
+        <FormInput onChangeText={this.onChangeVendor}/>
+        <FormLabel>Description</FormLabel>
+        <FormInput onChangeText={this.onChangeDescription}/>
+        <FormLabel>Amount</FormLabel>
+        <FormInput onChangeText={this.onChangeAmount}/>
+        <Button
+          large
+          onPress = { this.onButtonPress }
+          color={'#9e9e9e'}
+          icon={{ type: 'octicon' }}
+          title='Register' />
       </View>
     )
   }

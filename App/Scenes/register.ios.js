@@ -10,10 +10,8 @@ import { RegisterForm } from '../Components/user_register_form'
 class RegisterScene extends Component {
   render(){
     return(
-    <View>
-      <Text>Register</Text>
+    <View>  
       <RegisterForm />
-      <Text>Register Scene</Text>
     </View>
     )
   }
