@@ -9,7 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import  GroupShowScene  from '../Scenes/group_show.ios.js'
+// import  GroupShowScene  from '../Scenes/group_show.ios.js'
 
 class ProfileGroup extends Component {
   render() {
@@ -20,7 +20,7 @@ class ProfileGroup extends Component {
         {groups.map(function(group, index){
           return (
             <TouchableHighlight>
-              <Text key={index} onPress = {() => navigation.navigate('GroupShow')}>{group.group_name}: button</Text>
+              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id})}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}

@@ -95,6 +95,9 @@ const splittr = StackNavigator({
   GroupShow: {
     screen: GroupShowScene,
   },
+  GroupNewScene: {
+    screen: GroupNewScene,
+  }
 });
 
 

@@ -5,7 +5,8 @@ import {
   Text,
   TextInput,
   View,
-  Button
+  Button,
+  TouchableHighlight
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 

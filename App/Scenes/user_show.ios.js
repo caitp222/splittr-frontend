@@ -51,7 +51,7 @@ class UserShowScene extends React.Component {
     return(
     <View>
       <Text>Success</Text>
-      <ProfileHeader userName={user.firstName}/>
+      <ProfileHeader userName={user.firstName} navigation={navigation}/>
       <ProfileGroup groups={user.groups} navigation={navigation}/>
     </View>
     )

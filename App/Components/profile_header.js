@@ -13,13 +13,12 @@ import { StackNavigator } from 'react-navigation';
 
 class ProfileHeader extends Component {
   render(){
-    // const { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return(
       <View>
         <Text> Hi {this.props.userName}!</Text>
-        <TouchableHighlight onPress={() =>
-          navigate('GroupForm')}>
-          <Text>Create New Squad: button</Text>
+        <TouchableHighlight>
+          <Text onPress={() => navigate('GroupNewScene')}>Create New Squad: button</Text>
         </TouchableHighlight>
       </View>
     );
