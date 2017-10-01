@@ -9,7 +9,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-// import  GroupShowScene  from '../Scenes/group_show.ios.js'
 
 class ProfileGroup extends Component {
   render() {
@@ -28,11 +27,5 @@ class ProfileGroup extends Component {
     );
   }
 }
-
-// StackNavigator({
-//   GroupShow: {
-//     screen: GroupShowScene,
-//   }
-// });
 
 export default ProfileGroup;

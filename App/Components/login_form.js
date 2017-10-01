@@ -71,9 +71,4 @@ class LoginForm extends Component {
   }
 }
 
-// const splittr = StackNavigator({
-//   Profile: { screen: UserShowScene }
-// });
-
 export { LoginForm };
-// AppRegistry.registerComponent('LoginForm', () => LoginForm);
