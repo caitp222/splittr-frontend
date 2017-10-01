@@ -60,16 +60,24 @@ class Home extends React.Component {
             <Text style={styles.button}>Register</Text>
           </TouchableHighlight>
 
+
           <TouchableHighlight onPress={() => navigate('CameraAcc')}>
             <Text style={styles.button}>Camera</Text>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() => navigate('User')}>
-            <Text style={styles.button}>User</Text>
-          </TouchableHighlight>
+        <TouchableHighlight onPress={() => navigate('User')}>
+          <Text style={styles.button}>User</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={() => navigate('Expense')}>
+          <Text style={styles.button}>Expense</Text>
+        </TouchableHighlight>
+        {/* <Tabs/> */}
+
         </LinearGradient>
       </View>
     );
+
   }
 }
 const styles = StyleSheet.create({
