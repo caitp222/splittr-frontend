@@ -10,6 +10,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  TouchableHighlight,
   TextInput,
   View,
   Button
@@ -24,8 +25,13 @@ import GroupShowScene from './App/Scenes/group_show.ios.js'
 import GroupNewScene from './App/Scenes/new_group.ios.js'
 
 var styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#606c70',
+    height: "100%"
+  },
   button: {
-    backgroundColor: '#5085A5',
+    backgroundColor: '#00ff00',
+    fontWeight: 'bold'
   }
 })
 
@@ -33,6 +39,7 @@ var styles = StyleSheet.create({
 class Home extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
+    headerStyle: {backgroundColor: '#cccccc'}
   };
   constructor() {
     super();
@@ -46,6 +53,7 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
+<<<<<<< HEAD
       <View style={styles.button}>
         <Button
           title="Login"
@@ -70,6 +78,27 @@ class Home extends React.Component {
           onPress={() =>
             navigate('Group')}
         />
+=======
+      <View style={styles.background}>
+        <TouchableHighlight onPress={() => navigate('Login')}>
+          <Text style={styles.button}>Login</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={() => navigate('Register')}>
+          <Text style={styles.button}>Register</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={() => navigate('User')}>
+          <Text style={styles.button}>User</Text>
+        </TouchableHighlight>
+        <GroupShowScene navigate={ navigate }/>
+
+        <TouchableHighlight onPress={() => navigate('Expense')}>
+          <Text style={styles.button}>Expense</Text>
+        </TouchableHighlight>
+
+
+>>>>>>> master
       </View>
     );
   }

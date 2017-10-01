@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import {
   AppRegistry,
   StyleSheet,
+  TouchableHighlight,
   FlatList,
   Button,
   Text,
@@ -23,12 +24,9 @@ class Member extends Component {
         <Text>{member.full_name}</Text>
         {expenses.map(function(expense, index){
           return (
-            <Button
-              key={index}
-              title= {expense.vendor + ": $" +expense.amount}
-              // onPress = {() =>
-              //   navigate('Expense', { expense: expense })}
-            />
+            <TouchableHighlight >
+              <Text key={index} onPress = {() => navigate('Expense', { expense: expense })}>{expense.vendor + ": $" +expense.amount}: button</Text>
+            </TouchableHighlight>
           )
         })}
       </View>

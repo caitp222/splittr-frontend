@@ -51,11 +51,11 @@ class ExpenseForm extends Component {
         <Text>Amount:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.expense.amount} onChangeText={this.onChangeAmount}/>
-      <Button
-          onPress={this.onButtonPress}
-          title="Create Expense"
-          color="#841584"
-          accessibilityLabel="Create new expense" />
+
+      <TouchableHighlight onPress={this.onButtonPress}>
+        <Text>Create Expense: button</Text>
+      </TouchableHighlight>
+
       </View>
     )
   }

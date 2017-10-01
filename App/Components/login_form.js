@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Keyboard, TextInput } from 'react-native';
 import { AppRegistry,
          StyleSheet,
+         TouchableHighlight,
          Button,
          View,
          Text,
@@ -37,11 +38,10 @@ class LoginForm extends Component {
         <Text>Password:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="password"
       value={this.state.user.password} onChangeText={this.onChangePassword}/>
-      <Button
-          onPress={"h1"}
-          title="login"
-          color="#841584"
-          accessibilityLabel="Login"/>
+
+      <TouchableHighlight >
+        <Text onPress = {"Placeholder"}>Login:button</Text>
+      </TouchableHighlight>
       </View>
     )
   }
