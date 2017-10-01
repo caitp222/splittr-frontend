@@ -16,22 +16,22 @@ import {
   Button
 } from 'react-native';
 
-import { LoginScene } from './App/Scenes/login.ios.js';
-import { RegisterScene } from './App/Scenes/register.ios.js';
-import  UserShowScene  from './App/Scenes/user_show.ios.js'
-import  GroupShowScene  from './App/Scenes/group_show.ios.js'
-import  ExpenseNewScene  from './App/Scenes/expenses_show.ios.js'
+import LoginScene from './App/Scenes/login.ios.js';
+import RegisterScene from './App/Scenes/register.ios.js';
+import UserShowScene from './App/Scenes/user_show.ios.js';
+import ExpenseShowScene from './App/Scenes/expenses_show.ios.js';
+import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
+import GroupShowScene from './App/Scenes/group_show.ios.js';
+import GroupNewScene from './App/Scenes/new_group.ios.js';
 
-// import { ExpenseForm } from './App/Components/new_expense_form';
-// import { GroupForm } from './App/Components/new_group_form';
 var styles = StyleSheet.create({
   background: {
     backgroundColor: '#606c70',
-    height: "100%"
+    height: "100%",
   },
   button: {
     backgroundColor: '#00ff00',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   }
 })
 
@@ -70,8 +70,6 @@ class Home extends React.Component {
         <TouchableHighlight onPress={() => navigate('Expense')}>
           <Text style={styles.button}>Expense</Text>
         </TouchableHighlight>
-
-
       </View>
     );
   }

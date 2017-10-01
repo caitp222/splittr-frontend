@@ -19,4 +19,4 @@ class LoginScene extends Component {
   }
 }
 
-export { LoginScene };
+export default LoginScene;
