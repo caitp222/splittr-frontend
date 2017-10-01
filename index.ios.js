@@ -49,34 +49,45 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
+      <View style={styles.container}>
         <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.button}>Login</Text>
+          <Text style={styles.welcome}>Login</Text>
         </TouchableHighlight>
 
         <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.button}>Register</Text>
+          <Text style={styles.welcome}>Register</Text>
         </TouchableHighlight>
 
         <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.button}>User</Text>
+          <Text style={styles.welcome}>User</Text>
         </TouchableHighlight>
-        <GroupShowScene navigate={ navigate }/>
 
-        <TouchableHighlight onPress={() => navigate('Expense')}>
-          <Text style={styles.button}>Expense</Text>
-        </TouchableHighlight>
         <Tabs/>
-        </LinearGradient>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
-  linearGradient: {
-    height: "100%",
-  }
+  container: {
+    flex: 1,
+    margin: 10,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#31708E',
+  },
+  title: {
+    color: 'blue',
+    fontSize: 20,
+  },
+  welcome: {
+    fontSize: 20,
+    color: '#8FC1E3',
+    textAlign: 'justify',
+    margin: 10,
+    fontWeight: 'bold',
+    fontStyle: 'italic'
+  },
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
