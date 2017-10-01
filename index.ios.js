@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   TextInput,
   View,
+  Image,
   Button
 } from 'react-native';
 
@@ -49,40 +50,39 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+        <Image
+        source={require('./waterdrop-3.jpg')}
+        style={{width: '100%', height: '100%'}}>
+        <View style={styles.container}>
         <TouchableHighlight onPress={() => navigate('Login')}>
           <Text style={styles.welcome}>Login</Text>
         </TouchableHighlight>
-
         <TouchableHighlight onPress={() => navigate('Register')}>
           <Text style={styles.welcome}>Register</Text>
         </TouchableHighlight>
-
-        <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.welcome}>User</Text>
-        </TouchableHighlight>
-
-        <Tabs/>
       </View>
+      </Image>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
+    margin: 5,
     padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#31708E',
+    backgroundColor: 'transparent',
   },
   title: {
     color: 'blue',
     fontSize: 20,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 60,
     color: '#8FC1E3',
+    justifyContent: 'center',
+    alignItems: 'center',
     textAlign: 'justify',
     margin: 10,
     fontWeight: 'bold',
