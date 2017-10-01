@@ -62,12 +62,11 @@ class Home extends React.Component {
         <TouchableHighlight onPress={() => navigate('User')}>
           <Text style={styles.button}>User</Text>
         </TouchableHighlight>
-        <GroupShowScene navigate={ navigate }/>
 
         <TouchableHighlight onPress={() => navigate('Expense')}>
           <Text style={styles.button}>Expense</Text>
         </TouchableHighlight>
-        <Tabs/>
+        {/* <Tabs/> */}
         </LinearGradient>
       </View>
     );
