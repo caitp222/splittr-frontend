@@ -9,18 +9,18 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import  GroupShowScene  from '../Scenes/group_show.ios.js'
+// import  GroupShowScene  from '../Scenes/group_show.ios.js'
 
 class ProfileGroup extends Component {
   render() {
+    const { navigation, groups } = this.props;
     return(
       <View>
         <Text> Your Groups </Text>
-        {this.props.groups.map(function(group, index){
+        {groups.map(function(group, index){
           return (
-            <TouchableHighlight onPress={() => navigate('GroupShow')}>
-              <Text key={index} onPress = {() =>
-              console.log("Placeholder")}>{group.group_name}: button</Text>
+            <TouchableHighlight>
+              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id})}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}
@@ -29,10 +29,10 @@ class ProfileGroup extends Component {
   }
 }
 
-StackNavigator({
-  GroupShow: {
-    screen: GroupShowScene,
-  }
-});
+// StackNavigator({
+//   GroupShow: {
+//     screen: GroupShowScene,
+//   }
+// });
 
 export default ProfileGroup;

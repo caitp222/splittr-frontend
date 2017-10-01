@@ -92,6 +92,12 @@ const splittr = StackNavigator({
   Expense: {
     screen: ExpenseNewScene,
   },
+  GroupShow: {
+    screen: GroupShowScene,
+  },
+  GroupNewScene: {
+    screen: GroupNewScene,
+  }
 });
 
 
