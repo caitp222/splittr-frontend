@@ -34,22 +34,12 @@ class LoginForm extends Component {
         <FormInput onChangeText={this.onChangeEmail}/>
         <FormLabel>Password</FormLabel>
         <FormInput onChangeText={this.onChangePassword}/>
-        
-
-
-        <Text>Email:</Text>
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          name="email"
-          value={this.state.user.email} onChangeText={this.onChangeEmail}
-        />
-        <Text>Password:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="password"
-      value={this.state.user.password} onChangeText={this.onChangePassword}/>
-
-      <TouchableHighlight >
-        <Text onPress = {"Placeholder"}>Login:button</Text>
-      </TouchableHighlight>
+        <Button
+          large
+          onPress = {"Placeholder"}
+          color={'#9e9e9e'}
+          icon={{ type: 'octicon' }}
+          title='SIGN IN' />
       </View>
     )
   }

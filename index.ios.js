@@ -23,11 +23,11 @@ import ExpenseShowScene from './App/Scenes/expenses_show.ios.js';
 import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
+import LinearGradient from 'react-native-linear-gradient';
 
 var styles = StyleSheet.create({
   background: {
-    backgroundColor: '#606c70',
-    height: "100%",
+  backgroundColor: 'transparent',
   },
   button: {
     backgroundColor: '#00ff00',
@@ -53,27 +53,37 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.button}>Login</Text>
-        </TouchableHighlight>
+      <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
+        <View style={styles.background}>
 
-        <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.button}>Register</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('Login')}>
+            <Text style={styles.button}>Login</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.button}>User</Text>
-        </TouchableHighlight>
-        <GroupShowScene navigate={ navigate }/>
+          <TouchableHighlight onPress={() => navigate('Register')}>
+            <Text style={styles.button}>Register</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('Expense')}>
-          <Text style={styles.button}>Expense</Text>
-        </TouchableHighlight>
-      </View>
+          <TouchableHighlight onPress={() => navigate('User')}>
+            <Text style={styles.button}>User</Text>
+          </TouchableHighlight>
+          <GroupShowScene navigate={ navigate }/>
+
+          <TouchableHighlight onPress={() => navigate('Expense')}>
+            <Text style={styles.button}>Expense</Text>
+          </TouchableHighlight>
+        </View>
+    </LinearGradient>
     );
   }
 }
+const styles = StyleSheet.create({
+  linearGradient: {
+    height: "100%",
+    paddingLeft: 15,
+    paddingRight: 15,
+  }
+});
 
 const splittr = StackNavigator({
   Home: { screen: Home },

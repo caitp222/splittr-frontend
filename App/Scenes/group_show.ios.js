@@ -7,6 +7,14 @@ import {
 } from 'react-native';
 import  MemberList from '../Components/member_list';
 
+const styles = StyleSheet.create({
+  background: {
+  backgroundColor: 'transparent',
+  },
+})
+
+
+
 class GroupShowScene extends Component {
   constructor() {
     super();
@@ -39,7 +47,7 @@ class GroupShowScene extends Component {
   render() {
     const { navigate } = this.props;
     return(
-      <View>
+      <View style={styles.background}>
         <Text>{this.state.group.groupName}</Text>
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
