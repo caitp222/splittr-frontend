@@ -32,7 +32,8 @@ class GroupForm extends Component {
   onButtonPress = this.handleButtonPress.bind(this)
 
   handleButtonPress() {
-    const { group, navigation } = this.state;
+    const { group } = this.state;
+    const { navigation } = this.props;
     fetch("http://localhost:3000/groups", {
       method: 'post',
       headers: {
