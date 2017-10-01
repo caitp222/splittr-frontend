@@ -12,8 +12,8 @@ class RegisterForm extends Component {
   constructor() {
     super();
     this.state = {user: {
-      firstName: "First Name",
-      lastName: "Last Name",
+      first_name: "First Name",
+      last_name: "Last Name",
       email: "email",
       password: "password"
     }};
@@ -25,18 +25,32 @@ class RegisterForm extends Component {
     this.setState({user: user})
   }
 
-  onChangeFirstName = this.handleInputChange.bind(this, "firstName")
-  onChangeLastName = this.handleInputChange.bind(this, "lastName")
+  onChangeFirstName = this.handleInputChange.bind(this, "first_name")
+  onChangeLastName = this.handleInputChange.bind(this, "last_name")
   onChangeEmail = this.handleInputChange.bind(this, "email")
   onChangePassword = this.handleInputChange.bind(this, "password")
+
+  handleHighLightPress() {
+    const { user } = this.state
+    fetch("http://localhost:3000/users", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({user})
+    }).then((response) => console.log(response))
+  }
+
+  handleNewUserSubmit = this.handleHighLightPress.bind(this)
 
   render() {
     return(
       <View>
         <Text>First Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.firstName} onChangeText={this.onChangeFirstName}/>
+        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.first_name} onChangeText={this.onChangeFirstName}/>
         <Text>Last Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.lastName} onChangeText={this.onChangeLastName}/>
+        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.last_name} onChangeText={this.onChangeLastName}/>
         <Text>Email:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.user.email} onChangeText={this.onChangeEmail}/>
@@ -44,7 +58,7 @@ class RegisterForm extends Component {
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
       value={this.state.user.password} onChangeText={this.onChangePassword}/>
 
-      <TouchableHighlight onPress={"placeholder"}>
+      <TouchableHighlight onPress={this.handleNewUserSubmit}>
         <Text>Register User: button</Text>
       </TouchableHighlight>
       </View>
