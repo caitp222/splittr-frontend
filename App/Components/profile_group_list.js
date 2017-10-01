@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
+import { NavigationActions } from 'react-navigation'
 
 class ProfileGroup extends Component {
   render() {

@@ -20,6 +20,7 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
+import CameraAccess from './App/Components/camera.js';
 
 var styles = StyleSheet.create({
   background: {
@@ -63,6 +64,7 @@ class Home extends React.Component {
       </View>
       </Image>
     );
+
   }
 }
 const styles = StyleSheet.create({
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
+  CameraAcc:{ screen: CameraAccess},
   Login: {
     screen: LoginScene,
   },
