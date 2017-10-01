@@ -50,15 +50,15 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-        <Image
-        source={require('./waterdrop-3.jpg')}
-        style={{width: '100%', height: '100%'}}>
-        <View style={styles.container}>
-        <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.welcome}>Login</Text>
+      <Image
+      style={styles.backdrop}
+      source={require('./waterdrop-3.jpg')}>
+      <View style={styles.container}>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+          <Text style={styles.text}>Login</Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.welcome}>Register</Text>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+          <Text style={styles.text}>Register</Text>
         </TouchableHighlight>
       </View>
       </Image>
@@ -74,20 +74,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
   },
-  title: {
+  backdrop: {
     color: 'blue',
     fontSize: 20,
+    backgroundColor: 'transparent',
+    width: '100%',
+    height: '100%',
   },
   welcome: {
-    fontSize: 60,
-    color: '#8FC1E3',
-    justifyContent: 'center',
+    fontSize: 50,
+    paddingTop:5,
+    paddingBottom:5,
+    paddingLeft: 20,
+    paddingRight: 20,
     alignItems: 'center',
     textAlign: 'justify',
-    margin: 10,
-    fontWeight: 'bold',
-    fontStyle: 'italic'
+    margin: 20,
+    backgroundColor: '#8FC1E3',
+    borderRadius: 40,
   },
+  text:{
+    fontSize: 40,
+    backgroundColor: 'transparent',
+    color:'#F7F9FB',
+    fontWeight: '300',
+    justifyContent: 'center',
+  }
+
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
