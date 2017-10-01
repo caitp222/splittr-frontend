@@ -9,6 +9,8 @@ import { AppRegistry,
          Text,
          AsyncStorage
        } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import UserShowScene from '../Scenes/user_show.ios.js';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -37,15 +39,16 @@ class LoginForm extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({user})
-    }).then(function(response) {return response.json()} )
+    }).then(function(response) {return response.json()}.bind(this) )
     .then(function(responseJson) {
-      console.log(responseJson);
       let sessionId = responseJson.id
       AsyncStorage.setItem('sessionId', JSON.stringify(sessionId),
     () => { AsyncStorage.getItem('sessionId', (err, result) => {
-      console.log(result)
+      const userId = result;
+      console.log(this.props.navigation.navigate)
+      this.props.navigation.navigate("User", {userId: userId})
     }) } )
-      })
+  }.bind(this))
   }
 
   handleUserSubmit = this.handleHighLightPress.bind(this)
@@ -66,8 +69,11 @@ class LoginForm extends Component {
       </View>
     )
   }
-
 }
+
+// const splittr = StackNavigator({
+//   Profile: { screen: UserShowScene }
+// });
 
 export { LoginForm };
 // AppRegistry.registerComponent('LoginForm', () => LoginForm);

@@ -26,29 +26,32 @@ class UserShowScene extends React.Component {
   }
 
   componentWillMount = function() {
-    AsyncStorage.getItem('sessionId', (err, result) => {
-      const userId = result;
-      const url = "http://localhost:3000/users/";
-      const fetchUrl = url + parseInt(userId)
-      fetch(fetchUrl,
-            {method: 'GET'}
-          ).then(function(response) { return response.json();
-          }
-        ).then((responseJson) => { console.log(responseJson);
-          this.setState(
-            {user: {
-              firstName: responseJson.user.first_name,
-              lastName: responseJson.user.last_name,
-              groups: responseJson.user_groups}
-            })
-      })
-    })
+    // const userId = this.props.navigation.state.params.userId
+    console.log(this.props.id)
+    // AsyncStorage.getItem('sessionId', (err, result) => {
+    //   const userId = result;
+    //   const url = "http://localhost:3000/users/";
+    //   const fetchUrl = url + parseInt(userId)
+    //   fetch(fetchUrl,
+    //         {method: 'GET'}
+    //       ).then(function(response) { return response.json();
+    //       }
+    //     ).then((responseJson) => { console.log(responseJson);
+    //       this.setState(
+    //         {user: {
+    //           firstName: responseJson.user.first_name,
+    //           lastName: responseJson.user.last_name,
+    //           groups: responseJson.user_groups}
+    //         })
+    //   })
+    // })
   }
 
   render(){
     const { user } = this.state
     return(
     <View>
+      <Text>Success</Text>
       <ProfileHeader userName={user.firstName}/>
       <ProfileGroup groups={user.groups}/>
     </View>
