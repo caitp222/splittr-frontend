@@ -55,7 +55,7 @@ class ExpenseForm extends Component {
           onPress = { this.onButtonPress }
           color={'#9e9e9e'}
           icon={{ type: 'octicon' }}
-          title='Register' />
+          title='Create Expense' />
       </View>
     )
   }
