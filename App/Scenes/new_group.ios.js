@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { GroupForm } from '../Components/new_group_form'
+import GroupForm from '../Components/new_group_form'
 
 class GroupNewScene extends Component {
   render(){
@@ -18,4 +18,4 @@ class GroupNewScene extends Component {
   }
 }
 
-export { GroupNewScene };
+export default GroupNewScene;
