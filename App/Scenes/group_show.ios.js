@@ -13,8 +13,6 @@ const styles = StyleSheet.create({
   },
 })
 
-
-
 class GroupShowScene extends Component {
   constructor() {
     super();
@@ -29,7 +27,7 @@ class GroupShowScene extends Component {
    }
 
   componentDidMount = function() {
-    fetch("http://localhost:3000/groups/15",
+    fetch("http://localhost:3000/groups/56",
       {method: 'GET'}
     ).then((response) => response.json()
   ).then((responseJson) => {this.setState({

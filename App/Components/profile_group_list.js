@@ -9,8 +9,15 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
+import { NavigationActions } from 'react-navigation'
 
 class ProfileGroup extends Component {
+  // const setParams = NavigationActions.setParams({
+  //   params: {group_id: group.id},
+  //   key: 'GroupShow',})
+  //
+  // this.props.navigation.dispatch(setParams)
+
   render() {
     const { navigation, groups } = this.props;
     return(
@@ -19,7 +26,7 @@ class ProfileGroup extends Component {
         {groups.map(function(group, index){
           return (
             <TouchableHighlight>
-              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id})}>{group.group_name}: button</Text>
+              <Text key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id.toString()})}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}
