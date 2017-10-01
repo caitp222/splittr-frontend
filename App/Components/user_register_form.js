@@ -13,8 +13,8 @@ class RegisterForm extends Component {
   constructor() {
     super();
     this.state = {user: {
-      firstName: "First Name",
-      lastName: "Last Name",
+      first_name: "First Name",
+      last_name: "Last Name",
       email: "email",
       password: "password"
     }};
@@ -26,10 +26,24 @@ class RegisterForm extends Component {
     this.setState({user: user})
   }
 
-  onChangeFirstName = this.handleInputChange.bind(this, "firstName")
-  onChangeLastName = this.handleInputChange.bind(this, "lastName")
+  onChangeFirstName = this.handleInputChange.bind(this, "first_name")
+  onChangeLastName = this.handleInputChange.bind(this, "last_name")
   onChangeEmail = this.handleInputChange.bind(this, "email")
   onChangePassword = this.handleInputChange.bind(this, "password")
+
+  handleHighLightPress() {
+    const { user } = this.state
+    fetch("https://rocky-forest-46725.herokuapp.com/users", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({user})
+    }).then((response) => console.log(response))
+  }
+
+  handleNewUserSubmit = this.handleHighLightPress.bind(this)
 
   render() {
     return(
@@ -44,7 +58,7 @@ class RegisterForm extends Component {
         <FormInput onChangeText={this.onChangePassword}/>
         <Button
           large
-          onPress = {"Placeholder"}
+          onPress = {this.handleNewUserSubmit}
           color={'#9e9e9e'}
           icon={{ type: 'octicon' }}
           title='Register' />

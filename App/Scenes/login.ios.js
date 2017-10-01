@@ -10,10 +10,11 @@ import LinearGradient from 'react-native-linear-gradient';
 
 class LoginScene extends Component {
   render(){
+    const { navigation } = this.props;
     return(
   <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
     <View>
-      <LoginForm />
+      <LoginForm navigation={navigation}/>
     </View>
   </LinearGradient>
     )

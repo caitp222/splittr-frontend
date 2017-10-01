@@ -7,7 +7,10 @@ import { AppRegistry,
          Button,
          View,
          Text,
+         AsyncStorage
        } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import UserShowScene from '../Scenes/user_show.ios.js';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -27,6 +30,29 @@ class LoginForm extends Component {
   onChangeEmail = this.handleInputChange.bind(this, "email");
   onChangePassword = this.handleInputChange.bind(this, "password")
 
+  handleHighLightPress() {
+    const { user } = this.state;
+    fetch("http://localhost:3000/sessions", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({user})
+    }).then(function(response) {return response.json()}.bind(this) )
+    .then(function(responseJson) {
+      let sessionId = responseJson.id
+      AsyncStorage.setItem('sessionId', JSON.stringify(sessionId),
+    () => { AsyncStorage.getItem('sessionId', (err, result) => {
+      const userId = result;
+      console.log(this.props.navigation.navigate)
+      this.props.navigation.navigate("User", {userId: userId})
+    }) } )
+  }.bind(this))
+  }
+
+  handleUserSubmit = this.handleHighLightPress.bind(this)
+
   render() {
     return(
       <View>
@@ -36,7 +62,7 @@ class LoginForm extends Component {
         <FormInput onChangeText={this.onChangePassword}/>
         <Button
           large
-          onPress = {"Placeholder"}
+          onPress = {this.handleUserSubmit}
           color={'#9e9e9e'}
           icon={{ type: 'octicon' }}
           title='SIGN IN' />
@@ -46,4 +72,3 @@ class LoginForm extends Component {
 }
 
 export { LoginForm };
-// AppRegistry.registerComponent('LoginForm', () => LoginForm);

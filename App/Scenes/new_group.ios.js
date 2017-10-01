@@ -12,7 +12,7 @@ class GroupNewScene extends Component {
     return(
     <View>
       <Text>Create New Group</Text>
-      <GroupForm />
+      <GroupForm navigation={this.props.navigation} />
     </View>
     )
   }

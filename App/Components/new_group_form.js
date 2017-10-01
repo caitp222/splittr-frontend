@@ -5,9 +5,11 @@ import {
   Text,
   TextInput,
   View,
-  Button
+  Button,
+  TouchableHighlight
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import GroupShowScene from '../Scenes/group_show.ios.js';
 
 class GroupForm extends Component {
   constructor() {
@@ -15,7 +17,7 @@ class GroupForm extends Component {
     this.state = {group: {
         group_name: "Name",
         details: "Details",
-        creator_id: 7
+        creator_id: 24
       }};
   }
 
@@ -25,12 +27,13 @@ class GroupForm extends Component {
     this.setState({group: group})
   }
 
-  onChangeGroupName = this.handleInputChange.bind(this, "groupName")
+  onChangeGroupName = this.handleInputChange.bind(this, "group_name")
   onChangeDetails = this.handleInputChange.bind(this, "details")
   onButtonPress = this.handleButtonPress.bind(this)
 
   handleButtonPress() {
     const { group } = this.state;
+    const { navigation } = this.props;
     fetch("http://localhost:3000/groups", {
       method: 'post',
       headers: {
@@ -38,18 +41,22 @@ class GroupForm extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({group})
-    }).then((response) => console.log(response))
+    }).then(function(response) {
+      console.log(response)
+    }).then((response) =>
+      navigation.navigate("GroupShow")
+    )
   }
 
   render() {
     return(
       <View>
         <Text>Group Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.groupName} onChangeText={this.onChangeGroupName}/>
+        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.group_name} onChangeText={this.onChangeGroupName}/>
         <Text>Description:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.details} onChangeText={this.onChangeDetails}/>
         <TouchableHighlight onPress={this.onButtonPress}>
-          <Text>Create Expense:button</Text>
+          <Text>Create Group:button</Text>
         </TouchableHighlight>
       </View>
     )

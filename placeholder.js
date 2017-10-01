@@ -19,7 +19,6 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
-import CameraAccess from './App/Components/camera.js';
 
 var styles = StyleSheet.create({
   background: {
@@ -50,38 +49,42 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-        <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.button}>Login</Text>
-        </TouchableHighlight>
+        <View style={styles.background}>
+          <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
 
-        <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.button}>Register</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('Login')}>
+            <Text style={styles.button}>Login</Text>
+          </TouchableHighlight>
 
-          <TouchableHighlight onPress={() => navigate('CameraAcc')}>
-            <Text style={styles.button}>Camera</Text>
+          <TouchableHighlight onPress={() => navigate('Register')}>
+            <Text style={styles.button}>Register</Text>
           </TouchableHighlight>
 
           <TouchableHighlight onPress={() => navigate('User')}>
             <Text style={styles.button}>User</Text>
           </TouchableHighlight>
-      </LinearGradient>
-    </View>
+          <GroupShowScene navigate={ navigate }/>
 
-
+          <TouchableHighlight onPress={() => navigate('Expense')}>
+            <Text style={styles.button}>Expense</Text>
+          </TouchableHighlight>
+          <Text>Hi</Text>
+          <Tabs/>
+        </LinearGradient>
+        </View>
     );
   }
 }
 const styles = StyleSheet.create({
   linearGradient: {
     height: "100%",
+    paddingLeft: 15,
+    paddingRight: 15,
   }
 });
+
 const splittr = StackNavigator({
   Home: { screen: Home },
-  CameraAcc:{ screen: CameraAccess},
   Login: {
     screen: LoginScene,
   },
@@ -94,12 +97,6 @@ const splittr = StackNavigator({
   Expense: {
     screen: ExpenseNewScene,
   },
-  GroupShow: {
-    screen: GroupShowScene,
-  },
-  GroupNewScene: {
-    screen: GroupNewScene,
-  }
 });
 
 
