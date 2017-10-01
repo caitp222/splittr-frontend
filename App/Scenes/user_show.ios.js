@@ -26,7 +26,7 @@ class UserShowScene extends React.Component {
   }
 
   componentWillMount = function() {
-    const userId = AsyncStorage.getItem('sessionId', (err, result) => {
+    AsyncStorage.getItem('sessionId', (err, result) => {
       const userId = result;
       const url = "http://localhost:3000/users/";
       const fetchUrl = url + parseInt(userId)
