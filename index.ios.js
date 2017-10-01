@@ -52,13 +52,13 @@ class Home extends React.Component {
     return (
       <View style={styles.background}>
         <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-        <TouchableHighlight onPress={() => navigate('Login')}>
-          <Text style={styles.button}>Login</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('Login')}>
+            <Text style={styles.button}>Login</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('Register')}>
-          <Text style={styles.button}>Register</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('Register')}>
+            <Text style={styles.button}>Register</Text>
+          </TouchableHighlight>
 
           <TouchableHighlight onPress={() => navigate('CameraAcc')}>
             <Text style={styles.button}>Camera</Text>
@@ -67,10 +67,8 @@ class Home extends React.Component {
           <TouchableHighlight onPress={() => navigate('User')}>
             <Text style={styles.button}>User</Text>
           </TouchableHighlight>
-      </LinearGradient>
-    </View>
-
-
+        </LinearGradient>
+      </View>
     );
   }
 }

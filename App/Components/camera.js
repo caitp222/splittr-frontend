@@ -3,6 +3,7 @@ import {
   AppRegistry,
   Dimensions,
   StyleSheet,
+  Button,
   Text,
   TouchableHighlight,
   View
@@ -27,6 +28,7 @@ class CameraAccess extends Component {
 
   takePicture() {
     const options = {};
+    alert("h1");
     //options.location = ...
     this.camera.capture({metadata: options})
       .then((data) => console.log(data))
