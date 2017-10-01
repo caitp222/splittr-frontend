@@ -34,6 +34,9 @@ class GroupForm extends Component {
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.group_name} onChangeText={this.onChangeGroupName}/>
         <Text>Description:</Text>
         <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.details} onChangeText={this.onChangeDetails}/>
+        <TouchableHighlight onPress={"placeholder"}>
+          <Text>Create Expense:button</Text>
+        </TouchableHighlight>
       </View>
     )
   }

@@ -3,6 +3,7 @@ import {
   TextInput,
   View,
   Button,
+  TouchableHighlight,
   Text,
   AppRegistry,
   StyleSheet,
@@ -24,11 +25,12 @@ class ProfileHeader extends Component {
     return(
       <View>
         <Text> {this.state.user.firstName} {this.state.user.lastName}</Text>
-        <Button
-          title="Create New Squad"
-          onPress={() =>
-            navigate('GroupForm')}
-        />
+
+        <TouchableHighlight onPress={() =>
+          navigate('GroupForm')}>
+          <Text>Create New Squad: button</Text>
+        </TouchableHighlight>
+
         <Text> {this.state.user.groupNames} </Text>
       </View>
     );
