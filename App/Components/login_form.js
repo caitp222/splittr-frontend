@@ -38,7 +38,7 @@ class LoginForm extends Component {
       body: JSON.stringify({user})
     }).then(function(response) {return response.json()} )
     .then(function(responseJson) {
-      let sessionId = responseJson.id.toString()
+      let sessionId = responseJson.id
       AsyncStorage.setItem('sessionId', JSON.stringify(sessionId),
     () => { AsyncStorage.getItem('sessionId', (err, result) => {
       console.log(result)
