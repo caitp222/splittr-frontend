@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   TextInput,
   View,
+  Image,
   Button
 } from 'react-native';
 
@@ -50,40 +51,45 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-          <TouchableHighlight onPress={() => navigate('Login')}>
-            <Text style={styles.button}>Login</Text>
-          </TouchableHighlight>
-
-          <TouchableHighlight onPress={() => navigate('Register')}>
-            <Text style={styles.button}>Register</Text>
-          </TouchableHighlight>
-
-
-          <TouchableHighlight onPress={() => navigate('CameraAcc')}>
-            <Text style={styles.button}>Camera</Text>
-          </TouchableHighlight>
-
-        <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.button}>User</Text>
+        <Image
+        source={require('./waterdrop-3.jpg')}
+        style={{width: '100%', height: '100%'}}>
+        <View style={styles.container}>
+        <TouchableHighlight onPress={() => navigate('Login')}>
+          <Text style={styles.welcome}>Login</Text>
         </TouchableHighlight>
-
-        <TouchableHighlight onPress={() => navigate('Expense')}>
-          <Text style={styles.button}>Expense</Text>
+        <TouchableHighlight onPress={() => navigate('Register')}>
+          <Text style={styles.welcome}>Register</Text>
         </TouchableHighlight>
-        {/* <Tabs/> */}
-
-        </LinearGradient>
       </View>
+      </Image>
     );
 
   }
 }
 const styles = StyleSheet.create({
-  linearGradient: {
-    height: "100%",
-  }
+  container: {
+    flex: 1,
+    margin: 5,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  title: {
+    color: 'blue',
+    fontSize: 20,
+  },
+  welcome: {
+    fontSize: 60,
+    color: '#8FC1E3',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'justify',
+    margin: 10,
+    fontWeight: 'bold',
+    fontStyle: 'italic'
+  },
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
