@@ -13,8 +13,9 @@ class GroupForm extends Component {
   constructor() {
     super();
     this.state = {group: {
-        groupName: "Name",
-        details: "Details"
+        group_name: "Name",
+        details: "Details",
+        creator_id: 7
       }};
   }
 
@@ -26,6 +27,19 @@ class GroupForm extends Component {
 
   onChangeGroupName = this.handleInputChange.bind(this, "groupName")
   onChangeDetails = this.handleInputChange.bind(this, "details")
+  onButtonPress = this.handleButtonPress.bind(this)
+
+  handleButtonPress() {
+    const { group } = this.state;
+    fetch("http://localhost:3000/groups", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({group})
+    }).then((response) => console.log(response))
+  }
 
   render() {
     return(
