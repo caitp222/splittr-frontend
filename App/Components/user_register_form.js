@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { StackNavigator } from 'react-navigation';
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 import { StyleSheet,
          TextInput,
          TouchableHighlight,
@@ -47,20 +48,20 @@ class RegisterForm extends Component {
   render() {
     return(
       <View>
-        <Text>First Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.first_name} onChangeText={this.onChangeFirstName}/>
-        <Text>Last Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.user.last_name} onChangeText={this.onChangeLastName}/>
-        <Text>Email:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.user.email} onChangeText={this.onChangeEmail}/>
-        <Text>Password:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      value={this.state.user.password} onChangeText={this.onChangePassword}/>
-
-      <TouchableHighlight onPress={this.handleNewUserSubmit}>
-        <Text>Register User: button</Text>
-      </TouchableHighlight>
+        <FormLabel>First Name</FormLabel>
+        <FormInput onChangeText={this.onChangeFirstName}/>
+        <FormLabel>Last Name</FormLabel>
+        <FormInput onChangeText={this.onChangeLastName}/>
+        <FormLabel>Email</FormLabel>
+        <FormInput onChangeText={this.onChangeEmail}/>
+        <FormLabel>Password</FormLabel>
+        <FormInput onChangeText={this.onChangePassword}/>
+        <Button
+          large
+          onPress = {this.handleNewUserSubmit}
+          color={'#9e9e9e'}
+          icon={{ type: 'octicon' }}
+          title='Register' />
       </View>
     )
   }

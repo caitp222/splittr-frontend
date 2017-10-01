@@ -12,7 +12,6 @@ class ExpenseNewScene extends Component {
     const { expense } = this.props
     return(
       <View>
-        <Text>Create a New Expense</Text>
         <ExpenseForm  />
       </View>
     )
