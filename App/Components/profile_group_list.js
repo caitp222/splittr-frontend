@@ -3,11 +3,13 @@ import {
   TextInput,
   View,
   Button,
+  TouchableHighlight,
   Text,
   AppRegistry,
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
+import  GroupShowScene  from '../Scenes/group_show.ios.js'
 
 class ProfileGroup extends Component {
   constructor(){
@@ -25,17 +27,21 @@ class ProfileGroup extends Component {
       <View>
         {this.state.groups.map(function(group, index){
           return (
-            <Button
-              key={index}
-              title= {group.groupName}
-              onPress = {() =>
-              console.log("hi")}
-            />
+            <TouchableHighlight onPress={() => navigate('GroupShow')}>
+              <Text key={index} onPress = {() =>
+              console.log("Placeholder")}>{group.groupName}: button</Text>
+            </TouchableHighlight>
           )
         })}
       </View>
     );
   }
 }
+
+StackNavigator({
+  GroupShow: {
+    screen: GroupShowScene,
+  }
+});
 
 export default ProfileGroup;
