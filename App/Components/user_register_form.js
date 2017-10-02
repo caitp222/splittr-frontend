@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StackNavigator } from 'react-navigation';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { FormLabel, FormInput, labelStyle } from 'react-native-elements'
 import { StyleSheet,
          TextInput,
          TouchableHighlight,
@@ -48,7 +48,7 @@ class RegisterForm extends Component {
   render() {
     return(
       <View>
-        <FormLabel>First Name</FormLabel>
+        <FormLabel style={styles.form}>First Name</FormLabel>
         <FormInput onChangeText={this.onChangeFirstName}/>
         <FormLabel>Last Name</FormLabel>
         <FormInput onChangeText={this.onChangeLastName}/>
@@ -66,5 +66,10 @@ class RegisterForm extends Component {
     )
   }
 }
+const styles = StyleSheet.create({
+  form: {
+    color: "#808080"
+  }
+});
 
 export {RegisterForm};

@@ -82,13 +82,12 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 60,
-    color: '#8FC1E3',
+    color: '#F7F9FB',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'justify',
     margin: 10,
-    fontWeight: 'bold',
-    fontStyle: 'italic'
+    fontWeight: '400'
   },
 });
 const splittr = StackNavigator({

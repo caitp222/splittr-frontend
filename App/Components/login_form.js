@@ -55,13 +55,36 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
-        <FormLabel>Email</FormLabel>
+
+        <Text>Email:</Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          name="email"
+          value={this.state.user.email} onChangeText={this.onChangeEmail}
+        />
+        <Text>Password:</Text>
+        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="password"
+      value={this.state.user.password} onChangeText={this.onChangePassword}/>
+
+      <TouchableHighlight >
+        <Text onPress = {"Placeholder"}>Login:button</Text>
+      </TouchableHighlight>
+
+
+
+        <FormLabel style={styles.formLabel}>Email</FormLabel>
         <FormInput onChangeText={this.onChangeEmail}/>
-        <FormLabel>Password</FormLabel>
+        <FormLabel style={styles.formLabel}>Password</FormLabel>
         <FormInput onChangeText={this.onChangePassword}/>
+
+        <TouchableHighlight onPress={this.handleUserSubmit}>
+          <Text style={styles.signIn}>Sign In</Text>
+        </TouchableHighlight>
+
         <Button
           large
           onPress = {this.handleUserSubmit}
+          style={styles.formLabel}
           color={'#9e9e9e'}
           icon={{ type: 'octicon' }}
           title='SIGN IN' />
@@ -69,5 +92,17 @@ class LoginForm extends Component {
     )
   }
 }
+const styles = StyleSheet.create({
+  formLabel: {
+    backgroundColor: "transparent",
+    height: 40,
+     borderColor: 'gray', borderWidth: 1
+  },
+  signIn:{
+    textAlign: "center",
+    fontSize: 25,
+    color: '#9e9e9e'
+  }
+});
 
 export { LoginForm };
