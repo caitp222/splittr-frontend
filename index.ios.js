@@ -49,8 +49,8 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    // AsyncStorage.removeItem('sessionId')
+    // AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    AsyncStorage.removeItem('sessionId')
   }
 
 
