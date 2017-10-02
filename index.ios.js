@@ -36,7 +36,7 @@ var styles = StyleSheet.create({
 class Home extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
-    headerStyle: {backgroundColor: '#cccccc'}
+    headerStyle: {backgroundColor: '#F7F9FB'}
   };
   constructor() {
     super();
@@ -60,7 +60,7 @@ class Home extends React.Component {
         <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
           <Text style={styles.text}>Register</Text>
         </TouchableHighlight>
-      </View>
+        </View>
       </Image>
     );
   }
@@ -87,18 +87,19 @@ const styles = StyleSheet.create({
     paddingBottom:5,
     paddingLeft: 20,
     paddingRight: 20,
+    justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'justify',
     margin: 20,
     backgroundColor: '#8FC1E3',
     borderRadius: 40,
+    opacity: 0.7
   },
   text:{
     fontSize: 40,
     backgroundColor: 'transparent',
     color:'#F7F9FB',
-    fontWeight: '300',
-    justifyContent: 'center',
+    fontWeight: '400',
   }
 
 });
