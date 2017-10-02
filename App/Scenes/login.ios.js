@@ -9,6 +9,10 @@ import { LoginForm } from '../Components/login_form'
 import LinearGradient from 'react-native-linear-gradient';
 
 class LoginScene extends Component {
+  static navigationOptions = {
+    title: 'Login Here',
+    headerStyle: {backgroundColor: '#F7F9FB'}
+  };
   render(){
     const { navigation } = this.props;
     return(
