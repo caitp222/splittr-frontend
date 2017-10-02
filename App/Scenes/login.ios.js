@@ -12,13 +12,13 @@ class LoginScene extends Component {
   render(){
     const { navigation } = this.props;
     return(
-  <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
+  <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
     <View>
       <LoginForm navigation={navigation}/>
     </View>
   </LinearGradient>
     )
-  }
+  }  
 }
 
 const styles = StyleSheet.create({
