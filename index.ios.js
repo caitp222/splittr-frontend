@@ -21,7 +21,6 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
-import CameraAccess from './App/Components/camera.js';
 import backgroundImage from './waterdrop-3.jpg'
 
 var styles = StyleSheet.create({
@@ -37,10 +36,10 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Welcome',
-  //   headerStyle: {backgroundColor: '#F7F9FB'}
-  // };
+  static navigationOptions = {
+    title: 'Welcome',
+    headerStyle: {backgroundColor: '#F7F9FB'}
+  };
   constructor() {
     super();
     this.state = {
@@ -120,7 +119,6 @@ const styles = StyleSheet.create({
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
-  CameraAcc:{ screen: CameraAccess},
   Login: {
     screen: LoginScene,
   },

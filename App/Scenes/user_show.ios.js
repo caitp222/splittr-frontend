@@ -19,7 +19,7 @@ import backgroundImage from '../../ocean.jpg'
 
 class UserShowScene extends React.Component {
   static navigationOptions = {
-    title: 'SHOW UP ALREADY!!!',
+    title: 'Salutation',
     headerStyle: {backgroundColor: '#F7F9FB'}
   };
   constructor() {
@@ -57,13 +57,13 @@ class UserShowScene extends React.Component {
     const { navigation } = this.props
     return(
       <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-      <View>
-        <ImageBackground
+      <View style={{flex: 1 }}>
+        <Image
         style={styles.backdrop}
         source={backgroundImage}>
         <ProfileHeader userName={user.firstName} navigation={navigation}/>
-      </ImageBackground>
-        <ProfileGroup groups={user.groups} navigation={navigation}/>
+        <ProfileGroup style={styles.bottom} groups={user.groups} navigation={navigation}/>
+        </Image>
         </View>
       </LinearGradient>
     )
@@ -72,10 +72,13 @@ class UserShowScene extends React.Component {
 const styles = StyleSheet.create({
   backdrop: {
     width: '100%',
-    height: '25%',
+    height: '100%',
   },
   linearGradient: {
     height: "100%",
   },
+  bottom: {
+    margin: 100,
+  }
 });
 export default UserShowScene ;
