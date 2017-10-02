@@ -28,7 +28,7 @@ class UserShowScene extends React.Component {
   componentWillMount = function() {
     AsyncStorage.getItem('sessionId', (err, result) => {
       const userId = result;
-      const url = "http://localhost:3000/users/";
+      const url = "https://rocky-forest-46725.herokuapp.com/users/";
       const fetchUrl = url + parseInt(userId)
       fetch(fetchUrl,
             {method: 'GET'}

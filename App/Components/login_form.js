@@ -32,7 +32,7 @@ class LoginForm extends Component {
 
   handleHighLightPress() {
     const { user } = this.state;
-    fetch("http://localhost:3000/sessions", {
+    fetch("https://rocky-forest-46725.herokuapp.com/sessions", {
       method: 'post',
       headers: {
         'Accept': 'application/json',
