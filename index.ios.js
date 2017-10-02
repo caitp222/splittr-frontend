@@ -9,7 +9,8 @@ import {
   TextInput,
   View,
   Image,
-  Button
+  Button,
+  AsyncStorage
 } from 'react-native';
 
 import LoginScene from './App/Scenes/login.ios.js';
@@ -41,31 +42,41 @@ class Home extends React.Component {
   };
   constructor() {
     super();
-    this.state = {expense: {
-      description: "description",
-      amount: "$12.34",
-      vendor: "Rico's Seaside Bar & Grill",
-      user: 'Rico Suave'
-    }}
+    this.state = {
+      sessionId: ''
+    }
   }
+
+  componentWillMount(){
+    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+  }
+
+
   render() {
     const { navigate } = this.props.navigation;
-    return (
-      <Image
-      style={styles.backdrop}
-      source={require('./waterdrop-3.jpg')}>
-      <View style={styles.container}>
-        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-          <Text style={styles.text}>Login</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-          <Text style={styles.text}>Register</Text>
-        </TouchableHighlight>
-        </View>
-      </Image>
-    );
-
+    if(this.state.sessionId){
+      return(
+        <UserShowScene navigation={this.props.navigation}/>
+      )
+    }else {
+      return (
+        <Image
+          style={styles.backdrop}
+          source={require('./waterdrop-3.jpg')}>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+              <Text style={styles.text}>Login</Text>
+            </TouchableHighlight>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+              <Text style={styles.text}>Register</Text>
+            </TouchableHighlight>
+          </View>
+        </Image>
+      );
+    }
   }
+
+
 }
 const styles = StyleSheet.create({
   container: {
