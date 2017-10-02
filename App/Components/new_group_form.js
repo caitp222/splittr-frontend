@@ -53,10 +53,11 @@ class GroupForm extends Component {
       },
       body: JSON.stringify({group})
     }).then(function(response) {
-      console.log(response)
-    }).then(() =>
-      navigation.navigate("GroupShow")
-    )
+      return response.json()
+    }).then(function(responseJson) {
+      console.log(responseJson);
+      navigation.navigate("GroupShow", {groupId: responseJson.group.id})
+    })
   }
 
   render() {

@@ -28,8 +28,9 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    const id = this.props.navigation.state.params.group.id
-    const url = "http://localhost:3000/groups/"
+    const id = this.props.navigation.state.params.groupId
+    console.log(id)
+    const url = "https://rocky-forest-46725.herokuapp.com/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
       {method: 'GET'}
@@ -48,7 +49,7 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    const groupId = this.props.navigation.state.params.group.id
+    const groupId = this.props.navigation.state.params.groupId
     return(
       <View style={styles.background}>
         <TouchableHighlight onPress={() => navigate('CameraAcc')}>
