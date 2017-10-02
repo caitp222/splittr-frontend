@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StackNavigator } from 'react-navigation';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { FormLabel, FormInput, labelStyle } from 'react-native-elements'
 import { StyleSheet,
          TextInput,
          TouchableHighlight,
@@ -48,31 +48,61 @@ class RegisterForm extends Component {
   render() {
     return(
       <View style={styles.text}>
-        <FormLabel>First Name</FormLabel>
-        <FormInput onChangeText={this.onChangeFirstName}/>
-        <FormLabel>Last Name</FormLabel>
-        <FormInput onChangeText={this.onChangeLastName}/>
-        <FormLabel>Email</FormLabel>
-        <FormInput onChangeText={this.onChangeEmail}/>
-        <FormLabel>Password</FormLabel>
-        <FormInput onChangeText={this.onChangePassword}/>
-        <Button
-          large
-          onPress = {this.handleNewUserSubmit}
-          color={'#F7F9FB'}
-          icon={{ type: 'octicon' }}
-          title='Register' />
+        <View style={styles.container}>
+          <Text style={styles.label}>First Name</Text>
+          <TextInput
+            style={styles.input}
+            name="first_name"
+             onChangeText={this.onChangeFirstName} />
+
+          <Text style={styles.label}>Last Name</Text>
+          <TextInput name="last_name"
+            style={styles.input}
+            onChangeText={this.onChangeLastName}/>
+          <Text style={styles.label}>Email</Text>
+          <TextInput name="email"
+              style={styles.input}
+              onChangeText={this.onChangeEmail}/>
+          <Text style={styles.label}>Password</Text>
+          <TextInput name="password"
+                style={styles.input}
+                onChangeText={this.onChangePassword}/>
+
+          <TouchableHighlight >
+            <Text style={styles.signIn} onPress = {this.handleNewUserSubmit}>Create User</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
-  text:{
-    fontSize: 40,
-    backgroundColor: 'transparent',
-    color:'#F7F9FB',
-    fontWeight: '400',
+  container: {
+    marginLeft: 25,
+    marginRight:25,
+    paddingTop:30
+  },
+  label: {
+    paddingTop:10,
+    backgroundColor: "transparent",
+    height: 35,
+    color: '#666666'
+  },
+  input: {
+    backgroundColor: "transparent",
+    height: 30,
+    color: '#666666',
+    borderBottomColor: "#666666",
+    borderBottomWidth: 1
+  },
+  signIn:{
+    marginTop: 8,
+    textAlign: "center",
+    fontSize: 25,
+    color: '#666666'
   }
-})
+});
+
+
 
 export {RegisterForm};

@@ -21,9 +21,13 @@ class ExpenseShowScene extends Component {
   }
 
   componentWillMount = function() {
-    fetch("http://localhost:3000/groups/12/expenses/2",
+    const expenseId = this.props.navigation.state.params.expense.id
+    console.log("expense id " + expenseId)
+    const fetchUrl = "http://localhost:3000/expenses/" + expenseId
+    fetch(fetchUrl,
           {method: 'get'}
-        ).then((response) => response.json()
+        ).then((response) =>
+        response.json()
         ).then((responseJson) =>  {this.setState(
                                   {expense:
                                     {vendor: responseJson.vendor,
@@ -41,7 +45,7 @@ class ExpenseShowScene extends Component {
         <Text>Expense</Text>
         <Text>Vendor: {expense.vendor}</Text>
         <Text>Description: {expense.description}</Text>
-        <Text>Amount: {expense.amount}</Text>
+        <Text>Amount: ${expense.amount}</Text>
         <Text>Paid By: {expense.user}</Text>
       </View>
     )

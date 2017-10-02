@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation'
+import { NavigationActions } from 'react-navigation'
 
 class ProfileGroup extends Component {
   render() {
@@ -20,6 +21,8 @@ class ProfileGroup extends Component {
           return (
             <TouchableHighlight style={styles.list}>
               <Text style={styles.text} key={index} onPress = {() => navigation.navigate('GroupShow', {group_id: group.id})}>{group.group_name}</Text>
+            <TouchableHighlight key={index}>
+              <Text onPress = {() => navigation.navigate('GroupShow', {group: group})}>{group.group_name}: button</Text>
             </TouchableHighlight>
           )
         })}

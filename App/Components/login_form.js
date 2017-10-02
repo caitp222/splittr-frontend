@@ -57,19 +57,51 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
-        <FormLabel>Email</FormLabel>
-        <FormInput onChangeText={this.onChangeEmail}/>
-        <FormLabel>Password</FormLabel>
-        <FormInput onChangeText={this.onChangePassword}/>
-        <Button
-          large
-          onPress = {this.handleUserSubmit}
-          color={'#9e9e9e'}
-          icon={{ type: 'octicon' }}
-          title='SIGN IN' />
+        <View style={styles.container}>
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            name="email"
+             onChangeText={this.onChangeEmail}
+          />
+          <Text style={styles.label}>Password</Text>
+          <TextInput name="password"
+            style={styles.input}
+            onChangeText={this.onChangePassword}/>
+
+          <TouchableHighlight >
+            <Text style={styles.signIn} onPress = {this.handleUserSubmit}>Sign In</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    marginLeft: 25,
+    marginRight:25,
+    paddingTop:30
+  },
+  label: {
+    paddingTop:10,
+    backgroundColor: "transparent",
+    height: 35,
+    color: '#666666'
+  },
+  input: {
+    backgroundColor: "transparent",
+    height: 30,
+    color: '#666666',
+    borderBottomColor: "#666666",
+    borderBottomWidth: 1
+  },
+  signIn:{
+    marginTop: 8,
+    textAlign: "center",
+    fontSize: 25,
+    color: '#666666'
+  }
+});
 
 export { LoginForm };
