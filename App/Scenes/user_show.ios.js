@@ -7,13 +7,15 @@ import {
   View,
   Image,
   Button,
-  AsyncStorage
+  AsyncStorage,
+  ImageBackground
 } from 'react-native';
 // import { LoginForm } from '../Components/login_form'
 import ProfileHeader  from '../Components/profile_header';
 import ProfileGroup  from '../Components/profile_group_list';
 import LinearGradient from 'react-native-linear-gradient';
 import { Tabs } from '../Components/router.js';
+import backgroundImage from '../../ocean.jpg'
 
 class UserShowScene extends React.Component {
   static navigationOptions = {
@@ -56,11 +58,11 @@ class UserShowScene extends React.Component {
     return(
       <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
       <View>
-        <Image
+        <ImageBackground
         style={styles.backdrop}
-        source={require('../../ocean.jpg')}>
+        source={backgroundImage}>
         <ProfileHeader userName={user.firstName} navigation={navigation}/>
-        </Image>
+      </ImageBackground>
         <ProfileGroup groups={user.groups} navigation={navigation}/>
         </View>
       </LinearGradient>
