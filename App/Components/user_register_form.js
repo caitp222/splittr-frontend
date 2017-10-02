@@ -42,6 +42,7 @@ class RegisterForm extends Component {
       },
       body: JSON.stringify({user})
     }).then((response) => console.log(response))
+    .then(this.props.navigation.navigate("User"))
   }
 
   handleNewUserSubmit = this.handleHighLightPress.bind(this)
