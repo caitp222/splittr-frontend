@@ -28,7 +28,7 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    const id = this.props.navigation.state.params.group_id
+    const id = this.props.navigation.state.params.group.id
     const url = "http://localhost:3000/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
@@ -48,6 +48,7 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const groupId = this.props.navigation.state.params.group.id
     return(
       <View style={styles.background}>
         <TouchableHighlight onPress={() => navigate('CameraAcc')}>
@@ -57,7 +58,7 @@ class GroupShowScene extends Component {
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
         <Text>Member Split: ${this.state.memberSplit}</Text>
-        <MemberList groupId={this.props.navigation.state.params.group_id} members={this.state.members} navigate={ navigate }/>
+        <MemberList groupId={groupId} members={this.state.members} navigate={ navigate }/>
       </View>
     )
   }
