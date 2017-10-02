@@ -35,10 +35,10 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-    headerStyle: {backgroundColor: '#F7F9FB'}
-  };
+  // static navigationOptions = {
+  //   title: 'Welcome',
+  //   headerStyle: {backgroundColor: '#F7F9FB'}
+  // };
   constructor() {
     super();
     this.state = {expense: {
@@ -51,19 +51,20 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <GroupShowScene navigation= {navigate}/>
-      // <Image
-      // style={styles.backdrop}
-      // source={require('./waterdrop-3.jpg')}>
-      // <View style={styles.container}>
-      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-      //     <Text style={styles.text}>Login</Text>
-      //   </TouchableHighlight>
-      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-      //     <Text style={styles.text}>Register</Text>
-      //   </TouchableHighlight>
-      //   </View>
-      // </Image>
+      <Image
+      style={styles.backdrop}
+      source={require('./waterdrop-3.jpg')}>
+      <View style={styles.container}>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+          <Text style={styles.text}>Login</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+          <Text style={styles.text}>Register</Text>
+        </TouchableHighlight>
+        </View>
+        <Tabs/>
+
+       </Image>
     );
   }
 }

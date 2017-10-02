@@ -56,6 +56,7 @@ class GroupShowScene extends Component {
      }
    }
 
+
   componentWillMount = function() {
     // const id = this.props.navigation.state.params.group.id
     const url = "http://localhost:3000/groups/"
