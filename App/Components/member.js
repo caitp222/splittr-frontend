@@ -15,7 +15,6 @@ import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 class Member extends Component {
   render() {
     const { member, navigate, groupId } = this.props;
-    console.log(groupId)
     const expenses = member.expenses
     return(
       <View>
