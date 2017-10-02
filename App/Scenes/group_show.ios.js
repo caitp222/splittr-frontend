@@ -28,9 +28,9 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    const id = this.props.navigation.state.params.group.id
+    // const id = this.props.navigation.state.params.group.id
     const url = "http://localhost:3000/groups/"
-    const fetchUrl = url + id;
+    const fetchUrl = url + 22; //id
     fetch(fetchUrl,
       {method: 'GET'}
     ).then((response) => response.json()
@@ -48,7 +48,7 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    const groupId = this.props.navigation.state.params.group.id
+    const groupId = 22
     return(
       <View style={styles.background}>
         <TouchableHighlight onPress={() => navigate('CameraAcc')}>
