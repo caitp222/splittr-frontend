@@ -59,11 +59,11 @@ class GroupShowScene extends Component {
 
   componentWillMount = function() {
 
-    const id = this.props.navigation.state.params.groupId
+    const id = 21
     console.log(id)
     // const url = "https://rocky-forest-46725.herokuapp.com/groups/"
     const url = "http://localhost:3000/groups/"
-    const fetchUrl = url + id;
+    const fetchUrl = url + 21;
     fetch(fetchUrl,
       {method: 'GET'}
     ).then((response) => response.json()
@@ -81,7 +81,7 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    const id = this.props.navigation.state.params.groupId;
+    const id = 21;
     return(
       <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
         <View style={styles.background}>

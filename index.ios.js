@@ -57,23 +57,25 @@ class Home extends React.Component {
     const { navigate } = this.props.navigation;
     if(this.state.sessionId){
       return(
-        <UserShowScene navigation={this.props.navigation}/>
+        <Tabs/>
+        // <UserShowScene navigation={this.props.navigation}/>
       )
-    }else {
+    } else {
       return (
-        <Image
-          style={styles.backdrop}
-          source={backgroundImage}>
-          <View style={styles.container}>
-            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-              <Text style={styles.text}>Login</Text>
-            </TouchableHighlight>
-            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-              <Text style={styles.text}>Register</Text>
-            </TouchableHighlight>
-          </View>
-        </Image>
-      );
+        <Tabs/>
+        // <Image
+        //   style={styles.backdrop}
+        //   source={backgroundImage}>
+        //   <View style={styles.container}>
+        //     <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+        //       <Text style={styles.text}>Login</Text>
+        //     </TouchableHighlight>
+        //     <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+        //       <Text style={styles.text}>Register</Text>
+        //     </TouchableHighlight>
+        //   </View>
+        // </Image>
+      )
     }
   }
 

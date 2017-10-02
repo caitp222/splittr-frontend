@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 
 import UserShowScene from '../Scenes/user_show.ios.js';
 import GroupShowScene from '../Scenes/group_show.ios.js';
-
+import ExpensesShowScene from '../Scenes/expenses_show.ios.js'
 
 export const Tabs = TabNavigator({
   GroupShowScene: {
@@ -19,6 +19,13 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Me',
       tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+    },
+  },
+  ExpensesShowScene: {
+    screen: ExpensesShowScene,
+    navigationOptions: {
+      tabBarLabel: 'Me',
+      tabBarIcon: ({ tintColor }) => <Icon name="home" size={35} color={tintColor} />
     },
   },
 });
