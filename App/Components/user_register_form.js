@@ -7,6 +7,7 @@ import { StyleSheet,
          View,
          Button,
          Text,
+         AsyncStorage
        } from 'react-native';
 
 class RegisterForm extends Component {
@@ -42,8 +43,9 @@ class RegisterForm extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({user})
-    }).then((response) => console.log(response))
-    .then(this.props.navigation.navigate("User"))
+    }).then((response) => response.json())
+    .then((responseJson) => AsyncStorage.setItem('sessionId', JSON.stringify(responseJson.id)))
+    .then(() => this.props.navigation.navigate("User"))
   }
 
   handleNewUserSubmit = this.handleHighLightPress.bind(this)
