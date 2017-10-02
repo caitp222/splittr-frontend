@@ -48,8 +48,8 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    // AsyncStorage.removeItem('sessionId')
+    // AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    AsyncStorage.removeItem('sessionId').then(fuck => {console.log(fuck); console.log('fuuuuuckkckiinnnnng shite')})
   }
 
 
@@ -72,7 +72,6 @@ class Home extends React.Component {
               <Text style={styles.text}>Register</Text>
             </TouchableHighlight>
           </View>
-          <Tabs />
         </Image>
       );
     }
