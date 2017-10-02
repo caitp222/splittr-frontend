@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   TextInput,
   View,
+  Image,
   Button
 } from 'react-native';
 
@@ -36,7 +37,7 @@ var styles = StyleSheet.create({
 class Home extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
-    headerStyle: {backgroundColor: '#cccccc'}
+    headerStyle: {backgroundColor: '#F7F9FB'}
   };
   constructor() {
     super();
@@ -50,31 +51,59 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.background}>
-        <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-          <TouchableHighlight onPress={() => navigate('Login')}>
-            <Text style={styles.button}>Login</Text>
-          </TouchableHighlight>
-
-          <TouchableHighlight onPress={() => navigate('Register')}>
-            <Text style={styles.button}>Register</Text>
-          </TouchableHighlight>
-
-          <TouchableHighlight onPress={() => navigate('User')}>
-            <Text style={styles.button}>User</Text>
-          </TouchableHighlight>
-        {/* <Tabs/> */}
-
-        </LinearGradient>
-      </View>
+      <Image
+      style={styles.backdrop}
+      source={require('./waterdrop-3.jpg')}>
+      <View style={styles.container}>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+          <Text style={styles.text}>Login</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+          <Text style={styles.text}>Register</Text>
+        </TouchableHighlight>
+        </View>
+      </Image>
     );
 
   }
 }
 const styles = StyleSheet.create({
-  linearGradient: {
-    height: "100%",
+  container: {
+    flex: 1,
+    margin: 5,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  backdrop: {
+    color: 'blue',
+    fontSize: 20,
+    backgroundColor: 'transparent',
+    width: '100%',
+    height: '100%',
+  },
+  welcome: {
+    fontSize: 50,
+    paddingTop:5,
+    paddingBottom:5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'justify',
+    margin: 20,
+    backgroundColor: '#8FC1E3',
+    borderRadius: 40,
+    opacity: 0.7
+  },
+  text:{
+    fontSize: 40,
+    backgroundColor: 'transparent',
+    color:'#F7F9FB',
+    fontWeight: '400',
   }
+
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
