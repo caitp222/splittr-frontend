@@ -46,6 +46,7 @@ class LoginForm extends Component {
     () => { AsyncStorage.getItem('sessionId', (err, result) => {
       const userId = result;
       console.log(this.props.navigation.navigate)
+      alert("Welcome!")
       this.props.navigation.navigate("User", {userId: userId})
     }) } )
   }.bind(this))

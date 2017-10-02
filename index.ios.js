@@ -50,19 +50,19 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-            // <UserShowScene navigation={navigate}/>
-      <Image
-      style={styles.backdrop}
-      source={require('./waterdrop-3.jpg')}>
-      <View style={styles.container}>
-        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-          <Text style={styles.text}>Login</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-          <Text style={styles.text}>Register</Text>
-        </TouchableHighlight>
-        </View>
-      </Image>
+            <UserShowScene navigation={navigate}/>
+      // <Image
+      // style={styles.backdrop}
+      // source={require('./waterdrop-3.jpg')}>
+      // <View style={styles.container}>
+      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+      //     <Text style={styles.text}>Login</Text>
+      //   </TouchableHighlight>
+      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+      //     <Text style={styles.text}>Register</Text>
+      //   </TouchableHighlight>
+      //   </View>
+      // </Image>
     );
   }
 }
