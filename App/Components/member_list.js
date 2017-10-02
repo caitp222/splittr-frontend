@@ -10,8 +10,10 @@ const styles = StyleSheet.create({
   membersList: {
     textAlign: 'center',
     fontSize: 20,
-    marginTop:10,
-    marginBottom:2
+    fontWeight: '700',
+    marginTop:30,
+    marginBottom:10,
+
   }
 })
 
@@ -20,7 +22,7 @@ class MemberList extends Component {
     const { navigate, members, groupId } = this.props;
     return(
       <View>
-        <Text style={styles.membersList}>Members list</Text>
+        <Text style={styles.membersList}>Member Expenses</Text>
         {members.map(function(member, index) {
           return(
             <Member groupId={groupId} member={member} key={index} navigate={navigate}/>

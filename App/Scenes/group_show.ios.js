@@ -12,6 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const styles = StyleSheet.create({
   background: {
   backgroundColor: 'transparent',
+
   },
   linearGradient: {
     height: "100%",
@@ -22,25 +23,51 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 30,
-    marginTop:10,
+    marginTop:15,
     marginBottom:2
   },
   details: {
     textAlign: 'center',
     fontSize: 15,
     marginTop:2,
-    marginBottom: 10
+    marginBottom: 30
   },
   sumBox: {
     marginTop:10,
-    marginBottom: 10
+    marginBottom: 10,
+    flexDirection: 'column'
   },
   membersList: {
     textAlign: 'center',
     fontSize: 20,
     marginTop:10,
     marginBottom:2
+  },
+  sumHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  sumContainer: {
+    flexDirection: 'column'
+  },
+  button: {
+    backgroundColor: '#83a4d4',
+    paddingTop: 35,
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#8BBFC2'
+  },
+  expenseHeader: {
+    fontWeight: 'bold'
+  },
+  buttonText: {
+    fontWeight: 'bold',
+    fontSize: 20
   }
+
 })
 
 class GroupShowScene extends Component {
@@ -83,18 +110,22 @@ class GroupShowScene extends Component {
         <View style={styles.background}>
           <Text style={styles.groupHeader}>{this.state.group.groupName}</Text>
           <Text style={styles.details}>{this.state.group.details}</Text>
-          <View style={styles.sumBox}>
-            <Text>Group Spent:</Text>
-            <Text>${this.state.totalSpend}</Text>
-          </View>
-          <View style={styles.sumBox}>
-            <Text>Member Split:</Text>
-            <Text>${this.state.memberSplit}</Text>
+          <View style={styles.sumHeader}>
+            <View style={styles.sumContainer}>
+              <View style={styles.sumBox}>
+                <Text style={styles.expenseHeader}>Group Spent:</Text>
+                <Text>${this.state.totalSpend}</Text>
+              </View>
+              <View style={styles.sumBox}>
+                <Text style={styles.expenseHeader}>Member Split:</Text>
+                <Text>${this.state.memberSplit}</Text>
+              </View>
+            </View>
+            <TouchableHighlight style={styles.button} onPress={() => navigate('CameraAcc')}>
+              <Text style={styles.buttonText}>Add Expense</Text>
+            </TouchableHighlight>
           </View>
           <MemberList groupId={groupId} members={this.state.members} navigate={ navigate }/>
-          <TouchableHighlight onPress={() => navigate('CameraAcc')}>
-            <Text style={styles.button}>Add New Expense</Text>
-          </TouchableHighlight>
         </View>
       </LinearGradient>
     )
