@@ -53,15 +53,15 @@ class RegisterForm extends Component {
           <Text style={styles.label}>First Name</Text>
           <TextInput
             style={styles.input}
-            name="email"
+            name="first_name"
              onChangeText={this.onChangeFirstName} />
 
           <Text style={styles.label}>Last Name</Text>
-          <TextInput name="password"
+          <TextInput name="last_name"
             style={styles.input}
             onChangeText={this.onChangeLastName}/>
           <Text style={styles.label}>Email</Text>
-          <TextInput name="password"
+          <TextInput name="email"
               style={styles.input}
               onChangeText={this.onChangeEmail}/>
           <Text style={styles.label}>Password</Text>
