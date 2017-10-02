@@ -78,11 +78,7 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-<<<<<<< HEAD
     const groupId = this.props.navigation.state.params.groupId
-=======
-    const groupId = 22
->>>>>>> master
     return(
       <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
         <View style={styles.background}>
