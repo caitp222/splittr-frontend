@@ -120,6 +120,9 @@ const splittr = StackNavigator({
   Expense: {
     screen: ExpenseNewScene,
   },
+  ExpenseShow: {
+    screen: ExpenseShowScene,
+  },
   GroupShow: {
     screen: GroupShowScene,
   },

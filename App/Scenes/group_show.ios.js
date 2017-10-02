@@ -3,7 +3,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 import  MemberList from '../Components/member_list';
 
@@ -27,9 +28,7 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    console.log(this.props.navigation.state.params.group_id)
-    const id = this.props.navigation.state.params.group_id
-    console.log(id)
+    const id = this.props.navigation.state.params.group.id
     const url = "http://localhost:3000/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
@@ -48,14 +47,18 @@ class GroupShowScene extends Component {
   }
 
   render() {
-    const { navigate } = this.props;
+    const { navigate } = this.props.navigation;
+    const groupId = this.props.navigation.state.params.group.id
     return(
       <View style={styles.background}>
+        <TouchableHighlight onPress={() => navigate('CameraAcc')}>
+          <Text style={styles.button}>Add New Expense</Text>
+        </TouchableHighlight>
         <Text>{this.state.group.groupName}</Text>
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
         <Text>Member Split: ${this.state.memberSplit}</Text>
-        <MemberList members={this.state.members} navigate={ navigate }/>
+        <MemberList groupId={groupId} members={this.state.members} navigate={ navigate }/>
       </View>
     )
   }
