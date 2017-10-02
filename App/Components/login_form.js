@@ -30,26 +30,23 @@ class LoginForm extends Component {
   onChangeEmail = this.handleInputChange.bind(this, "email");
   onChangePassword = this.handleInputChange.bind(this, "password")
 
-  handleHighLightPress() {
+  async handleHighLightPress() {
     const { user } = this.state;
-    fetch("http://localhost:3000/sessions", {
+    // const url = "https://rocky-forest-46725.herokuapp.com/sessions"
+    const url = "http://localhost:3000/sessions"
+    var responseJson = await fetch(url, {
       method: 'post',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({user})
-    }).then(function(response) {return response.json()}.bind(this) )
-    .then(function(responseJson) {
-      let sessionId = responseJson.id
-      AsyncStorage.setItem('sessionId', JSON.stringify(sessionId),
-    () => { AsyncStorage.getItem('sessionId', (err, result) => {
-      const userId = result;
-      console.log(this.props.navigation.navigate)
-      alert("Welcome!")
-      this.props.navigation.navigate("User", {userId: userId})
-    }) } )
-  }.bind(this))
+    }).then(response => response.json() )
+
+    let sessionId = responseJson.id
+    await AsyncStorage.setItem('sessionId', JSON.stringify(sessionId))
+    var userId = await AsyncStorage.getItem('sessionId')
+    this.props.navigation.navigate("User", {userId: userId})
   }
 
   handleUserSubmit = this.handleHighLightPress.bind(this)
