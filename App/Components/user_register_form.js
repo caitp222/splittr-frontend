@@ -10,6 +10,7 @@ import { StyleSheet,
        } from 'react-native';
 
 class RegisterForm extends Component {
+
   constructor() {
     super();
     this.state = {user: {
@@ -47,8 +48,8 @@ class RegisterForm extends Component {
 
   render() {
     return(
-      <View>
-        <FormLabel style={styles.form}>First Name</FormLabel>
+      <View style={styles.text}>
+        <FormLabel>First Name</FormLabel>
         <FormInput onChangeText={this.onChangeFirstName}/>
         <FormLabel>Last Name</FormLabel>
         <FormInput onChangeText={this.onChangeLastName}/>
@@ -59,7 +60,7 @@ class RegisterForm extends Component {
         <Button
           large
           onPress = {this.handleNewUserSubmit}
-          color={'#9e9e9e'}
+          color={'#F7F9FB'}
           icon={{ type: 'octicon' }}
           title='Register' />
       </View>
@@ -67,9 +68,19 @@ class RegisterForm extends Component {
   }
 }
 const styles = StyleSheet.create({
+<<<<<<< HEAD
   form: {
     color: "#808080"
   }
 });
+=======
+  text:{
+    fontSize: 40,
+    backgroundColor: 'transparent',
+    color:'#F7F9FB',
+    fontWeight: '400',
+  }
+})
+>>>>>>> master
 
 export {RegisterForm};
