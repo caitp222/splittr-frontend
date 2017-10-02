@@ -64,7 +64,6 @@ class Home extends React.Component {
         </View>
       </Image>
     );
-
   }
 }
 const styles = StyleSheet.create({
@@ -84,15 +83,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   welcome: {
-<<<<<<< HEAD
-    fontSize: 60,
-    color: '#F7F9FB',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'justify',
-    margin: 10,
-    fontWeight: '400'
-=======
     fontSize: 50,
     paddingTop:5,
     paddingBottom:5,
@@ -105,7 +95,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#8FC1E3',
     borderRadius: 40,
     opacity: 0.7
->>>>>>> master
   },
   text:{
     fontSize: 40,

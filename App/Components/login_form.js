@@ -55,53 +55,50 @@ class LoginForm extends Component {
   render() {
     return(
       <View>
+        <View style={styles.container}>
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            name="email"
+             onChangeText={this.onChangeEmail}
+          />
+          <Text style={styles.label}>Password</Text>
+          <TextInput name="password"
+            style={styles.input}
+            onChangeText={this.onChangePassword}/>
 
-        <Text>Email:</Text>
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          name="email"
-          value={this.state.user.email} onChangeText={this.onChangeEmail}
-        />
-        <Text>Password:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} name="password"
-      value={this.state.user.password} onChangeText={this.onChangePassword}/>
-
-      <TouchableHighlight >
-        <Text onPress = {"Placeholder"}>Login:button</Text>
-      </TouchableHighlight>
-
-
-
-        <FormLabel style={styles.formLabel}>Email</FormLabel>
-        <FormInput onChangeText={this.onChangeEmail}/>
-        <FormLabel style={styles.formLabel}>Password</FormLabel>
-        <FormInput onChangeText={this.onChangePassword}/>
-
-        <TouchableHighlight onPress={this.handleUserSubmit}>
-          <Text style={styles.signIn}>Sign In</Text>
-        </TouchableHighlight>
-
-        <Button
-          large
-          onPress = {this.handleUserSubmit}
-          style={styles.formLabel}
-          color={'#9e9e9e'}
-          icon={{ type: 'octicon' }}
-          title='SIGN IN' />
+          <TouchableHighlight >
+            <Text style={styles.signIn} onPress = {this.handleUserSubmit}>Sign In</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
-  formLabel: {
+  container: {
+    marginLeft: 25,
+    marginRight:25,
+    paddingTop:30
+  },
+  label: {
+    paddingTop:10,
     backgroundColor: "transparent",
-    height: 40,
-     borderColor: 'gray', borderWidth: 1
+    height: 35,
+    color: '#666666'
+  },
+  input: {
+    backgroundColor: "transparent",
+    height: 30,
+    color: '#666666',
+    borderBottomColor: "#666666",
+    borderBottomWidth: 1
   },
   signIn:{
+    marginTop: 8,
     textAlign: "center",
     fontSize: 25,
-    color: '#9e9e9e'
+    color: '#666666'
   }
 });
 
