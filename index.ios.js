@@ -34,10 +34,10 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-    headerStyle: {backgroundColor: '#F7F9FB'}
-  };
+  // static navigationOptions = {
+  //   title: 'Welcome',
+  //   headerStyle: {backgroundColor: '#F7F9FB'}
+  // };
   constructor() {
     super();
     this.state = {expense: {
@@ -50,6 +50,7 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
+            // <UserShowScene navigation={navigate}/>
       <Image
       style={styles.backdrop}
       source={require('./waterdrop-3.jpg')}>

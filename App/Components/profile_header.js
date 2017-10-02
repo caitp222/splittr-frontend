@@ -12,6 +12,10 @@ import GroupForm from './new_group_form';
 import { StackNavigator } from 'react-navigation';
 
 class ProfileHeader extends Component {
+  static navigationOptions = {
+    title: 'Welcome',
+    headerStyle: {backgroundColor: '#F7F9FB'}
+  };
   render(){
     const { navigate } = this.props.navigation;
     return(
@@ -30,5 +34,8 @@ const splittr = StackNavigator({
     screen: GroupForm,
   },
 });
+const styles = StyleSheet.create({
+  
+})
 
 export default ProfileHeader;

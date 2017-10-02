@@ -29,7 +29,7 @@ class GroupShowScene extends Component {
    }
 
   componentDidMount = function() {
-    fetch("http://localhost:3000/groups/15",
+    fetch("http://localhost:3000/groups/33",
       {method: 'GET'}
     ).then((response) => response.json()
   ).then((responseJson) => {this.setState({
