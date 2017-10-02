@@ -32,8 +32,8 @@ class ExpenseForm extends Component {
 
   handleButtonPress() {
     const expense = this.state.expense;
-    const url = "http://localhost:3000/groups/1/expenses"
-    // const url = "https://rocky-forest-46725.herokuapp.com/groups/1/expenses"
+    // const url = "http://localhost:3000/groups/1/expenses"
+    const url = "https://rocky-forest-46725.herokuapp.com/groups/1/expenses"
     fetch(url, {
       method: 'POST',
       headers: {
