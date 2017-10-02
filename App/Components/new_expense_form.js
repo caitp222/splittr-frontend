@@ -49,15 +49,15 @@ class ExpenseForm extends Component {
           <Text style={styles.label}>Vendor</Text>
           <TextInput
             style={styles.input}
-            name="email"
+            name="vendor"
              onChangeText={this.onChangeVendor}
           />
           <Text style={styles.label}>Description</Text>
-          <TextInput name="password"
+          <TextInput name="description"
             style={styles.input}
             onChangeText={this.onChangeDescription}/>
           <Text style={styles.label}>Amount</Text>
-          <TextInput name="password"
+          <TextInput name="amount"
               style={styles.input}
               onChangeText={this.onChangeAmount}/>
 
