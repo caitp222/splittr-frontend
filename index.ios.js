@@ -22,6 +22,7 @@ import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
 import CameraAccess from './App/Components/camera.js';
+import backgroundImage from './waterdrop-3.jpg'
 
 var styles = StyleSheet.create({
   background: {
@@ -48,8 +49,8 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    // AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    AsyncStorage.removeItem('sessionId').then(fuck => {console.log(fuck); console.log('fuuuuuckkckiinnnnng shite')})
+    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    // AsyncStorage.removeItem('sessionId')
   }
 
 
@@ -63,7 +64,7 @@ class Home extends React.Component {
       return (
         <Image
           style={styles.backdrop}
-          source={require('./waterdrop-3.jpg')}>
+          source={backgroundImage}>
           <View style={styles.container}>
             <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
               <Text style={styles.text}>Login</Text>
