@@ -9,7 +9,8 @@ import {
   TextInput,
   View,
   Image,
-  Button
+  Button,
+  AsyncStorage
 } from 'react-native';
 
 import LoginScene from './App/Scenes/login.ios.js';
@@ -20,6 +21,7 @@ import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
+import backgroundImage from './waterdrop-3.jpg'
 
 var styles = StyleSheet.create({
   background: {
@@ -34,39 +36,48 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Welcome',
-  //   headerStyle: {backgroundColor: '#F7F9FB'}
-  // };
+  static navigationOptions = {
+    title: 'Welcome',
+    headerStyle: {backgroundColor: '#F7F9FB'}
+  };
   constructor() {
     super();
-    this.state = {expense: {
-      description: "description",
-      amount: "$12.34",
-      vendor: "Rico's Seaside Bar & Grill",
-      user: 'Rico Suave'
-    }}
+    this.state = {
+      sessionId: ''
+    }
   }
+
+  componentWillMount(){
+    // AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    AsyncStorage.removeItem('sessionId')
+  }
+
+
   render() {
     const { navigate } = this.props.navigation;
-    return (
-          // {/* <UserShowScene navigation={navigate}/> */}
-
-      // <Image
-      // style={styles.backdrop}
-      // source={require('./waterdrop-3.jpg')}>
-      // <View style={styles.container}>
-      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-      //     <Text style={styles.text}>Login</Text>
-      //   </TouchableHighlight>
-      //   <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-      //     <Text style={styles.text}>Register</Text>
-      //   </TouchableHighlight>
-      //   </View>
-        <Tabs/>
-      // </Image>
-    );
+    if(this.state.sessionId){
+      return(
+        <UserShowScene navigation={this.props.navigation}/>
+      )
+    }else {
+      return (
+        <Image
+          style={styles.backdrop}
+          source={backgroundImage}>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+              <Text style={styles.text}>Login</Text>
+            </TouchableHighlight>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+              <Text style={styles.text}>Register</Text>
+            </TouchableHighlight>
+          </View>
+        </Image>
+      );
+    }
   }
+
+
 }
 const styles = StyleSheet.create({
   container: {
@@ -119,6 +130,9 @@ const splittr = StackNavigator({
   },
   Expense: {
     screen: ExpenseNewScene,
+  },
+  ExpenseShow: {
+    screen: ExpenseShowScene,
   },
   GroupShow: {
     screen: GroupShowScene,
