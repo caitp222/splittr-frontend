@@ -22,14 +22,10 @@ class GroupForm extends Component {
       }};
   }
 
-  findCreatorId() {
+  componentWillMount = function() {
     AsyncStorage.getItem('sessionId', (err, result) => {
       this.setState({group: { creator_id: result, group_name: "", details: "" }})
     })
-  }
-
-  componentWillMount = function() {
-    this.findCreatorId()
   }
 
   handleInputChange(name, text) {
