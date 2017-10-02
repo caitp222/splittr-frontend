@@ -13,6 +13,7 @@ import {
 import ProfileHeader  from '../Components/profile_header';
 import ProfileGroup  from '../Components/profile_group_list';
 import LinearGradient from 'react-native-linear-gradient';
+import { Tabs } from '../Components/router.js';
 
 class UserShowScene extends React.Component {
   static navigationOptions = {

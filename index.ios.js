@@ -50,7 +50,8 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-            <UserShowScene navigation={navigate}/>
+          // {/* <UserShowScene navigation={navigate}/> */}
+
       // <Image
       // style={styles.backdrop}
       // source={require('./waterdrop-3.jpg')}>
@@ -62,6 +63,7 @@ class Home extends React.Component {
       //     <Text style={styles.text}>Register</Text>
       //   </TouchableHighlight>
       //   </View>
+        <Tabs/>
       // </Image>
     );
   }
