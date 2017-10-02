@@ -45,7 +45,8 @@ class GroupForm extends Component {
   handleButtonPress() {
     const { group } = this.state;
     const { navigation } = this.props;
-    const url = "https://rocky-forest-46725.herokuapp.com/groups"
+    // const url = "https://rocky-forest-46725.herokuapp.com/groups"
+    const url = "http://localhost:3000/groups"
     fetch(url, {
       method: 'post',
       headers: {
@@ -59,7 +60,7 @@ class GroupForm extends Component {
       console.log(responseJson);
       navigation.navigate("GroupShow", {groupId: responseJson.group.id})
     }).catch(function(err) {
-      alert("Something went wrong.")
+      alert(err)
     })
   }
 

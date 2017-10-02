@@ -34,7 +34,9 @@ class RegisterForm extends Component {
 
   handleHighLightPress() {
     const { user } = this.state
-    fetch("https://rocky-forest-46725.herokuapp.com/users", {
+    // const url = "https://rocky-forest-46725.herokuapp.com/users"
+    const url = "http://localhost:3000/users"
+    fetch(url, {
       method: 'post',
       headers: {
         'Accept': 'application/json',
