@@ -54,13 +54,13 @@ class UserShowScene extends React.Component {
     const { navigation } = this.props
     return(
       <LinearGradient colors={['#83a4d4', '#b6fbff']} style={styles.linearGradient}>
-      <View>
+      <View style={{flex: 1 }}>
         <Image
         style={styles.backdrop}
         source={require('../../ocean.jpg')}>
         <ProfileHeader userName={user.firstName} navigation={navigation}/>
+        <ProfileGroup style={styles.bottom} groups={user.groups} navigation={navigation}/>
         </Image>
-        <ProfileGroup groups={user.groups} navigation={navigation}/>
         </View>
       </LinearGradient>
     )
@@ -69,10 +69,13 @@ class UserShowScene extends React.Component {
 const styles = StyleSheet.create({
   backdrop: {
     width: '100%',
-    height: '25%',
+    height: '100%',
   },
   linearGradient: {
     height: "100%",
   },
+  bottom: {
+    margin: 100,
+  }
 });
 export default UserShowScene ;
