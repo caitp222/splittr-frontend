@@ -9,13 +9,13 @@ import  Member  from './member';
 
 class MemberList extends Component {
   render() {
-    const { navigate, members } = this.props;
+    const { navigate, members, groupId } = this.props;
     return(
       <View>
         <Text>Members list</Text>
         {members.map(function(member, index) {
           return(
-            <Member member={member} key={index} navigate={navigate}/>
+            <Member groupId={groupId} member={member} key={index} navigate={navigate}/>
           )
         })}
       </View>
