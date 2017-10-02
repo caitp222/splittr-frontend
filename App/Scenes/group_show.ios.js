@@ -28,9 +28,7 @@ class GroupShowScene extends Component {
    }
 
   componentWillMount = function() {
-    console.log(this.props.navigation.state.params.group_id)
     const id = this.props.navigation.state.params.group_id
-    console.log(id)
     const url = "http://localhost:3000/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
@@ -59,7 +57,7 @@ class GroupShowScene extends Component {
         <Text>{this.state.group.details}</Text>
         <Text>Total Group Spend: ${this.state.totalSpend}</Text>
         <Text>Member Split: ${this.state.memberSplit}</Text>
-        <MemberList members={this.state.members} navigate={ navigate }/>
+        <MemberList groupId={this.props.navigation.state.params.group_id} members={this.state.members} navigate={ navigate }/>
       </View>
     )
   }

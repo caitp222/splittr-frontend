@@ -13,11 +13,9 @@ import Expense from './expense';
 import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 
 class Member extends Component {
-  constructor() {
-    super();
-  }
   render() {
     const { member, navigate } = this.props;
+    console.log("groupid " + groupId)
     const expenses = member.expenses
     return(
       <View>
@@ -25,7 +23,7 @@ class Member extends Component {
         {expenses.map(function(expense, index){
           return (
             <TouchableHighlight key={index}>
-              <Text onPress = {() => navigate('Expense', { expense: expense })}>{expense.vendor + ": $" +expense.amount}: button</Text>
+              <Text onPress = {() => navigate('ExpenseShow', { expense: expense, groupId: groupId })}>{expense.vendor + ": $" +expense.amount}: button</Text>
             </TouchableHighlight>
           )
         })}

@@ -60,18 +60,9 @@ class Home extends React.Component {
             <Text style={styles.button}>Register</Text>
           </TouchableHighlight>
 
-
-          {/* <TouchableHighlight onPress={() => navigate('CameraAcc')}>
-            <Text style={styles.button}>Camera</Text>
-          </TouchableHighlight> */}
-
-        <TouchableHighlight onPress={() => navigate('User')}>
-          <Text style={styles.button}>User</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={() => navigate('Expense')}>
-          <Text style={styles.button}>Expense</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => navigate('User')}>
+            <Text style={styles.button}>User</Text>
+          </TouchableHighlight>
         {/* <Tabs/> */}
 
         </LinearGradient>
@@ -99,6 +90,9 @@ const splittr = StackNavigator({
   },
   Expense: {
     screen: ExpenseNewScene,
+  },
+  ExpenseShow: {
+    screen: ExpenseShowScene,
   },
   GroupShow: {
     screen: GroupShowScene,
