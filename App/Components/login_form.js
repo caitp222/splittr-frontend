@@ -47,6 +47,8 @@ class LoginForm extends Component {
       AsyncStorage.setItem('sessionId', JSON.stringify(sessionId),
     () => { AsyncStorage.getItem('sessionId', (err, result) => {
       const userId = result;
+      console.log(this.props.navigation.navigate)
+      alert("Welcome!")
       this.props.navigation.navigate("User", {userId: userId})
     }) } )
   }.bind(this))

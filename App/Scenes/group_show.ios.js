@@ -56,6 +56,7 @@ class GroupShowScene extends Component {
      }
    }
 
+
   componentWillMount = function() {
     debugger
     const id = this.props.navigation.state.params.groupId

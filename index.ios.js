@@ -36,10 +36,10 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-    headerStyle: {backgroundColor: '#F7F9FB'}
-  };
+  // static navigationOptions = {
+  //   title: 'Welcome',
+  //   headerStyle: {backgroundColor: '#F7F9FB'}
+  // };
   constructor() {
     super();
     this.state = {
@@ -72,6 +72,7 @@ class Home extends React.Component {
               <Text style={styles.text}>Register</Text>
             </TouchableHighlight>
           </View>
+          <Tabs />
         </Image>
       );
     }

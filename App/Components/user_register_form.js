@@ -10,7 +10,6 @@ import { StyleSheet,
        } from 'react-native';
 
 class RegisterForm extends Component {
-
   constructor() {
     super();
     this.state = {user: {
