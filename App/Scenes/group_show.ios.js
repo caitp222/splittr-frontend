@@ -166,7 +166,7 @@ class GroupShowScene extends Component {
                   <Text style={styles.buttonText}>Add Expense</Text>
                 </TouchableHighlight>
               </View>
-              <MemberList groupId={id} members={this.state.members} navigate={ navigate }/>
+              <MemberList settledUp={this.state.group.settledUp} groupId={id} members={this.state.members} navigate={ navigate }/>
               </View>
               <View style={styles.footer}>
                 <TouchableHighlight style={styles.settleButton} onPress={this.settleUpHandler}>
@@ -196,11 +196,8 @@ class GroupShowScene extends Component {
                     <Text>${this.state.memberSplit}</Text>
                   </View>
                 </View>
-                <TouchableHighlight style={styles.button} onPress={() => navigate('Expense')}>
-                  <Text style={styles.buttonText}>Add Expense</Text>
-                </TouchableHighlight>
               </View>
-              <MemberList groupId={id} members={this.state.members} navigate={ navigate }/>
+              <MemberList settledUp={this.state.group.settledUp} groupId={id} members={this.state.members} navigate={ navigate }/>
               </View>
           </View>
         </LinearGradient>
