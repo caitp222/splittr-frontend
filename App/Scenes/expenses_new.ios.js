@@ -10,7 +10,10 @@ import ExpenseForm from '../Components/new_expense_form.js'
 import LinearGradient from 'react-native-linear-gradient';
 import Camera from '../Components/camera.js';
 
-class ExpenseNewScene extends Component {
+class ExpenseNewScene extends Component {static navigationOptions = {
+  title: 'Bitch better have my money',
+  headerStyle: {backgroundColor: '#F7F9FB'}
+};
   render() {
     const { expense } = this.props
     const { navigate } = this.props.navigation
