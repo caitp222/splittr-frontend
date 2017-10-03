@@ -32,9 +32,40 @@ class CameraAccess extends Component {
     alert("h1");
     //options.location = ...
     this.camera.capture({metadata: options})
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
-  }
+    .then(function(response) {
+      const data = response;
+      fetch("http://localhost:3000/expenses/camera",
+      {method: 'post',
+      headers: {
+        'Accept':'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({data})
+    }).then(function(response) {
+      console.log(response)
+    })
+
+    // debugger;
+    // console.log(response)
+  })
+
+
+
+
+
+  //     .then(function() {
+  //       fetch("http://localhost:3000/expenses/camera",
+  //             {method: 'post',
+  //              body: JSON.stringify({ params:1 })
+  //           }
+  //         }).then(function())
+  //             (data) => console.log(data)
+  //           )
+  //           .then((response) => response.json())
+  //           .then((data) => console.log('data', data))
+  //     )
+  //     .catch(err => console.error(err));
+}
 }
 
 const styles = StyleSheet.create({

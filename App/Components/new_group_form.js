@@ -51,6 +51,7 @@ class GroupForm extends Component {
       },
       body: JSON.stringify({group})
     }).then(function(response) {
+      console.log(response);
       return response.json()
     }).then(function(responseJson) {
       console.log(responseJson);
