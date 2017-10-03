@@ -4,7 +4,10 @@ import { Icon } from 'react-native-elements';
 
 import UserShowScene from '../Scenes/user_show.ios.js';
 import GroupNewScene from '../Scenes/new_group.ios.js';
+import Home from '../../index.ios.js';
 import ExpensesShowScene from '../Scenes/expenses_show.ios.js'
+import Tabbar from 'react-native-tabbar-bottom'
+
 
 export const Tabs = TabNavigator({
   UserShowScene: {
@@ -21,4 +24,11 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
     },
   },
+  // Home: {
+  //   screen: Home,
+  //   navigationOptions: {
+  //     tabBarLabel: 'Login',
+  //     tabBarLabel: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
+  //   },
+  // },
 });

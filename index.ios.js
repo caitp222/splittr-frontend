@@ -23,18 +23,7 @@ import GroupNewScene from './App/Scenes/new_group.ios.js';
 import ExpenseForm from './App/Scenes/expenses_new.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
 import backgroundImage from './waterdrop-3.jpg'
-import CameraAccess from './App/Components/camera.js';
-
-var styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    backgroundColor: 'transparent',
-  },
-  button: {
-    backgroundColor: '#00ff00',
-    fontWeight: 'bold',
-  }
-})
+// import CameraAccess from './App/Components/camera.js';
 
 
 class Home extends React.Component {
@@ -51,7 +40,7 @@ class Home extends React.Component {
 
   componentWillMount(){
     AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    // AsyncStorage.removeItem('sessionId')
+    AsyncStorage.removeItem('sessionId')
   }
 
 
@@ -59,29 +48,29 @@ class Home extends React.Component {
     const { navigate } = this.props.navigation;
     if(this.state.sessionId){
       return(
-        <Tabs/>
-        // <UserShowScene navigation={this.props.navigation}/>
+         <Tabs/>
+         //<UserShowScene navigation={this.props.navigation}/>
+        //  <Tabs/>
       )
     } else {
       return (
-        <Tabs/>
-        // <Image
-        //   style={styles.backdrop}
-        //   source={backgroundImage}>
-        //   <View style={styles.container}>
-        //     <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
-        //       <Text style={styles.text}>Login</Text>
-        //     </TouchableHighlight>
-        //     <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
-        //       <Text style={styles.text}>Register</Text>
-        //     </TouchableHighlight>
-        //   </View>
-        // </Image>
+        <View>
+        <Image
+          style={styles.backdrop}
+          source={backgroundImage}>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Login')}>
+              <Text style={styles.text}>Login</Text>
+            </TouchableHighlight>
+            <TouchableHighlight style={styles.welcome} onPress={() => navigate('Register')}>
+              <Text style={styles.text}>Register</Text>
+            </TouchableHighlight>
+          </View>
+        </Image>
+       </View>
       )
     }
   }
-
-
 }
 const styles = StyleSheet.create({
   container: {
@@ -144,9 +133,9 @@ const splittr = StackNavigator({
   GroupNewScene: {
     screen: GroupNewScene,
   },
-  Camera: {
-    screen: CameraAccess,
-  }
+  // Camera: {
+  //   screen: CameraAccess,
+  // }
 });
 
 
