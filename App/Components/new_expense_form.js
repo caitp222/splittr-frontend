@@ -45,9 +45,9 @@ class ExpenseForm extends Component {
     const navigation = this.props.navigation;
     const groupId = this.props.navigation.state.params.groupId
     console.log("this is what you need " + groupId)
-    const url = "http://localhost:3000/groups/" + groupId + "/expenses"
+    //const url = "http://localhost:3000/groups/" + groupId + "/expenses"
+    const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
     console.log(url)
-    // const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
     fetch(url, {
       method: 'POST',
       headers: {
