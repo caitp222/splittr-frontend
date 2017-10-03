@@ -127,8 +127,8 @@ class GroupShowScene extends Component {
 
   settleUpHandler = function() {
     const { group } = this.state
-    // const url = "https://rocky-forest-46725.herokuapp.com/groups/"
-    const url = "http://localhost:3000/groups/"
+    const url = "https://rocky-forest-46725.herokuapp.com/groups/"
+    //const url = "http://localhost:3000/groups/"
     const id = this.props.navigation.state.params.groupId
     fetch(url + id + "/settle", {
       method: 'POST'
