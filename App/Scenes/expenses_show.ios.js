@@ -23,20 +23,24 @@ class ExpenseShowScene extends Component {
   componentWillMount = function() {
     const expenseId = this.props.navigation.state.params.expense.id
     console.log("expense id " + expenseId)
-    const url = "http://localhost:3000/expenses/"
-    // const url = "https://rocky-forest-46725.herokuapp.com/expenses"
+    // const url = "http://localhost:3000/expenses/"
+    const url = "https://rocky-forest-46725.herokuapp.com/expenses/"
     const fetchUrl = url + expenseId
-    fetch(fetchUrl,
-          {method: 'get'}
-        ).then((response) =>
-        response.json()
-        ).then((responseJson) =>  {this.setState(
-                                  {expense:
-                                    {vendor: responseJson.vendor,
-                                      amount: responseJson.amount,
-                                      description: responseJson.description,
-                                      user: responseJson.paid_by}
-                                    })
+    fetch(fetchUrl, { method: 'get' })
+    .then((response) => response.json())
+    .then((responseJson) =>  {
+      // debugger
+      this.setState({
+        expense: {
+            vendor: responseJson.vendor,
+            amount: responseJson.amount,
+            description: responseJson.description,
+            user: responseJson.paid_by
+          }
+        })
+      }).catch(err => {
+        debugger
+        console.log(err)
       })
   }
 

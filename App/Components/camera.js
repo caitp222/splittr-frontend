@@ -34,7 +34,9 @@ class CameraAccess extends Component {
     this.camera.capture({metadata: options})
     .then(function(response) {
       const data = response;
-      fetch("http://localhost:3000/expenses/camera",
+      // const url = "http://localhost:3000/expenses/camera"
+      const url = "https://rocky-forest-46725.herokuapp.com/"
+      fetch(url,
       {method: 'post',
       headers: {
         'Accept':'application/json',
