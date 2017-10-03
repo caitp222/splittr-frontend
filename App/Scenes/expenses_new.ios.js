@@ -18,7 +18,7 @@ class ExpenseNewScene extends Component {
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
           <TouchableHighlight style={styles.scanButton} onPress={() => navigate('Camera')}>
-            <Text style={styles.scanText}>Scan Recipe</Text>
+            <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
           <ExpenseForm  />
         </LinearGradient>
