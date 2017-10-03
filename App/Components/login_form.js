@@ -46,7 +46,7 @@ class LoginForm extends Component {
     let sessionId = responseJson.id
     await AsyncStorage.setItem('sessionId', JSON.stringify(sessionId))
     var userId = await AsyncStorage.getItem('sessionId')
-    this.props.navigation.navigate("User", {userId: userId})
+    this.props.navigation.navigate("App", {userId: userId})
   }
 
   handleUserSubmit = this.handleHighLightPress.bind(this)

@@ -53,6 +53,7 @@ class Home extends React.Component {
         //  <Tabs/>
       )
     } else {
+      // return <Tabs/>
       return (
         <View>
         <Image
@@ -118,24 +119,9 @@ const splittr = StackNavigator({
   Register: {
     screen: RegisterScene,
   },
-  User: {
-    screen: UserShowScene,
+  App: {
+    screen: Tabs,
   },
-  Expense: {
-    screen: ExpenseNewScene,
-  },
-  ExpenseShow: {
-    screen: ExpenseShowScene,
-  },
-  GroupShow: {
-    screen: GroupShowScene,
-  },
-  GroupNewScene: {
-    screen: GroupNewScene,
-  },
-  // Camera: {
-  //   screen: CameraAccess,
-  // }
 });
 
 

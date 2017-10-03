@@ -24,11 +24,4 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
     },
   },
-  // Home: {
-  //   screen: Home,
-  //   navigationOptions: {
-  //     tabBarLabel: 'Login',
-  //     tabBarLabel: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
-  //   },
-  // },
 });

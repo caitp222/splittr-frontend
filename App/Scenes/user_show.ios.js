@@ -72,13 +72,13 @@ class UserShowScene extends React.Component {
 const styles = StyleSheet.create({
   backdrop: {
     width: '100%',
-    height: '100%',
+    // height: '100%',
   },
   linearGradient: {
-    height: "100%",
+    // height: "100%",
   },
   bottom: {
-    margin: 100,
+    // margin: 100,
   }
 });
 export default UserShowScene ;
