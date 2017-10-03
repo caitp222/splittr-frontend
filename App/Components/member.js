@@ -12,12 +12,21 @@ import {
 import Expense from './expense';
 import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 const styles = StyleSheet.create({
-  member: {
-    fontWeight: '300',
+  memberName: {
+    fontWeight: "700",
+    fontSize: 15
 
   },
+
   expense: {
-    justifyContent: 'flex-end',
+    textAlign: 'left',
+    paddingLeft: 4,
+    paddingRight: 4,
+    backgroundColor: '#83a4d4',
+    borderRadius: 15,
+    margin: 2,
+    borderWidth: 0.25,
+    borderColor: '#8BBFC2'
   },
   container: {
     flexDirection: 'row',
@@ -36,12 +45,12 @@ class Member extends Component {
     const expenses = member.expenses
     return(
       <View style={styles.container}>
-        <Text style={styles.member}>{member.full_name}:</Text>
+        <Text style={styles.memberName}>{member.full_name}:</Text>
         <View style={styles.listContainer}>
         {expenses.map(function(expense, index){
           return (
           <TouchableHighlight style={styles.expense} key={index}>
-            <Text onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}: button</Text>
+            <Text style={styles.expense} onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}</Text>
           </TouchableHighlight>
           )
         })}
