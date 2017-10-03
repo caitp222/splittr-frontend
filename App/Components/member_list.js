@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
 
 class MemberList extends Component {
   render() {
-    const { navigate, members, groupId } = this.props;
+    const { navigate, members, groupId, settledUp } = this.props;
     return(
       <View>
         <Text style={styles.membersList}>Member Expenses:</Text>
         {members.map(function(member, index) {
           return(
-            <Member groupId={groupId} member={member} key={index} navigate={navigate}/>
+            <Member settledUp={settledUp} groupId={groupId} member={member} key={index} navigate={navigate}/>
           )
         })}
       </View>

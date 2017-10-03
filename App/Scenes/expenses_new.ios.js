@@ -13,14 +13,14 @@ import Camera from '../Components/camera.js';
 class ExpenseNewScene extends Component {
   render() {
     const { expense } = this.props
-    const { navigate } = this.props.navigation
+    const { navigation } = this.props
     return(
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
-          <TouchableHighlight style={styles.scanButton} onPress={() => navigate('Camera')}>
-            <Text style={styles.scanText}>Scan Recipe</Text>
+          <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera')}>
+            <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
-          <ExpenseForm  />
+          <ExpenseForm navigation={navigation} />
         </LinearGradient>
       </View>
     )

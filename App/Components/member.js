@@ -41,22 +41,58 @@ const styles = StyleSheet.create({
 
 class Member extends Component {
   render() {
-    const { member, navigate, groupId } = this.props;
+    const { member, navigate, groupId, settledUp } = this.props;
     const expenses = member.expenses
-    return(
-      <View style={styles.container}>
-        <Text style={styles.memberName}>{member.full_name}:</Text>
-        <View style={styles.listContainer}>
-        {expenses.map(function(expense, index){
-          return (
-          <TouchableHighlight style={styles.expense} key={index}>
-            <Text style={styles.expense} onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}</Text>
-          </TouchableHighlight>
-          )
-        })}
-      </View>
-      </View>
-    )
+    if(settledUp === false) {
+      return(
+        <View style={styles.container}>
+          <Text style={styles.memberName}>{member.full_name} has spent ${member.total_spend}</Text>
+          <Text>Expenses:</Text>
+          <View style={styles.listContainer}>
+          {expenses.map(function(expense, index){
+            return (
+            <TouchableHighlight style={styles.expense} key={index}>
+              <Text style={styles.expense} onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}</Text>
+            </TouchableHighlight>
+            )
+          })}
+        </View>
+        </View>
+      )
+    } else if(settledUp === true && member.owes === false) {
+      return(
+        <View style={styles.container}>
+          <Text style={styles.memberName}>{member.full_name} has spent ${member.total_spend} and is owed ${member.amount_user_is_owed} by the group</Text>
+          <Text>Expenses:</Text>
+          <View style={styles.listContainer}>
+          {expenses.map(function(expense, index){
+            return (
+            <TouchableHighlight style={styles.expense} key={index}>
+              <Text style={styles.expense} onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}</Text>
+            </TouchableHighlight>
+            )
+
+          })}
+        </View>
+        </View>
+      )
+    } else if(settledUp === true && member.owes === true) {
+      return(
+        <View style={styles.container}>
+          <Text style={styles.memberName}>{member.full_name} has spent ${member.total_spend} and owes ${member.amount_user_owes} to the group</Text>
+          <Text>Expenses:</Text>
+          <View style={styles.listContainer}>
+          {expenses.map(function(expense, index){
+            return (
+            <TouchableHighlight style={styles.expense} key={index}>
+              <Text style={styles.expense} onPress = {() => navigate('ExpenseShow', { expense: expense })}>{expense.vendor + ": $" +expense.amount}</Text>
+            </TouchableHighlight>
+            )
+          })}
+        </View>
+        </View>
+      )
+    }
   }
 }
 StackNavigator({
