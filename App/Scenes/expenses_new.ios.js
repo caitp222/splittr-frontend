@@ -13,6 +13,7 @@ import Camera from '../Components/camera.js';
 class ExpenseNewScene extends Component {
   render() {
     const { expense } = this.props
+    const { navigate } = this.props.navigation
     return(
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
