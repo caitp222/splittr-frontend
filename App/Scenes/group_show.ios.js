@@ -170,7 +170,7 @@ class GroupShowScene extends Component {
                     <Text>${this.state.memberSplit}</Text>
                   </View>
                 </View>
-                <TouchableHighlight style={styles.button} onPress={() => navigate('Expense')}>
+                <TouchableHighlight style={styles.button} onPress={() => navigate('Expense', {groupId: id})}>
                   <Text style={styles.buttonText}>Add Expense</Text>
                 </TouchableHighlight>
               </View>

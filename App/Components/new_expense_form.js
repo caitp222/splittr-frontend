@@ -6,17 +6,27 @@ import { TextInput,
          View,
          Button,
          Text,
+         AsyncStorage
        } from 'react-native';
 
 class ExpenseForm extends Component {
   constructor() {
     super();
     this.state = {expense: {
-      description: "description",
-      amount: 12.34,
-      vendor: "Rico's Seaside Bar & Grill",
-      membership_id: 3
+      description: "",
+      amount: 0,
+      vendor: "",
+      user_id: 0,
+      group_id: 0
     }};
+  }
+
+  componentWillMount = function() {
+    const groupId = this.props.navigation.state.params.groupId;
+    console.log("groupId" + groupId);
+    AsyncStorage.getItem('sessionId', (err, result) => {
+      this.setState({expense: { description: "", amount: 0, vendor: "", user_id: parseInt(result), group_id: groupId}})
+    })
   }
 
   handleInputChange(name, text) {
