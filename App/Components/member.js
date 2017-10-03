@@ -45,7 +45,8 @@ class Member extends Component {
     const expenses = member.expenses
     return(
       <View style={styles.container}>
-        <Text style={styles.memberName}>{member.full_name}:</Text>
+        <Text style={styles.memberName}>{member.full_name} has spent ${member.total_spend}</Text>
+        <Text>Expenses:</Text>
         <View style={styles.listContainer}>
         {expenses.map(function(expense, index){
           return (
