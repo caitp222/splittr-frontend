@@ -20,9 +20,10 @@ import ExpenseShowScene from './App/Scenes/expenses_show.ios.js';
 import ExpenseNewScene from './App/Scenes/expenses_new.ios.js';
 import GroupShowScene from './App/Scenes/group_show.ios.js';
 import GroupNewScene from './App/Scenes/new_group.ios.js';
+import ExpenseForm from './App/Scenes/expenses_new.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
-import CameraAccess from './App/Components/camera.js';
 import backgroundImage from './waterdrop-3.jpg'
+import CameraAccess from './App/Components/camera.js';
 
 var styles = StyleSheet.create({
   background: {
@@ -37,10 +38,10 @@ var styles = StyleSheet.create({
 
 
 class Home extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Welcome',
-  //   headerStyle: {backgroundColor: '#F7F9FB'}
-  // };
+  static navigationOptions = {
+    title: 'Welcome',
+    headerStyle: {backgroundColor: '#F7F9FB'}
+  };
   constructor() {
     super();
     this.state = {
@@ -49,8 +50,8 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    // AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    AsyncStorage.removeItem('sessionId')
+    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    // AsyncStorage.removeItem('sessionId')
   }
 
 
@@ -120,7 +121,6 @@ const styles = StyleSheet.create({
 });
 const splittr = StackNavigator({
   Home: { screen: Home },
-  CameraAcc:{ screen: CameraAccess},
   Login: {
     screen: LoginScene,
   },
@@ -141,6 +141,9 @@ const splittr = StackNavigator({
   },
   GroupNewScene: {
     screen: GroupNewScene,
+  },
+  Camera: {
+    screen: CameraAccess,
   }
 });
 

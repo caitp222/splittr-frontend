@@ -64,7 +64,7 @@ class ExpenseForm extends Component {
               onChangeText={this.onChangeAmount}/>
 
           <TouchableHighlight >
-            <Text style={styles.signIn} onPress = {this.onButtonPress}>Create Expense</Text>
+            <Text style={styles.confirm} onPress = {this.onButtonPress}>Confirm Expense</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -90,11 +90,18 @@ const styles = StyleSheet.create({
     borderBottomColor: "#666666",
     borderBottomWidth: 1
   },
-  signIn:{
-    marginTop: 8,
+  confirm:{
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: "#666666",
+    marginTop: 30,
+    marginLeft: 30,
+    marginRight: 30,
+    color: '#666666',
     textAlign: "center",
-    fontSize: 25,
-    color: '#666666'
+    fontSize: 25
   }
 });
 

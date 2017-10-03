@@ -37,13 +37,10 @@ const splittr = StackNavigator({
 const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
-    paddingTop:5,
-    paddingBottom:5,
-    paddingLeft: 5,
-    paddingRight: 5,
+    padding:5,
     justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'justify',
+    textAlign: 'center',
     margin: 20,
     backgroundColor: '#8FC1E3',
     opacity: 0.9,
@@ -53,7 +50,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   user:{
-    paddingTop:10,
+    padding:10,
+    textAlign: 'right',
     fontSize: 20,
     color:'#F7F9FB',
     fontWeight: 'bold',

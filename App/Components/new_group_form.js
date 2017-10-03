@@ -63,17 +63,53 @@ class GroupForm extends Component {
   render() {
     return(
       <View>
-        <Text>Group Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.group_name} onChangeText={this.onChangeGroupName}/>
-        <Text>Description:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.details} onChangeText={this.onChangeDetails}/>
-        <TouchableHighlight onPress={this.onButtonPress}>
-          <Text>Create Group:button</Text>
-        </TouchableHighlight>
+
+        <View style={styles.container}>
+          <Text style={styles.label}>Group Name:</Text>
+          <TextInput
+            style={styles.input}
+            name="vendor"
+             onChangeText={this.onChangeGroupName}
+          />
+          <Text style={styles.label}>Details:</Text>
+          <TextInput name="description"
+            style={styles.input}
+            onChangeText={this.onChangeDetails}/>
+
+          <TouchableHighlight >
+            <Text style={styles.signIn} onPress = {this.onButtonPress}>Create Group</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    marginLeft: 25,
+    marginRight:25,
+    paddingTop:30
+  },
+  label: {
+    paddingTop:10,
+    backgroundColor: "transparent",
+    height: 35,
+    color: '#666666'
+  },
+  input: {
+    backgroundColor: "transparent",
+    height: 30,
+    color: '#666666',
+    borderBottomColor: "#666666",
+    borderBottomWidth: 1
+  },
+  signIn:{
+    marginTop: 8,
+    textAlign: "center",
+    fontSize: 25,
+    color: '#666666'
+  }
+});
 
 export default GroupForm;
