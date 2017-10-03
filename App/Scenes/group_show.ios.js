@@ -105,11 +105,10 @@ class GroupShowScene extends Component {
 
 
   componentWillMount = function() {
-
     const id = this.props.navigation.state.params.groupId
     console.log(id)
-    const url = "https://rocky-forest-46725.herokuapp.com/groups/"
-    // const url = "http://localhost:3000/groups/"
+    // const url = "https://rocky-forest-46725.herokuapp.com/groups/"
+    const url = "http://localhost:3000/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
       {method: 'GET'}
@@ -125,6 +124,18 @@ class GroupShowScene extends Component {
     members: responseJson.members
   })})
   }
+
+  settleUpHandler = function() {
+    // const url = "https://rocky-forest-46725.herokuapp.com/groups/"
+    const url = "http://localhost:3000/groups/"
+    const id = this.props.navigation.state.params.groupId
+    fetch(url + id + "/settle", {
+      method: 'POST'
+    }).then((response) => response.json()
+  ).then((responseJson) => console.log(responseJson))
+  }
+
+  settleUpHandler = this.settleUpHandler.bind(this);
 
   render() {
     const { navigate } = this.props.navigation;
@@ -155,7 +166,7 @@ class GroupShowScene extends Component {
             <MemberList groupId={id} members={this.state.members} navigate={ navigate }/>
             </View>
             <View style={styles.footer}>
-              <TouchableHighlight style={styles.settleButton} onPress={() => navigate('Expense')}>
+              <TouchableHighlight style={styles.settleButton} onPress={this.settleUpHandler}>
                 <Text style={styles.settleText}>Settle up</Text>
               </TouchableHighlight>
             </View>
