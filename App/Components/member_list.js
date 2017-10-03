@@ -8,7 +8,7 @@ import {
 import  Member  from './member';
 const styles = StyleSheet.create({
   membersList: {
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 20,
     fontWeight: '700',
     marginTop:30,
@@ -22,7 +22,7 @@ class MemberList extends Component {
     const { navigate, members, groupId } = this.props;
     return(
       <View>
-        <Text style={styles.membersList}>Member Expenses</Text>
+        <Text style={styles.membersList}>Member Expenses:</Text>
         {members.map(function(member, index) {
           return(
             <Member groupId={groupId} member={member} key={index} navigate={navigate}/>

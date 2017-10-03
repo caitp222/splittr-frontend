@@ -77,17 +77,9 @@ class GroupForm extends Component {
             onChangeText={this.onChangeDetails}/>
 
           <TouchableHighlight >
-            <Text style={styles.signIn} onPress = {this.onButtonPress}>Create Group:button</Text>
+            <Text style={styles.signIn} onPress = {this.onButtonPress}>Create Group</Text>
           </TouchableHighlight>
         </View>
-
-        <Text>Group Name:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.group_name} onChangeText={this.onChangeGroupName}/>
-        <Text>Description:</Text>
-        <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} value={this.state.group.details} onChangeText={this.onChangeDetails}/>
-        <TouchableHighlight onPress={this.onButtonPress}>
-          <Text>Create Group:button</Text>
-        </TouchableHighlight>
       </View>
     )
   }
