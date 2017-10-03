@@ -29,7 +29,6 @@ class ExpenseShowScene extends Component {
     fetch(fetchUrl, { method: 'get' })
     .then((response) => response.json())
     .then((responseJson) =>  {
-      // debugger
       this.setState({
         expense: {
             vendor: responseJson.vendor,
@@ -38,8 +37,7 @@ class ExpenseShowScene extends Component {
             user: responseJson.paid_by
           }
         })
-      }).catch(err => {
-        debugger
+      }).catch(err => { 
         console.log(err)
       })
   }
