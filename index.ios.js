@@ -22,7 +22,7 @@ import GroupNewScene from './App/Scenes/new_group.ios.js';
 import ExpenseForm from './App/Scenes/expenses_new.ios.js';
 import LinearGradient from 'react-native-linear-gradient';
 import backgroundImage from './waterdrop-3.jpg'
-// import CameraAccess from './App/Components/camera.js';
+import CameraAccess from './App/Components/camera.js';
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -38,7 +38,7 @@ class Home extends React.Component {
 
   componentWillMount(){
     AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    // AsyncStorage.removeItem('sessionId')
+    //AsyncStorage.removeItem('sessionId')
   }
 
   render() {
