@@ -7,7 +7,7 @@ import {
   Image,
   ImageBackground
 } from 'react-native';
-import backgroundImage from '../../blueblack.jpg'
+import backgroundImage from '../../beach.jpg'
 
 
 class ExpenseShowScene extends Component {
@@ -68,7 +68,7 @@ class ExpenseShowScene extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    margin: "5%",
+    margin: "15%",
     backgroundColor: 'transparent',
   },
   backdrop: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     margin: "5%",
     backgroundColor: 'transparent',
-    color:'#F7F9FB',
+    color:'black',
     fontWeight: 'bold',
   }
 })
