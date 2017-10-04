@@ -21,7 +21,7 @@ class GroupNewScene extends Component {
     const { navigation } = this.props
 
     return(
-      <Container>
+      <Container style={styles.container}>
     <View>
       <GroupForm style={styles.bottom} navigation={this.props.navigation} />
     </View>
@@ -36,6 +36,11 @@ class GroupNewScene extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
   bottom: {
     margin: 100,
   },
