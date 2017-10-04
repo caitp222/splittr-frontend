@@ -23,6 +23,7 @@ class ExpenseNewScene extends Component {
     }};
     this.handleOnChangeCamera = this.handleOnChangeCamera.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleButtonPress = this.handleButtonPress.bind(this)
   }
 
   handleOnChangeCamera(amount, groupId){
@@ -50,6 +51,26 @@ class ExpenseNewScene extends Component {
     this.setState({expense: expense})
   }
 
+  handleButtonPress() {
+    alert("hi!")
+    const expense = this.state.expense;
+    const navigation = this.props.navigation;
+    const groupId = this.state.expense.group_id
+    console.log(groupId)
+    const url = "http://localhost:3000/groups/" + groupId + "/expenses"
+    //const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({expense})
+    }).then(function() {
+      navigation.navigate("GroupShow", {groupId: groupId})
+    })
+  }
+
   render() {
     // const { expense } = this.props
     const { navigation } = this.props
@@ -60,7 +81,7 @@ class ExpenseNewScene extends Component {
           <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera', {handleOnChange: this.handleOnChangeCamera, groupId: this.props.navigation.state.params.groupId, userId: this.state.expense.user_id})}>
             <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
-          <ExpenseForm navigation={navigation} expense={this.state.expense} handleInputChange={this.handleInputChange} />
+          <ExpenseForm navigation={navigation} expense={this.state.expense} handleInputChange={this.handleInputChange} handleButtonPress={this.handleButtonPress} />
         </LinearGradient>
       </View>
     )

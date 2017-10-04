@@ -16,27 +16,27 @@ class ExpenseForm extends Component {
   //   this.setState({expense: expense})
   // }
 
-  onButtonPress = this.handleButtonPress.bind(this)
+  // onButtonPress = this.handleButtonPress.bind(this)
 
-  handleButtonPress() {
-    // const expense = this.state.expense;
-    const navigation = this.props.navigation;
-    const groupId = this.props.navigation.state.params.groupId
-    console.log("this is what you need " + groupId)
-    const url = "http://localhost:3000/groups/" + groupId + "/expenses"
-    //const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
-    console.log(url)
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({expense})
-    }).then(function() {
-      navigation.navigate("GroupShow", {groupId: groupId})
-    })
-  }
+  // handleButtonPress() {
+  //   // const expense = this.state.expense;
+  //   const navigation = this.props.navigation;
+  //   const groupId = this.props.navigation.state.params.groupId
+  //   console.log("this is what you need " + groupId)
+  //   const url = "http://localhost:3000/groups/" + groupId + "/expenses"
+  //   //const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
+  //   console.log(url)
+  //   fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({expense})
+  //   }).then(function() {
+  //     navigation.navigate("GroupShow", {groupId: groupId})
+  //   })
+  // }
 
   render() {
     return(
@@ -57,8 +57,8 @@ class ExpenseForm extends Component {
               style={styles.input}
               onChange={(evt) => this.props.handleInputChange('amount',evt)} value={this.props.expense.amount}/>
 
-              <TouchableHighlight >
-                <Text style={styles.confirm} onPress = {this.onButtonPress}>Confirm Expense</Text>
+              <TouchableHighlight onPress={this.props.handleButtonPress}>
+                <Text style={styles.confirm}>Confirm Expense</Text>
               </TouchableHighlight>
             </View>
           </View>
