@@ -19,10 +19,10 @@ class CameraAccess extends Component {
     const options = {};
     alert("h1");
     const handleOnChange = this.props.navigation.state.params.handleOnChange
-    const navigate = this.props.nagivation.navigate
-    console.log(navigate)
-    // debugger
-    // debugger
+    const navigation = this.props.navigation
+    const groupId = this.props.navigation.state.params.groupId
+    const userId = this.props.navigation.state.params.userId
+    console.log("userid " + userId)
     //options.location = ...
     this.camera.capture({metadata: options})
     .then(function(response) {
@@ -39,10 +39,9 @@ class CameraAccess extends Component {
     }).then(function(response) {
       return response.json() }
   ).then(function(responseJson) {
-    // debugger;
-      handleOnChange(responseJson.total)
-      console.log(responseJson)
-      navigate('Expense')
+      handleOnChange(responseJson.total, groupId, userId)
+      // navigation.navigate('Expense', {groupId: groupId})
+      navigation.goBack()
     })
   })
   }

@@ -12,22 +12,24 @@ import { TextInput,
 class ExpenseForm extends Component {
   constructor() {
     super();
-    this.state = {expense: {
-      description: "",
-      amount: 0,
-      vendor: "",
-      user_id: 0,
-      group_id: 0
-    }};
+    // this.state = {expense: {
+    //   description: "",
+    //   amount: 0,
+    //   vendor: "",
+    //   user_id: 0,
+    //   group_id: 0
+    // }};
   }
 
-  componentWillMount = function() {
-    const groupId = this.props.navigation.state.params.groupId;
-    console.log("groupId" + groupId);
-    AsyncStorage.getItem('sessionId', (err, result) => {
-      this.setState({expense: { description: "", amount: 0, vendor: "", user_id: parseInt(result), group_id: groupId}})
-    })
-  }
+  // componentWillMount = function() {
+    // const groupId = this.props.navigation.state.params.groupId;
+    // console.log("groupId" + groupId);
+    // const amount = parseFloat(this.props.amount)
+    // AsyncStorage.getItem('sessionId', (err, result) => {
+    //   this.setState({expense: { description: "", amount: amount, vendor: "", user_id: parseInt(result), group_id: groupId}})
+    // })
+    // this.setState({expense: {amount: parseFloat(this.props.amount)}})
+  // }
 
   handleInputChange(name, text) {
     const expense = this.state.expense;
@@ -77,7 +79,7 @@ class ExpenseForm extends Component {
             <Text style={styles.label}>Amount</Text>
             <TextInput name="amount"
               style={styles.input}
-              onChangeText={this.onChangeAmount}/>
+              onChangeText={this.onChangeAmount} value = {parseFloat(this.props.expense.amount).toFixed(2)}/>
 
               <TouchableHighlight >
                 <Text style={styles.confirm} onPress = {this.onButtonPress}>Confirm Expense</Text>

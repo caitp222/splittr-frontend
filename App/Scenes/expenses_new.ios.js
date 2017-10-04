@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TouchableHighlight,
   Text,
-  View
+  View,
+  AsyncStorage
 } from 'react-native';
 import ExpenseForm from '../Components/new_expense_form.js'
 import LinearGradient from 'react-native-linear-gradient';
@@ -13,25 +14,36 @@ import Camera from '../Components/camera.js';
 class ExpenseNewScene extends Component {
   constructor() {
     super();
-    this.state = {
-      totalAmount: ''
-    }
-    this.handleOnChange = this.handleOnChange.bind(this)
+    this.state = {expense: {
+      description: "",
+      amount: 0,
+      vendor: "",
+      user_id: 0,
+      group_id: 0
+    }};
+    this.handleOnChangeCamera = this.handleOnChangeCamera.bind(this)
   }
 
-  handleOnChange(amount){
-    this.setState({totalAmount: amount})
+  handleOnChangeCamera(amount, groupId, userId){
+    let expense = this.state.expense
+    expense.amount = amount
+    expense.group_id = groupId
+    AsyncStorage.getItem('sessionId', (err, result) => {
+      expense.user_id = parseInt(result)
+    })
+    this.setState({expense: expense})
   }
   render() {
-    const { expense } = this.props
+    // const { expense } = this.props
     const { navigation } = this.props
+    // const amount = parseFloat(this.state.totalAmount).toFixed(2)
     return(
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
-          <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera', {handleOnChange: this.handleOnChange})}>
+          <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera', {handleOnChange: this.handleOnChangeCamera, groupId: this.props.navigation.state.params.groupId, userId: this.state.expense.user_id})}>
             <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
-          <ExpenseForm navigation={navigation} />
+          <ExpenseForm navigation={navigation} expense={this.state.expense} />
         </LinearGradient>
       </View>
     )
