@@ -41,8 +41,8 @@ class GroupForm extends Component {
   handleButtonPress() {
     const { group } = this.state;
     const { navigation } = this.props;
-    const url = "https://rocky-forest-46725.herokuapp.com/groups"
-    // const url = "http://localhost:3000/groups"
+    //const url = "https://rocky-forest-46725.herokuapp.com/groups"
+    const url = "http://localhost:3000/groups"
     fetch(url, {
       method: 'post',
       headers: {

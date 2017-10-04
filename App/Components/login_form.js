@@ -32,8 +32,8 @@ class LoginForm extends Component {
 
   async handleHighLightPress() {
     const { user } = this.state;
-    const url = "https://rocky-forest-46725.herokuapp.com/sessions"
-    // const url = "http://localhost:3000/sessions"
+    //const url = "https://rocky-forest-46725.herokuapp.com/sessions"
+    const url = "http://localhost:3000/sessions"
     var responseJson = await fetch(url, {
       method: 'post',
       headers: {

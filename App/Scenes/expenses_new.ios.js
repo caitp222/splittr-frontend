@@ -11,13 +11,24 @@ import LinearGradient from 'react-native-linear-gradient';
 import Camera from '../Components/camera.js';
 
 class ExpenseNewScene extends Component {
+  constructor() {
+    super();
+    this.state = {
+      totalAmount: ''
+    }
+    this.handleOnChange = this.handleOnChange.bind(this)
+  }
+
+  handleOnChange(amount){
+    this.setState({totalAmount: amount})
+  }
   render() {
     const { expense } = this.props
     const { navigation } = this.props
     return(
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
-          <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera')}>
+          <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera', {handleOnChange: this.handleOnChange})}>
             <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
           <ExpenseForm navigation={navigation} />

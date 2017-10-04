@@ -13,6 +13,8 @@ import {
   AsyncStorage
 } from 'react-native';
 
+console.disableYellowBox = true;
+
 import LoginScene from './App/Scenes/login.ios.js';
 import RegisterScene from './App/Scenes/register.ios.js';
 import UserShowScene from './App/Scenes/user_show.ios.js';
@@ -50,8 +52,8 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
-    // AsyncStorage.removeItem('sessionId')
+    //AsyncStorage.getItem('sessionId', (err, result) => this.setState({sessionId: result}) )
+    AsyncStorage.removeItem('sessionId')
   }
 
 

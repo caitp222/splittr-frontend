@@ -11,6 +11,41 @@ import {
 import Camera from 'react-native-camera';
 
 class CameraAccess extends Component {
+  constructor() {
+    super();
+
+  }
+  takePicture() {
+    const options = {};
+    alert("h1");
+    const handleOnChange = this.props.navigation.state.params.handleOnChange
+    const navigate = this.props.nagivation.navigate
+    console.log(navigate)
+    // debugger
+    // debugger
+    //options.location = ...
+    this.camera.capture({metadata: options})
+    .then(function(response) {
+      const data = response;
+      const url = "http://localhost:3000/expenses/camera"
+      //const url = "https://rocky-forest-46725.herokuapp.com/expenses/camera"
+      fetch(url,
+      {method: 'post',
+      headers: {
+        'Accept':'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({data})
+    }).then(function(response) {
+      return response.json() }
+  ).then(function(responseJson) {
+    // debugger;
+      handleOnChange(responseJson.total)
+      console.log(responseJson)
+      navigate('Expense')
+    })
+  })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -26,48 +61,6 @@ class CameraAccess extends Component {
       </View>
     );
   }
-
-  takePicture() {
-    const options = {};
-    alert("h1");
-    //options.location = ...
-    this.camera.capture({metadata: options})
-    .then(function(response) {
-      const data = response;
-      // const url = "http://localhost:3000/expenses/expenses/camera"
-      const url = "https://rocky-forest-46725.herokuapp.com/expenses/camera"
-      fetch(url,
-      {method: 'post',
-      headers: {
-        'Accept':'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({data})
-    }).then(function(response) {
-      console.log(response)
-    })
-
-    // debugger;
-    // console.log(response)
-  })
-
-
-
-
-
-  //     .then(function() {
-  //       fetch("http://localhost:3000/expenses/camera",
-  //             {method: 'post',
-  //              body: JSON.stringify({ params:1 })
-  //           }
-  //         }).then(function())
-  //             (data) => console.log(data)
-  //           )
-  //           .then((response) => response.json())
-  //           .then((data) => console.log('data', data))
-  //     )
-  //     .catch(err => console.error(err));
-}
 }
 
 const styles = StyleSheet.create({
