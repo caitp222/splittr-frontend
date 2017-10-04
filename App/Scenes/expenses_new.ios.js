@@ -22,17 +22,34 @@ class ExpenseNewScene extends Component {
       group_id: 0
     }};
     this.handleOnChangeCamera = this.handleOnChangeCamera.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleOnChangeCamera(amount, groupId, userId){
+  handleOnChangeCamera(amount, groupId){
     let expense = this.state.expense
     expense.amount = amount
     expense.group_id = groupId
     AsyncStorage.getItem('sessionId', (err, result) => {
-      expense.user_id = parseInt(result)
+      var resultInt = parseInt(result);
+      console.log(resultInt);
+      expense.user_id = resultInt
     })
+    console.log('***********************')
+    console.log(expense)
+    // console.log(AsyncStorage.getItem('sessionId'))
+    // console.log('***********************')
+    // console.log(parseInt(AsyncStorage.getItem('sessionId')))
     this.setState({expense: expense})
   }
+
+  handleInputChange(name, event) {
+    console.log('******')
+    let expense = this.state.expense;
+    // debugger
+    expense[name] = event.nativeEvent.text;
+    this.setState({expense: expense})
+  }
+
   render() {
     // const { expense } = this.props
     const { navigation } = this.props
@@ -43,7 +60,7 @@ class ExpenseNewScene extends Component {
           <TouchableHighlight style={styles.scanButton} onPress={() => navigation.navigate('Camera', {handleOnChange: this.handleOnChangeCamera, groupId: this.props.navigation.state.params.groupId, userId: this.state.expense.user_id})}>
             <Text style={styles.scanText}>Scan Receipt</Text>
           </TouchableHighlight>
-          <ExpenseForm navigation={navigation} expense={this.state.expense} />
+          <ExpenseForm navigation={navigation} expense={this.state.expense} handleInputChange={this.handleInputChange} />
         </LinearGradient>
       </View>
     )

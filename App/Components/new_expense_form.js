@@ -10,40 +10,16 @@ import { TextInput,
 } from 'react-native';
 
 class ExpenseForm extends Component {
-  constructor() {
-    super();
-    // this.state = {expense: {
-    //   description: "",
-    //   amount: 0,
-    //   vendor: "",
-    //   user_id: 0,
-    //   group_id: 0
-    // }};
-  }
-
-  // componentWillMount = function() {
-    // const groupId = this.props.navigation.state.params.groupId;
-    // console.log("groupId" + groupId);
-    // const amount = parseFloat(this.props.amount)
-    // AsyncStorage.getItem('sessionId', (err, result) => {
-    //   this.setState({expense: { description: "", amount: amount, vendor: "", user_id: parseInt(result), group_id: groupId}})
-    // })
-    // this.setState({expense: {amount: parseFloat(this.props.amount)}})
+  // handleInputChange(name, event) {
+  //   const expense = this.state.expense;
+  //   expense[name] = event;
+  //   this.setState({expense: expense})
   // }
 
-  handleInputChange(name, text) {
-    const expense = this.state.expense;
-    expense[name] = text;
-    this.setState({expense: expense})
-  }
-
-  onChangeDescription = this.handleInputChange.bind(this, "description")
-  onChangeAmount = this.handleInputChange.bind(this, "amount")
-  onChangeVendor = this.handleInputChange.bind(this, "vendor")
   onButtonPress = this.handleButtonPress.bind(this)
 
   handleButtonPress() {
-    const expense = this.state.expense;
+    // const expense = this.state.expense;
     const navigation = this.props.navigation;
     const groupId = this.props.navigation.state.params.groupId
     console.log("this is what you need " + groupId)
@@ -70,16 +46,16 @@ class ExpenseForm extends Component {
           <TextInput
             style={styles.input}
             name="vendor"
-            onChangeText={this.onChangeVendor}
+            onChange={(evt) => this.props.handleInputChange('vendor',evt)}
           />
           <Text style={styles.label}>Description</Text>
           <TextInput name="description"
             style={styles.input}
-            onChangeText={this.onChangeDescription}/>
+            onChange={(evt) => this.props.handleInputChange('description',evt)} />
             <Text style={styles.label}>Amount</Text>
             <TextInput name="amount"
               style={styles.input}
-              onChangeText={this.onChangeAmount} value = {parseFloat(this.props.expense.amount).toFixed(2)}/>
+              onChange={(evt) => this.props.handleInputChange('amount',evt)} value={this.props.expense.amount}/>
 
               <TouchableHighlight >
                 <Text style={styles.confirm} onPress = {this.onButtonPress}>Confirm Expense</Text>

@@ -11,17 +11,14 @@ import {
 import Camera from 'react-native-camera';
 
 class CameraAccess extends Component {
-  constructor() {
-    super();
 
-  }
   takePicture() {
     const options = {};
     alert("h1");
     const handleOnChange = this.props.navigation.state.params.handleOnChange
     const navigation = this.props.navigation
-    const groupId = this.props.navigation.state.params.groupId
-    const userId = this.props.navigation.state.params.userId
+    const {groupId, userId} = this.props.navigation.state.params
+    // const userId = this.props.navigation.state.params.userId
     console.log("userid " + userId)
     //options.location = ...
     this.camera.capture({metadata: options})
