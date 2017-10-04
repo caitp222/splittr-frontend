@@ -14,13 +14,9 @@ class CameraAccess extends Component {
 
   takePicture() {
     const options = {};
-    alert("h1");
     const handleOnChange = this.props.navigation.state.params.handleOnChange
     const navigation = this.props.navigation
     const {groupId, userId} = this.props.navigation.state.params
-    // const userId = this.props.navigation.state.params.userId
-    console.log("userid " + userId)
-    //options.location = ...
     this.camera.capture({metadata: options})
     .then(function(response) {
       const data = response;
@@ -37,7 +33,6 @@ class CameraAccess extends Component {
       return response.json() }
   ).then(function(responseJson) {
       handleOnChange(responseJson.total, groupId, userId)
-      // navigation.navigate('Expense', {groupId: groupId})
       navigation.goBack()
     })
   })

@@ -10,7 +10,6 @@ import {
   AsyncStorage,
   ImageBackground
 } from 'react-native';
-// import { LoginForm } from '../Components/login_form'
 import ProfileHeader  from '../Components/profile_header';
 import ProfileGroup  from '../Components/profile_group_list';
 import LinearGradient from 'react-native-linear-gradient';

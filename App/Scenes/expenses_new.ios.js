@@ -32,31 +32,21 @@ class ExpenseNewScene extends Component {
     expense.group_id = groupId
     AsyncStorage.getItem('sessionId', (err, result) => {
       var resultInt = parseInt(result);
-      console.log(resultInt);
       expense.user_id = resultInt
     })
-    console.log('***********************')
-    console.log(expense)
-    // console.log(AsyncStorage.getItem('sessionId'))
-    // console.log('***********************')
-    // console.log(parseInt(AsyncStorage.getItem('sessionId')))
     this.setState({expense: expense})
   }
 
   handleInputChange(name, event) {
-    console.log('******')
     let expense = this.state.expense;
-    // debugger
     expense[name] = event.nativeEvent.text;
     this.setState({expense: expense})
   }
 
   handleButtonPress() {
-    alert("hi!")
     const expense = this.state.expense;
     const navigation = this.props.navigation;
     const groupId = this.state.expense.group_id
-    console.log(groupId)
     const url = "http://localhost:3000/groups/" + groupId + "/expenses"
     //const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
     fetch(url, {
@@ -72,9 +62,7 @@ class ExpenseNewScene extends Component {
   }
 
   render() {
-    // const { expense } = this.props
     const { navigation } = this.props
-    // const amount = parseFloat(this.state.totalAmount).toFixed(2)
     return(
       <View>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>

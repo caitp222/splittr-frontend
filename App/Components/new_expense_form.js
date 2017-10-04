@@ -10,34 +10,6 @@ import { TextInput,
 } from 'react-native';
 
 class ExpenseForm extends Component {
-  // handleInputChange(name, event) {
-  //   const expense = this.state.expense;
-  //   expense[name] = event;
-  //   this.setState({expense: expense})
-  // }
-
-  // onButtonPress = this.handleButtonPress.bind(this)
-
-  // handleButtonPress() {
-  //   // const expense = this.state.expense;
-  //   const navigation = this.props.navigation;
-  //   const groupId = this.props.navigation.state.params.groupId
-  //   console.log("this is what you need " + groupId)
-  //   const url = "http://localhost:3000/groups/" + groupId + "/expenses"
-  //   //const url = "https://rocky-forest-46725.herokuapp.com/groups/" + groupId + "/expenses"
-  //   console.log(url)
-  //   fetch(url, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({expense})
-  //   }).then(function() {
-  //     navigation.navigate("GroupShow", {groupId: groupId})
-  //   })
-  // }
-
   render() {
     return(
       <View>
