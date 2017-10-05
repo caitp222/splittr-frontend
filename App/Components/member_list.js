@@ -3,6 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  ScrollView,
   View
 } from 'react-native';
 import  Member  from './member';
@@ -13,7 +14,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginTop:30,
     marginBottom:10,
-
+  },
+  deco: {
+    flex: 1,
+    backgroundColor: "transparent",
   }
 })
 
@@ -21,8 +25,7 @@ class MemberList extends Component {
   render() {
     const { navigate, members, groupId, settledUp } = this.props;
     return(
-      <View>
-        <Text style={styles.membersList}>Member Expenses:</Text>
+      <View style={styles.deco}>
         {members.map(function(member, index) {
           return(
             <Member settledUp={settledUp} groupId={groupId} member={member} key={index} navigate={navigate}/>

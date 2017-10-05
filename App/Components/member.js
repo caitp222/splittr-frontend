@@ -7,18 +7,21 @@ import {
   FlatList,
   Button,
   Text,
+  ScrollView,
   View
 } from 'react-native';
 import Expense from './expense';
 import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 const styles = StyleSheet.create({
   memberName: {
+    width: 100,
     fontWeight: "700",
     fontSize: 15,
     width:100
 
   },
   expense: {
+    width: 100,
     textAlign: 'left',
     paddingLeft: 4,
     paddingRight: 4,
@@ -37,8 +40,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flexDirection: 'column',
-
-  }
+  },
 });
 
 class Member extends Component {

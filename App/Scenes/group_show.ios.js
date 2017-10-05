@@ -4,12 +4,14 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   TouchableHighlight
 } from 'react-native';
 import  MemberList from '../Components/member_list';
 import LinearGradient from 'react-native-linear-gradient';
 import ExpenseForm from './expenses_new.ios.js';
 import { StackNavigator } from 'react-navigation';
+import AddNewMember from '../Components/finder.js'
 
 const styles = StyleSheet.create({
   background: {
@@ -24,9 +26,9 @@ const styles = StyleSheet.create({
   groupHeader:{
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 40,
-    marginTop:15,
-    marginBottom:2
+    fontSize: 30,
+    marginTop: 2.5,
+    //marginBottom:2
   },
   details: {
     textAlign: 'center',
@@ -35,25 +37,31 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   sumBox: {
-    marginTop:10,
-    marginBottom: 10,
-    flexDirection: 'column'
+    marginTop:5,
+    marginBottom: 5,
+    flexDirection: 'column',
   },
   membersList: {
+    padding : 5,
     textAlign: 'center',
     fontSize: 30,
-    marginTop:10,
-    marginBottom:2
+    marginTop:5,
+    marginBottom: 15,
   },
   sumHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   sumContainer: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    margin: "-5%",
+    marginLeft: "5%"
   },
   button: {
-    padding: 10
+    marginTop:5,
+    padding: 5,
+    // marginRight: 5,
+    marginLeft: "-20%",
   },
   expenseHeader: {
     fontWeight: 'bold',
@@ -62,8 +70,8 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: 'bold',
     fontSize: 20,
-    padding: 10,
-    borderRadius: 15,
+    padding: 5,
+    borderRadius: 5,
     borderWidth: 2,
     borderColor: '#8BBFC2'
   },
@@ -87,7 +95,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: 'transparent'
   }
-
 })
 
 class GroupShowScene extends Component {
@@ -101,6 +108,18 @@ class GroupShowScene extends Component {
        memberSplit: 0,
        members: []
      }
+   }
+
+   findGroup = (group) => {
+     this.setState({
+       group: {
+         groupName: group.group.group_name,
+         details: group.group.details,
+         settledUp: group.group.settled_up
+       },
+       totalSpend: group.total_spend,
+       memberSplit: group.member_split,
+       members: group.members})
    }
 
 
@@ -145,10 +164,11 @@ class GroupShowScene extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props
     const id = this.props.navigation.state.params.groupId;
-
     if(this.state.group.settledUp === false){
       return(
+        // <ScrollView style={{flex: 1}}>
         <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
           <View style={styles.container}>
             <View>
@@ -165,21 +185,31 @@ class GroupShowScene extends Component {
                   <View style={styles.sumBox}>
                     <Text style={styles.expenseHeader}>Member Split</Text>
                     <Text>${this.state.memberSplit}</Text>
+                    <Text style={styles.membersList}>Member Expenses:</Text>
                   </View>
                 </View>
                 <TouchableHighlight style={styles.button} onPress={() => navigate('Expense', {groupId: id})}>
                   <Text style={styles.buttonText}>Add Expense</Text>
                 </TouchableHighlight>
+
               </View>
-              <MemberList settledUp={this.state.group.settledUp} groupId={id} members={this.state.members} navigate={ navigate }/>
               </View>
+              </View>
+              <ScrollView >
+                <MemberList settledUp={this.state.group.settledUp} groupId={id} members={this.state.members} navigate={ navigate }/>
+              </ScrollView>
+
+              <View>
+                <AddNewMember groupId={id} navigation={navigation} findGroup={this.findGroup}/>
+              </View>
+
               <View style={styles.footer}>
                 <TouchableHighlight style={styles.settleButton} onPress={this.settleUpHandler}>
                   <Text style={styles.settleText}>Settle up</Text>
                 </TouchableHighlight>
               </View>
-          </View>
         </LinearGradient>
+          // </ScrollView>
       )
     } else if(this.state.group.settledUp === true) {
       return(
