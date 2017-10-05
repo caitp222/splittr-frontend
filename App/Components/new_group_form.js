@@ -64,7 +64,6 @@ class GroupForm extends Component {
   render() {
     return(
       <View>
-
         <View style={styles.container}>
           <Text style={styles.label}>Group Name:</Text>
           <TextInput

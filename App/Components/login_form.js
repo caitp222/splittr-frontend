@@ -57,6 +57,7 @@ class LoginForm extends Component {
         <View style={styles.container}>
           <Text style={styles.label}>Email</Text>
           <TextInput
+            autoCapitalize= {false}
             style={styles.input}
             name="email"
              onChangeText={this.onChangeEmail}
@@ -64,6 +65,8 @@ class LoginForm extends Component {
           <Text style={styles.label}>Password</Text>
           <TextInput name="password"
             style={styles.input}
+            autoCapitalize= {false}
+            // secureTextEntry = {true}
             onChangeText={this.onChangePassword}/>
 
           <TouchableHighlight >

@@ -17,8 +17,6 @@ class ProfileGroup extends Component {
     const { navigation, groups } = this.props;
     return(
       <View style={styles.container}>
-        <View style={styles.header}>
-        </View>
         <Text style={styles.group}>Your Groups</Text>
         <ScrollView style={{flex: 3}}>
           <View>

@@ -36,6 +36,7 @@ class RegisterForm extends Component {
     const { user } = this.state
     const url = "https://rocky-forest-46725.herokuapp.com/users"
     // const url = "http://localhost:3000/users"
+    debugger
     fetch(url, {
       method: 'post',
       headers: {
