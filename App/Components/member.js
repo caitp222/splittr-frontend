@@ -14,10 +14,10 @@ import  ExpenseShowScene  from '../Scenes/expenses_show.ios.js'
 const styles = StyleSheet.create({
   memberName: {
     fontWeight: "700",
-    fontSize: 15
+    fontSize: 15,
+    width:100
 
   },
-
   expense: {
     textAlign: 'left',
     paddingLeft: 4,
@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 2,
     borderWidth: 0.25,
-    borderColor: '#8BBFC2'
+    borderColor: '#8BBFC2',
+    width: 120
+
   },
   container: {
     flexDirection: 'row',

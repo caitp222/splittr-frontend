@@ -106,7 +106,7 @@ class GroupShowScene extends Component {
 
   componentWillMount = function() {
     const id = this.props.navigation.state.params.groupId
-    // const url = "https://rocky-forest-46725.herokuapp.com/groups/"
+    //const url = "https://rocky-forest-46725.herokuapp.com/groups/"
     const url = "http://localhost:3000/groups/"
     const fetchUrl = url + id;
     fetch(fetchUrl,
@@ -136,6 +136,7 @@ class GroupShowScene extends Component {
     alert(responseJson.message);
     group.settledUp = true;
     this.setState({group: group})
+    console.log(this.state)
   }.bind(this)
     )
   }

@@ -23,7 +23,7 @@ class ExpenseShowScene extends Component {
   componentWillMount = function() {
     const expenseId = this.props.navigation.state.params.expense.id
     const url = "http://localhost:3000/expenses/"
-    // const url = "https://rocky-forest-46725.herokuapp.com/expenses/"
+    //const url = "https://rocky-forest-46725.herokuapp.com/expenses/"
     const fetchUrl = url + expenseId
     fetch(fetchUrl, { method: 'get' })
     .then((response) => response.json())
