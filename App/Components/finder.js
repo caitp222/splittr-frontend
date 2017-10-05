@@ -24,8 +24,8 @@ class AddNewMember extends Component {
   addMembership = () => {
 
     const user = this.state;
-    // const url = "http://localhost:3000/memberships";
-    const url = "https://rocky-forest-46725.herokuapp.com/memberships"
+    const url = "http://localhost:3000/memberships";
+    // const url = "https://rocky-forest-46725.herokuapp.com/memberships"
     fetch(url, {
       method: 'post',
       headers: {
