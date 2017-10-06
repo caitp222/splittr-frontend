@@ -66,7 +66,7 @@ class LoginForm extends Component {
           <TextInput name="password"
             style={styles.input}
             autoCapitalize= {false}
-            // secureTextEntry = {true}
+            secureTextEntry = {true}
             onChangeText={this.onChangePassword}/>
 
           <TouchableHighlight >
