@@ -10,6 +10,3 @@ This repository was forked after the group project period ended on October 6 201
 - Caitlin Prentke
 - Rico De Santis
 - Rebecca Trachtenberg
-
-![Alt text](/screenshots/screenshot1.png?raw=true "Optional Title")
-
