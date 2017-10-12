@@ -10,3 +10,9 @@ This repository was forked after the group project period ended on October 6 201
 - Caitlin Prentke
 - Rico De Santis
 - Rebecca Trachtenberg
+
+# To Run Locally in the Simulator
+- `git clone https://github.com/caitp222/splittr-frontend.git`
+- `cd splittr-frontend`
+- `npm install`
+- `react-native run-ios`
