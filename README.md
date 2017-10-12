@@ -13,9 +13,11 @@ This repository was forked after the group project period ended on October 6 201
 ![alt-text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/Screenshot3.png)
 ![alt-text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/screenshot4.png)
 
-- Users can scan receipts with their phone camera. SplittR uses the Google Vision API to read the text and find the price.
+- Users can scan receipts with their phone camera. SplittR uses the Google Vision API to read the text. An algorithm in the backend then parses the data to find the total price.
 
 ![alt text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/Screenshot1.jpg)
+![alt text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/screenshot11.png)
+
 
 # Contributors
 - Caitlin Prentke
