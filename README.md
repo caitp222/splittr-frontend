@@ -6,7 +6,7 @@ Please see the repository for the back-end, built using Ruby on Rails, [here](ht
 
 This repository was forked after the group project period ended on October 6 2017.
 
-[!alt text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/Screenshot1.jpg)
+![alt text](https://github.com/caitp222/splittr-frontend/blob/screenshots/screenshots/Screenshot1.jpg)
 
 # Contributors
 - Caitlin Prentke
