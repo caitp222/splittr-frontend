@@ -25,7 +25,7 @@ This repository was forked after the group project period ended on October 6 201
 - Rebecca Trachtenberg
 
 # To Run Locally in the Simulator
-- Make sure you have Xcode installed.
+- Make sure you have Xcode installed and running.
 - Make sure you have the relevant [backend](https://github.com/caitp222/splittr-backend) installed.
 - `git clone https://github.com/caitp222/splittr-frontend.git`
 - `cd splittr-frontend`
