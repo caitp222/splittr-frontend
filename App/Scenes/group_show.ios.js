@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
   View,
   ScrollView,
@@ -12,90 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import ExpenseForm from './expenses_new.ios.js';
 import { StackNavigator } from 'react-navigation';
 import AddNewMember from '../Components/finder.js'
-
-const styles = StyleSheet.create({
-  background: {
-  backgroundColor: 'transparent',
-
-  },
-  linearGradient: {
-    height: "100%",
-    paddingLeft: 15,
-    paddingRight: 15,
-  },
-  groupHeader:{
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 30,
-    marginTop: 2.5,
-    //marginBottom:2
-  },
-  details: {
-    textAlign: 'center',
-    fontSize: 15,
-    marginTop:2,
-    marginBottom: 30
-  },
-  sumBox: {
-    marginTop:5,
-    marginBottom: 5,
-    flexDirection: 'column',
-  },
-  membersList: {
-    padding : 5,
-    textAlign: 'center',
-    fontSize: 30,
-    marginTop:5,
-    marginBottom: 15,
-  },
-  sumHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  sumContainer: {
-    flexDirection: 'column',
-    margin: "-5%",
-    marginLeft: "5%"
-  },
-  button: {
-    marginTop:5,
-    padding: 5,
-    // marginRight: 5,
-    marginLeft: "-20%",
-  },
-  expenseHeader: {
-    fontWeight: 'bold',
-    fontSize: 18
-  },
-  buttonText: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    padding: 5,
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: '#8BBFC2'
-  },
-  settleText:{
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 20
-  },
-  settleButton:{
-    backgroundColor: '#83a4d4',
-    paddingTop: 10,
-    paddingBottom: 10,
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: '#8BBFC2',
-    marginBottom:50
-  },
-  container: {
-    flex:1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    backgroundColor: 'transparent'
-  }
-})
+import GroupShowSceneStyles from '../Styles/groupShowSceneStyles'
 
 class GroupShowScene extends Component {
   constructor() {
@@ -169,27 +85,27 @@ class GroupShowScene extends Component {
     if(this.state.group.settledUp === false){
       return(
         // <ScrollView style={{flex: 1}}>
-        <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
-          <View style={styles.container}>
+        <LinearGradient colors={['#b6fbff', '#83a4d4']} style={GroupShowSceneStyles.linearGradient}>
+          <View style={GroupShowSceneStyles.container}>
             <View>
               <View>
-                <Text style={styles.groupHeader}>{this.state.group.groupName}</Text>
-                <Text style={styles.details}>{this.state.group.details}</Text>
+                <Text style={GroupShowSceneStyles.groupHeader}>{this.state.group.groupName}</Text>
+                <Text style={GroupShowSceneStyles.details}>{this.state.group.details}</Text>
               </View>
-              <View style={styles.sumHeader}>
-                <View style={styles.sumContainer}>
-                  <View style={styles.sumBox}>
-                    <Text style={styles.expenseHeader}>Group Spent</Text>
+              <View style={GroupShowSceneStyles.sumHeader}>
+                <View style={GroupShowSceneStyles.sumContainer}>
+                  <View style={GroupShowSceneStyles.sumBox}>
+                    <Text style={GroupShowSceneStyles.expenseHeader}>Group Spent</Text>
                     <Text>${this.state.totalSpend}</Text>
                   </View>
-                  <View style={styles.sumBox}>
-                    <Text style={styles.expenseHeader}>Member Split</Text>
+                  <View style={GroupShowSceneStyles.sumBox}>
+                    <Text style={GroupShowSceneStyles.expenseHeader}>Member Split</Text>
                     <Text>${this.state.memberSplit}</Text>
-                    <Text style={styles.membersList}>Member Expenses:</Text>
+                    <Text style={GroupShowSceneStyles.membersList}>Member Expenses:</Text>
                   </View>
                 </View>
-                <TouchableHighlight style={styles.button} onPress={() => navigate('Expense', {groupId: id})}>
-                  <Text style={styles.buttonText}>Add Expense</Text>
+                <TouchableHighlight style={GroupShowSceneStyles.button} onPress={() => navigate('Expense', {groupId: id})}>
+                  <Text style={GroupShowSceneStyles.buttonText}>Add Expense</Text>
                 </TouchableHighlight>
 
               </View>
@@ -203,9 +119,9 @@ class GroupShowScene extends Component {
                 <AddNewMember groupId={id} navigation={navigation} findGroup={this.findGroup}/>
               </View>
 
-              <View style={styles.footer}>
-                <TouchableHighlight style={styles.settleButton} onPress={this.settleUpHandler}>
-                  <Text style={styles.settleText}>Settle up</Text>
+              <View style={GroupShowSceneStyles.footer}>
+                <TouchableHighlight style={GroupShowSceneStyles.settleButton} onPress={this.settleUpHandler}>
+                  <Text style={GroupShowSceneStyles.settleText}>Settle up</Text>
                 </TouchableHighlight>
               </View>
         </LinearGradient>
@@ -213,21 +129,21 @@ class GroupShowScene extends Component {
       )
     } else if(this.state.group.settledUp === true) {
       return(
-        <LinearGradient colors={['#b6fbff', '#83a4d4']} style={styles.linearGradient}>
-          <View style={styles.container}>
+        <LinearGradient colors={['#b6fbff', '#83a4d4']} style={GroupShowSceneStyles.linearGradient}>
+          <View style={GroupShowSceneStyles.container}>
             <View>
               <View>
-                <Text style={styles.groupHeader}>{this.state.group.groupName}</Text>
-                <Text style={styles.details}>{this.state.group.details}</Text>
+                <Text style={GroupShowSceneStyles.groupHeader}>{this.state.group.groupName}</Text>
+                <Text style={GroupShowSceneStyles.details}>{this.state.group.details}</Text>
               </View>
-              <View style={styles.sumHeader}>
-                <View style={styles.sumContainer}>
-                  <View style={styles.sumBox}>
-                    <Text style={styles.expenseHeader}>Group Spent</Text>
+              <View style={GroupShowSceneStyles.sumHeader}>
+                <View style={GroupShowSceneStyles.sumContainer}>
+                  <View style={GroupShowSceneStyles.sumBox}>
+                    <Text style={GroupShowSceneStyles.expenseHeader}>Group Spent</Text>
                     <Text>${this.state.totalSpend}</Text>
                   </View>
-                  <View style={styles.sumBox}>
-                    <Text style={styles.expenseHeader}>Member Split</Text>
+                  <View style={GroupShowSceneStyles.sumBox}>
+                    <Text style={GroupShowSceneStyles.expenseHeader}>Member Split</Text>
                     <Text>${this.state.memberSplit}</Text>
                   </View>
                 </View>

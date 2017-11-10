@@ -26,3 +26,5 @@ const LoginFormStyles = StyleSheet.create({
     color: '#666666'
   }
 })
+
+export default LoginFormStyles;
