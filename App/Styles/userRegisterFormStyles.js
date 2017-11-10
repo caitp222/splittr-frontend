@@ -27,4 +27,4 @@ const UserRegisterFormStyles = StyleSheet.create({
   }
 });
 
-export default UserRegisterFormStyles
+export default UserRegisterFormStyles;
