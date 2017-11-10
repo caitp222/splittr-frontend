@@ -6,11 +6,11 @@ import {
   TextInput,
   Text,
   View,
-  StyleSheet,
   TouchableHighlight,
   AsyncStorage
 } from 'react-native';
 import Member from './member';
+import FinderStyles from '../Styles/finderStyle';
 
 class AddNewMember extends Component {
   constructor(props) {
@@ -49,31 +49,16 @@ class AddNewMember extends Component {
     <View>
       <TextInput name="email"
         autoCapitalize={false}
-          style={styles.input}
+          style={FinderStyles.input}
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
       />
       <TouchableHighlight >
-        <Text style={styles.label} onPress = {this.addMembership}>Find Friend</Text>
+        <Text style={FinderStyles.label} onPress = {this.addMembership}>Find Friend</Text>
       </TouchableHighlight>
     </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  label: {
-    paddingTop:10,
-    backgroundColor: "transparent",
-    height: 35,
-    color: 'black'
-  },
-  input: {
-    backgroundColor: "transparent",
-    height: 30,
-    color: '#666666',
-    borderBottomColor: "black",
-    borderBottomWidth: 1
-  },
-})
 export default AddNewMember ;
