@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const LoginFormStyles = StyleSheet.create({
+const ExpenseFormStyles = StyleSheet.create({
   container: {
     marginLeft: 25,
     marginRight:25,
@@ -19,10 +19,19 @@ const LoginFormStyles = StyleSheet.create({
     borderBottomColor: "#666666",
     borderBottomWidth: 1
   },
-  signIn:{
-    marginTop: 8,
+  confirm:{
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: "#666666",
+    marginTop: 30,
+    marginLeft: 30,
+    marginRight: 30,
+    color: '#666666',
     textAlign: "center",
-    fontSize: 25,
-    color: '#666666'
+    fontSize: 25
   }
-})
+});
+
+export default ExpenseFormStyles;
